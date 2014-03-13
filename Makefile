@@ -8,7 +8,7 @@ run:
 	node index.js
 
 run-container:
-	docker run -d gasi/centos-node-hello
+	docker run -p 49160:8080 -d gasi/centos-node-hello 
 
 test:
 	curl localhost

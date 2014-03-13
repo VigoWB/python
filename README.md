@@ -30,7 +30,7 @@ Node.js Hello World on CentOS using [docker][].
 -   Run app:
 
         make run-container
-        # docker run -d gasi/centos-node-hello
+        # docker run -p 49160:8080 -d gasi/centos-node-hello
 
 -   Install `curl`:
 
