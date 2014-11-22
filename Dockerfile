@@ -19,7 +19,7 @@ RUN mkdir -p /var/log/supervisor
 ADD ./supervisord/conf.d/* $SCPATH/
 
 # Application Code
-ADD .js* $AP/
+ADD *.js* $AP/
 
 WORKDIR $AP
 
