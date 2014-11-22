@@ -1,5 +1,1 @@
-.git/
-.gitignore
-Makefile
-README.md
-Vagrantfile
+.git
