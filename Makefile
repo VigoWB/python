@@ -2,13 +2,13 @@ install:
 	npm install
 
 build:
-	docker build -t gasi/centos-node-hello .
+	docker build -t example/docker-node-hello:latest .
 
 run:
 	node index.js
 
 run-container:
-	docker run -p 49160:8080 -d gasi/centos-node-hello 
+	docker run -p 8080:8080 -d example/docker-node-hello 
 
 test:
 	curl localhost
