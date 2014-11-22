@@ -1,21 +1,29 @@
-# VERSION 0.2
-# DOCKER-VERSION 0.3.4
-# To build:
-# 1. Install docker (http://docker.io)
-# 2. Checkout source: git@github.com:gasi/docker-node-hello.git
-# 3. Build container: docker build .
+# Originally forked from: git@github.com:gasi/docker-node-hello.git
 
-FROM    centos:6.4
+FROM node:0.10
 
-# Enable EPEL for Node.js
-RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-# Install Node.js and npm
-RUN     yum install -y npm
+MAINTAINER Anna Doe <anna@example.com>
 
-# App
-ADD . /src
-# Install app dependencies
-RUN cd /src; npm install
+USER root
 
-EXPOSE  8080
-CMD ["node", "/src/index.js"]
+ENV AP /data/app
+ENV SCPATH /etc/supervisor/conf.d
+
+RUN apt-get -y update
+
+# The daemons
+RUN apt-get -y install supervisor
+RUN mkdir -p /var/log/supervisor
+
+# Supervisor Configuration
+ADD ./supervisord/conf.d/* $SCPATH/
+
+# Application Code
+ADD . $AP/
+
+WORKDIR $AP
+
+RUN npm install
+
+CMD ["supervisord", "-n"]
+
