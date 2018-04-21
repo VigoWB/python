@@ -2,7 +2,8 @@
 
 FROM node:0.10
 
-MAINTAINER Anna Doe <anna@example.com>
+LABEL "maintainer"="anna@example.com"
+LABEL "rating"="Five Stars" "class"="First Class"
 
 USER root
 
