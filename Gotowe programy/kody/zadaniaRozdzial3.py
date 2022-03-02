@@ -25,7 +25,7 @@ elif wrozba == 5:
 else:
     print ('Koniec to nie wejdzie nigdy')
 
-input ('\nKoniec Enter')'''
+input ('\nKoniec Enter')
 
 # zadanie 2 Napisz program, który „rzuca” 100 razy monetą, a następnie podaje użytkownikowi liczbę orzełków i reszek
 import random
@@ -45,4 +45,30 @@ def losowanie():
     print('ilosc reszek ', il_reszek)
     print('ilosc orlow ', il_orlow)
 
-input('\nKoniec -> Enter')
+input('\nKoniec -> Enter')'''
+
+
+
+import random
+
+print ("\tWitaj w grze 'Jaka to liczba'!")
+print ("\nMam na myśli pewną liczbę z zakresu od 1 do 100.")
+print ("Spróbuj ją odgadnąć w jak najmniejszej liczbie prób.\n")
+
+# ustaw wartości początkowe
+the_number = random.randint (1, 100)
+wylosowana = int (input ("Ta liczba to: "))
+proby = 1
+# pętla zgadywania
+
+while wylosowana != the_number:
+    if wylosowana > the_number:
+        print ("Za duża...")
+    else:
+        print ("Za mała...")
+    wylosowana = int (input ("Ta liczba to: "))
+    if proby >= 5:
+        print ('KONIEC!!!\nZa duzo prob.')
+
+print ("Odgadłeś! Ta liczba to", the_number)
+print ("Do osiągnięcia sukcesu potrzebowałeś tylko", proby, "prób!\n")
