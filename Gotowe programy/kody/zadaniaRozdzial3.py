@@ -56,19 +56,23 @@ print ("\nMam na myśli pewną liczbę z zakresu od 1 do 100.")
 print ("Spróbuj ją odgadnąć w jak najmniejszej liczbie prób.\n")
 
 # ustaw wartości początkowe
-the_number = random.randint (1, 100)
+the_number = random.randint (1, 10)
 wylosowana = int (input ("Ta liczba to: "))
 proby = 1
 # pętla zgadywania
 
 while wylosowana != the_number:
-    if wylosowana > the_number:
-        print ("Za duża...")
-    else:
-        print ("Za mała...")
-    wylosowana = int (input ("Ta liczba to: "))
     if proby >= 5:
         print ('KONIEC!!!\nZa duzo prob.')
+        break
+    if wylosowana > the_number:
+        print ("Za duża...")
+        proby =+ 1
+    else:
+        print ("Za mała...")
+        proby += 1
+    wylosowana = int (input ("Ta liczba to: "))
+
 
 print ("Odgadłeś! Ta liczba to", the_number)
 print ("Do osiągnięcia sukcesu potrzebowałeś tylko", proby, "prób!\n")
