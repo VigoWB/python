@@ -49,39 +49,40 @@ input('\nKoniec -> Enter')'''
 
 
 
-'''import random
+import random
 
 print ("\tWitaj w grze 'Jaka to liczba'!")
 print ("\nMam na myśli pewną liczbę z zakresu od 1 do 100.")
-print ("Spróbuj ją odgadnąć w jak najmniejszej liczbie prób.\n")
-
+print ("Spróbuj ją odgadnąć w jak najmniejszej liczbie prób.")
+print('Masz na to 5 prob.')
 # ustaw wartości początkowe
 the_number = random.randint (1, 10)
-wylosowana = int (input ("Ta liczba to: "))
-proby = 1
+wylosowana = int (input("Ta liczba to: "))
+proby = 5
 # pętla zgadywania
 
 while wylosowana != the_number:
-    if proby >= 5:
+    if proby <= 1:
         print ('KONIEC!!!\nZa duzo prob. To byla', the_number)
         break
     if wylosowana > the_number:
         print ("Za duża...")
-        proby =+ 1
+        proby =- 1
     else:
         print ("Za mała...")
-        proby += 1
-    wylosowana = int (input ("Ta liczba to: "))
+        proby -= 1
+    print('Zostalo Ci', proby )
+    wylosowana = int (input('Wybierz liczbę: '))
 
 
 print ("Odgadłeś! Ta liczba to", the_number)
-print ("Do osiągnięcia sukcesu potrzebowałeś tylko", proby, "prób!\n") '''
+print ("Do osiągnięcia sukcesu potrzebowałeś tylko", proby, "prób!\n")
 
 
 '''4. Tym razem trudniejsze wyzwanie. Napisz pseudokod do programu, w którym
 gracz i komputer zamienią się rolami w grze z odgadywaniem liczby. To znaczy
 gracz wybiera losowo liczbę z przedziału od 1 do 100, a komputer ma ją
 odgadnąć. Zanim rozpoczniesz tworzenie algorytmu, pomyśl, w jaki sposób
-sam byś zgadywał. Jeśli wszystko się uda, spróbuj napisać kod gry.'''
+sam byś zgadywał. Jeśli wszystko się uda, spróbuj napisać kod gry.
 
-celuj = int(input("Wybierz liczbe z zakresu 1 - 100"))
+celuj = int(input("Wybierz liczbe z zakresu 1 - 100"))'''
