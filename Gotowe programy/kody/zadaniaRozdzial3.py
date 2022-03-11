@@ -45,7 +45,7 @@ def losowanie():
     print('ilosc reszek ', il_reszek)
     print('ilosc orlow ', il_orlow)
 
-input('\nKoniec -> Enter')'''
+input('\nKoniec -> Enter')
 
 
 
@@ -78,11 +78,25 @@ while wylosowana != the_number:
 print ("Odgadłeś! Ta liczba to", the_number)
 print ("Do osiągnięcia sukcesu potrzebowałeś tylko", proby, "prób!\n")
 
-
-'''4. Tym razem trudniejsze wyzwanie. Napisz pseudokod do programu, w którym
+4. Tym razem trudniejsze wyzwanie. Napisz pseudokod do programu, w którym
 gracz i komputer zamienią się rolami w grze z odgadywaniem liczby. To znaczy
 gracz wybiera losowo liczbę z przedziału od 1 do 100, a komputer ma ją
 odgadnąć. Zanim rozpoczniesz tworzenie algorytmu, pomyśl, w jaki sposób
-sam byś zgadywał. Jeśli wszystko się uda, spróbuj napisać kod gry.
+sam byś zgadywał. Jeśli wszystko się uda, spróbuj napisać kod gry.'''
 
-celuj = int(input("Wybierz liczbe z zakresu 1 - 100"))'''
+
+def zgadywanie():
+    #  celuj = int(input("Wybierz liczbe z zakresu 1 - 100"))
+    print ('Wybierz liczbe z zakresu 1-100.')
+    min = 1
+    max = 100
+    srednia = max / 2
+
+    while True:
+        if int(input('Czy wybrana liczba jest mniejsza niz ', srednia)
+
+
+
+if __main__ == "__name__"
+          print('casd')
+        zgadywanie()
