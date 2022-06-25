@@ -17,10 +17,10 @@ RUN apt-get -y install supervisor
 RUN mkdir -p /var/log/supervisor
 
 # Supervisor Configuration
-ADD ./supervisord/conf.d/* $SCPATH/
+COPY ./supervisord/conf.d/* $SCPATH/
 
 # Application Code
-ADD *.js* $AP/
+COPY *.js* $AP/
 
 WORKDIR $AP
 
