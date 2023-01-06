@@ -1,6 +1,6 @@
 # Originally forked from: git@github.com:gasi/docker-node-hello.git
 
-FROM docker.io/node:11.11.0
+FROM docker.io/node:18.13.0
 
 LABEL "maintainer"="anna@example.com"
 LABEL "rating"="Five Stars" "class"="First Class"
