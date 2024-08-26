@@ -21,3 +21,4 @@ def zamowienia():
         if idx % 2 == 1:
             print("Pizza dla nieparzystych")
 zamowienia()
+
