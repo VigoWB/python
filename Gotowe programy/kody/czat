@@ -1,0 +1,29 @@
+def count_digits(start, end):
+    count = [0] * 10
+    for number in range(start, end + 1):
+        for digit in str(number):
+            count[int(digit)] += 1
+    return count
+
+start = int(input("Wprowadź początek zakresu: "))
+end = int(input("Wprowadź koniec zakresu: "))
+
+count = count_digits(start, end)
+print("Ilość cyfr w zakresie od", start, "do", end, "wynosi:", sum(count))
+
+for i in range(10):
+    print("Ilość cyfry", i, "wynosi:", count[i])
+
+
+
+
+'''def count_digits(start, end):
+    count = 0
+    for number in range(start, end + 1):
+        count += len(str(number))
+    return count
+
+start = int(input("Wprowadź początek zakresu: "))
+end = int(input("Wprowadź koniec zakresu: "))
+
+print("Ilość cyfr w zakresie od", start, "do", end, "wynosi:", count_digits(start, end))'''
