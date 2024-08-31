@@ -20,7 +20,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_noc_normalna_bad_set(self):
         result = noc_normalna([21.0, 22.0, 32.0])
-        self.assertTrue(not result)
+        self.assertSTrue(not result)
 
     def test_noc_normalna_edge_set(self):
         result = noc_normalna([21.0, 20.0, 32.0])
