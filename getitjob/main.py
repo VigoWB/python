@@ -30,8 +30,4 @@ for nasz_pojemnik in [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]:
     if nasz_pojemnik <= 2:
         sleep(1)
     sleep(1)
-<<<<<<< HEAD
 print("KABUM")
-=======
-print("KABUM")
->>>>>>> dfa06c7228621fdcadb533ef68500d0d96874312
