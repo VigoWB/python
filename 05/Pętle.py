@@ -31,11 +31,10 @@ def zakresy_wicia(start, stop, krok):
 
 def trojki_elementy(lista):
     dl_listy = len(lista)
-    indeksy = zakresy_wicia(1, dl_listy, 3)
+    indeksy = zakresy_wicia(0, dl_listy, 3)
     elementy = []
-    while indeksy in lista:
-
-        elementy.append(indeksy)
+    for iop in indeksy:
+        elementy.append(lista[iop])
     return elementy
     # z podanej listy zwrocic tylko te elementy ktore sa na indeksach 3n
     # koniecznie uzyj zakresy_wicia
@@ -48,7 +47,7 @@ def trojki_elementy_reverse(lista):
 if __name__ == "__main__":
     #print(trojki_elementy(lista))
     #print(zakresy_wicia(0, 10, 3))
-    print(trojki_elementy (['a', 'b', 'c', 'd', 'e', 'f', 'g']))  # ['a','d','g']
+    print(trojki_elementy(['a', 'b', 'c', 'd', 'e', 'f', 'g']))  # ['a','d','g']
     #print(trojki_elementy_reverse (['a', 'b', 'c', 'd', 'e', 'f', 'g']))  # ['g','d','a']
     #print(zakresy_wicia(3, 0, -1))
     #print(zakresy_wicia(-20, -10, 3))
