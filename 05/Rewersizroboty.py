@@ -39,5 +39,5 @@ def ruchy():
 
 if __name__ == '__main__':
     #naglowek()
-    uzupelnij()
+    #uzupelnij()
     ruchy()

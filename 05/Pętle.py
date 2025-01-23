@@ -46,7 +46,7 @@ def trojki_elementy_reverse(lista):
     for iop in indeksy:
         elementy.append(lista[iop])
     return elementy
-    # z podanej listy zwrocic tylko te elementy ktore sa na indeksach 3n ale od konca
+    #z podanej listy zwrocic tylko te elementy ktore sa na indeksach 3n ale od konca
     # koniecznie uzyj zakresy_wicia
 
 
