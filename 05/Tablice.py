@@ -38,13 +38,15 @@ def suma_kolumn(tablica):
 
 def przekatne(tablica):
     dlugosctablicy = len(tablica)
-    przekatna1 = [tablica[0][0], tablica[-1][-1]]
-    #przekatna2 = [tablica[0][-1], tablica[int(dlugosctablicy)][0]]
+    przekatna1 = []
+    przekatna2 = []
     for p in range(dlugosctablicy):
-        przekatna1.append(tablica[+1][+1])
-    print(przekatna1, p)
-
-    return przekatna1
+        #for i in range(dlugosctablicy):
+            #if p == i:
+                przekatna1.append(tablica[p][p])
+                przekatna2.append(tablica[p][dlugosctablicy-p-1])
+    print(przekatna1, przekatna2)
+    return przekatna1, przekatna2
 
 if __name__ == '__main__':
     sumy = tab()
