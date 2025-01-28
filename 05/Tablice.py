@@ -1,12 +1,24 @@
 def tab():
-    #n = int(input()) # ilosc wierszy
-    tablica = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    '''for idx in range(n):
+    #n = input("podaj cyfre:" ) #ilosc wierszy no i kolumn
+    #tablica = []
+    #tablica = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    saturn = [
+        [4, 9, 2],
+        [3, 5, 7],
+        [8, 1, 6]
+    ]
+    '''jupiter = [
+        [4, 14, 15, 1],
+        [9, 7, 6, 12],
+        [5, 11, 10, 8],
+        [16, 2, 3, 13]
+    ]
+    ''for idx in range(n):
         wiersz = input().split()
         for i in range(len(wiersz)):
             wiersz[i] = int(wiersz[i])
         tablica.append(wiersz)'''
-    return tablica
+    return saturn
 
 def suma_wiersz(tablica):
     dlugosctablicy = len(tablica)
@@ -45,12 +57,20 @@ def przekatne(tablica):
             #if p == i:
                 przekatna1.append(tablica[p][p])
                 przekatna2.append(tablica[p][dlugosctablicy-p-1])
-    print(przekatna1, przekatna2)
-    return przekatna1, przekatna2
+    suma1przek = sum(przekatna1)
+    suma2przek = sum(przekatna2)
+    return [suma1przek, suma2przek]
+
+def czyonmagiczny():
+    magicznalista = suma_wiersz(tab())+suma_kolumn(tab())+przekatne(tab())
+    start = magicznalista[0]
+    for idp in range(len(magicznalista)):
+        if magicznalista[idp] != start:
+            return False
+    return True
 
 if __name__ == '__main__':
-    sumy = tab()
-    print(sumy)
-    print('Wiersze: ',suma_wiersz(sumy))
-    print('Kolumny: ',suma_kolumn(sumy))
-    print('Przekatne: ',przekatne(sumy))
+    #print('Wiersze: ',suma_wiersz(tab()))
+    #print('Kolumny: ',suma_kolumn(tab()))
+    #print('Przekatne: ',przekatne(tab()))
+    print('Magiczny czy nie: ',czyonmagiczny())
