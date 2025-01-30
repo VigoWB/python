@@ -1,24 +1,28 @@
 def tab():
     #n = input("podaj cyfre:" ) #ilosc wierszy no i kolumn
-    #tablica = []
+    file = open("dane.txt", "r")
+    for line in file.readlines():
+        print(line)
+    file.close()
+
     #tablica = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    saturn = [
+    '''saturn = [
         [4, 9, 2],
         [3, 5, 7],
         [8, 1, 6]
-    ]
+    ]'''
     '''jupiter = [
         [4, 14, 15, 1],
         [9, 7, 6, 12],
         [5, 11, 10, 8],
         [16, 2, 3, 13]
-    ]
-    ''for idx in range(n):
+    ]'''
+    '''for idx in range(n):
         wiersz = input().split()
         for i in range(len(wiersz)):
             wiersz[i] = int(wiersz[i])
         tablica.append(wiersz)'''
-    return saturn
+    return line
 
 def suma_wiersz(tablica):
     dlugosctablicy = len(tablica)
@@ -42,9 +46,8 @@ def suma_kolumn(tablica):
         #print(f"kolumna", (w + 1))
         sumaKolumny = 0
         for k in range(dlugosctablicy):
-            # print((w, k),(tablica[w][k]))
+            #print((w, k),(tablica[w][k]))
             sumaKolumny += tablica[k][w]
-        #print(sumaKolumny)
         sumy.append(sumaKolumny)
     return sumy
 
@@ -53,10 +56,8 @@ def przekatne(tablica):
     przekatna1 = []
     przekatna2 = []
     for p in range(dlugosctablicy):
-        #for i in range(dlugosctablicy):
-            #if p == i:
-                przekatna1.append(tablica[p][p])
-                przekatna2.append(tablica[p][dlugosctablicy-p-1])
+        przekatna1.append(tablica[p][p])
+        przekatna2.append(tablica[p][dlugosctablicy-p-1])
     suma1przek = sum(przekatna1)
     suma2przek = sum(przekatna2)
     return [suma1przek, suma2przek]
