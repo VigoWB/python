@@ -1,16 +1,53 @@
+def danewczyt():
+    pliczek = open("dane.txt", "r")
+    l = 1
+    for linia in pliczek.readlines():
+        print(f"Linia {l}: {linia}", end="")
+        #for tu mam sprawdzic czy to kwadrat?
+        l += 1
+    pliczek.close()
+    print()
+    return
+
+def zdekoduj_kwadrat():
+    test = "2|0,1,1,0"
+    dane = str.split(test,"|")
+    if len(dane) != 2:
+        print("Złe dane")
+        return None
+    wielkosc = int(dane[0])
+    if wielkosc < 2:
+        print("To nie kwadrat")
+        return None
+    parametry = dane[1]
+    tablica = str.split(parametry, ",")
+    for idf, igh in enumerate(tablica):
+        tablica[idf] = int(igh)
+    print(tablica)
+    if len(tablica) != wielkosc ** 2:
+        print('sikalafon')
+    kwadrat = []
+    poczatek = 0
+    koniec = 0
+    for ijk in range(len(tablica)):
+        print("ijk", ijk)
+        for ilp in range(wielkosc):
+            temp = tablica[poczatek:koniec]
+            koniec += wielkosc
+            kwadrat.append(temp)
+        poczatek += wielkosc
+    print(kwadrat)
+
+    return
+
 def tab():
     #n = input("podaj cyfre:" ) #ilosc wierszy no i kolumn
-    file = open("dane.txt", "r")
-    for line in file.readlines():
-        print(line)
-    file.close()
-
     #tablica = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    '''saturn = [
+    saturn = [
         [4, 9, 2],
         [3, 5, 7],
         [8, 1, 6]
-    ]'''
+    ]
     '''jupiter = [
         [4, 14, 15, 1],
         [9, 7, 6, 12],
@@ -22,7 +59,7 @@ def tab():
         for i in range(len(wiersz)):
             wiersz[i] = int(wiersz[i])
         tablica.append(wiersz)'''
-    return line
+    return saturn
 
 def suma_wiersz(tablica):
     dlugosctablicy = len(tablica)
@@ -74,4 +111,6 @@ if __name__ == '__main__':
     #print('Wiersze: ',suma_wiersz(tab()))
     #print('Kolumny: ',suma_kolumn(tab()))
     #print('Przekatne: ',przekatne(tab()))
-    print('Magiczny czy nie: ',czyonmagiczny())
+    #print('Magiczny czy nie: ',czyonmagiczny())
+    danewczyt()
+    zdekoduj_kwadrat()
