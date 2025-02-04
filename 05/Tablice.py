@@ -27,17 +27,19 @@ def zdekoduj_kwadrat():
     if len(tablica) != wielkosc ** 2:
         print('sikalafon')
     kwadrat = []
-    poczatek = 0
-    koniec = 0
-    for ijk in range(len(tablica)):
-        print("ijk", ijk)
-        for ilp in range(wielkosc):
-            temp = tablica[poczatek:koniec]
-            koniec += wielkosc
-            kwadrat.append(temp)
-        poczatek += wielkosc
+    '''poczatek = 0
+    koniec = wielkosc
+    for ijk in range(wielkosc):
+        temp = tablica[poczatek:koniec]
+        koniec += wielkosc
+        kwadrat.append(temp)
+        poczatek += wielkosc'''
+    for idk in range(wielkosc):
+        poczatek = idk * wielkosc
+        koniec = (idk + 1) * wielkosc
+        temp = tablica[poczatek:koniec]
+        kwadrat.append(temp)
     print(kwadrat)
-
     return
 
 def tab():
