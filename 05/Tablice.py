@@ -1,3 +1,5 @@
+import random
+
 def danewczyt():
     pliczek = open("dane.txt", "r")
     l = 1
@@ -23,7 +25,7 @@ def zdekoduj_kwadrat():
     tablica = str.split(parametry, ",")
     for idf, igh in enumerate(tablica):
         tablica[idf] = int(igh)
-    print(tablica)
+    #print(tablica)
     if len(tablica) != wielkosc ** 2:
         print('sikalafon')
     kwadrat = []
@@ -101,7 +103,7 @@ def przekatne(tablica):
     suma2przek = sum(przekatna2)
     return [suma1przek, suma2przek]
 
-def czyonmagiczny():
+def czyonmagiczny(qwe):
     magicznalista = suma_wiersz(tab())+suma_kolumn(tab())+przekatne(tab())
     start = magicznalista[0]
     for idp in range(len(magicznalista)):
@@ -109,10 +111,39 @@ def czyonmagiczny():
             return False
     return True
 
+def generuj_magiczny():
+    a = random.randint(1, 9)
+    b = random.randint(1, 9)
+    c = random.randint(1, 9)
+    while a / b != .5 and (a / b) != 1 and (a / b) != 2 and a > (b + c):
+        a = random.randint(1, 9)
+        b = random.randint(1, 9)
+        c = random.randint(1, 9)
+
+    kwadrat = [[0 for _ in range(3)] for _ in range(3)]
+    kwadrat[0][0] = a - b
+    kwadrat[0][1] = a + b - c
+    kwadrat[0][2] = a + c
+    kwadrat[1][0] = a + b + c
+    kwadrat[1][1] = a
+    kwadrat[1][2] = a - b - c
+    kwadrat[2][0] = a - c
+    kwadrat[2][1] = a - b + c
+    kwadrat[2][2] = a + b
+    return kwadrat
+
+def generuj_magiczne(ile):
+    kbx = []
+    for idx in range(ile):
+        kbx.append(generuj_magiczny())
+    return kbx
+
 if __name__ == '__main__':
-    #print('Wiersze: ',suma_wiersz(tab()))
+
+    #print('Wiersze: ',suma_wiersz(tablica))
     #print('Kolumny: ',suma_kolumn(tab()))
     #print('Przekatne: ',przekatne(tab()))
-    #print('Magiczny czy nie: ',czyonmagiczny())
-    danewczyt()
+    print('Magiczny czy nie: ',czyonmagiczny(qwe))
+    #danewczyt()
     zdekoduj_kwadrat()
+    print(generuj_magiczne(1))
