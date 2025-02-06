@@ -4,12 +4,12 @@ def danewczyt():
     pliczek = open("dane.txt", "r")
     l = 1
     linijki = []
-    for linia in pliczek.readlines():
-        #print(f"Linia {l}: {linia}", end="")
-        linijki.append(linia)
+    for wiersze in pliczek.readlines():
+        print(f"Linia nr {l}: {wiersze}", end="")
+        linijki.append(wiersze)
         l += 1
     pliczek.close()
-    print(linijki)
+    print()
     return linijki
 
 def zdekoduj_kwadrat(test):
@@ -41,7 +41,7 @@ def zdekoduj_kwadrat(test):
         koniec = (idk + 1) * wielkosc
         temp = tablica[poczatek:koniec]
         kwadrat.append(temp)
-    return
+    return kwadrat
 
 def tab():
     #n = input("podaj cyfre:" ) #ilosc wierszy no i kolumn
@@ -119,17 +119,17 @@ def generuj_magiczny():
         b = random.randint(1, 9)
         c = random.randint(1, 9)
 
-    kwadrat = [[0 for _ in range(3)] for _ in range(3)]
-    kwadrat[0][0] = a - b
-    kwadrat[0][1] = a + b - c
-    kwadrat[0][2] = a + c
-    kwadrat[1][0] = a + b + c
-    kwadrat[1][1] = a
-    kwadrat[1][2] = a - b - c
-    kwadrat[2][0] = a - c
-    kwadrat[2][1] = a - b + c
-    kwadrat[2][2] = a + b
-    return kwadrat
+    kwadratm = [[0 for _ in range(3)] for _ in range(3)]
+    kwadratm[0][0] = a - b
+    kwadratm[0][1] = a + b - c
+    kwadratm[0][2] = a + c
+    kwadratm[1][0] = a + b + c
+    kwadratm[1][1] = a
+    kwadratm[1][2] = a - b - c
+    kwadratm[2][0] = a - c
+    kwadratm[2][1] = a - b + c
+    kwadratm[2][2] = a + b
+    return kwadratm
 
 def generuj_magiczne(ile):
     kbx = []
@@ -138,12 +138,12 @@ def generuj_magiczne(ile):
     return kbx
 
 if __name__ == '__main__':
-    #testownik = danewczyt()
-    zdekoduj_kwadrat(danewczyt())
+    linie = danewczyt()
+    for linia in linie:
+        kwadrat = zdekoduj_kwadrat(linia)
+        print(kwadrat, czyonmagiczny(kwadrat))
     #zdekoduj_kwadrat('2|0,1,1,0')
     #print('Wiersze: ',suma_wiersz(testownik))
     #print('Kolumny: ',suma_kolumn(testownik))
     #print('Przekatne: ',przekatne(testownik))
     #print('Magiczny czy nie: ',czyonmagiczny(testownik))
-
-    #4 | 4,14,15,1,9,7,6,12,5,11,10,8,16,2,3,13
