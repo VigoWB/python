@@ -3,16 +3,16 @@ import random
 def danewczyt():
     pliczek = open("dane.txt", "r")
     l = 1
+    linijki = []
     for linia in pliczek.readlines():
-        print(f"Linia {l}: {linia}", end="")
-        #for tu mam sprawdzic czy to kwadrat?
+        #print(f"Linia {l}: {linia}", end="")
+        linijki.append(linia)
         l += 1
     pliczek.close()
-    print()
-    return
+    print(linijki)
+    return linijki
 
-def zdekoduj_kwadrat():
-    test = "2|0,1,1,0"
+def zdekoduj_kwadrat(test):
     dane = str.split(test,"|")
     if len(dane) != 2:
         print("Złe dane")
@@ -41,7 +41,6 @@ def zdekoduj_kwadrat():
         koniec = (idk + 1) * wielkosc
         temp = tablica[poczatek:koniec]
         kwadrat.append(temp)
-    print(kwadrat)
     return
 
 def tab():
@@ -139,12 +138,12 @@ def generuj_magiczne(ile):
     return kbx
 
 if __name__ == '__main__':
-    testownik = generuj_magiczny()
+    #testownik = danewczyt()
+    zdekoduj_kwadrat(danewczyt())
+    #zdekoduj_kwadrat('2|0,1,1,0')
+    #print('Wiersze: ',suma_wiersz(testownik))
+    #print('Kolumny: ',suma_kolumn(testownik))
+    #print('Przekatne: ',przekatne(testownik))
+    #print('Magiczny czy nie: ',czyonmagiczny(testownik))
 
-    print('Wiersze: ',suma_wiersz(testownik))
-    print('Kolumny: ',suma_kolumn(testownik))
-    print('Przekatne: ',przekatne(testownik))
-    print('Magiczny czy nie: ',czyonmagiczny(testownik))
-    #danewczyt()
-    #zdekoduj_kwadrat()
-    #print(generuj_magiczny())
+    #4 | 4,14,15,1,9,7,6,12,5,11,10,8,16,2,3,13
