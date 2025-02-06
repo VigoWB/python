@@ -103,8 +103,8 @@ def przekatne(tablica):
     suma2przek = sum(przekatna2)
     return [suma1przek, suma2przek]
 
-def czyonmagiczny(qwe):
-    magicznalista = suma_wiersz(tab())+suma_kolumn(tab())+przekatne(tab())
+def czyonmagiczny(tablica):
+    magicznalista = suma_wiersz(tablica)+suma_kolumn(tablica)+przekatne(tablica)
     start = magicznalista[0]
     for idp in range(len(magicznalista)):
         if magicznalista[idp] != start:
@@ -139,11 +139,12 @@ def generuj_magiczne(ile):
     return kbx
 
 if __name__ == '__main__':
+    testownik = generuj_magiczny()
 
-    #print('Wiersze: ',suma_wiersz(tablica))
-    #print('Kolumny: ',suma_kolumn(tab()))
-    #print('Przekatne: ',przekatne(tab()))
-    print('Magiczny czy nie: ',czyonmagiczny(qwe))
+    print('Wiersze: ',suma_wiersz(testownik))
+    print('Kolumny: ',suma_kolumn(testownik))
+    print('Przekatne: ',przekatne(testownik))
+    print('Magiczny czy nie: ',czyonmagiczny(testownik))
     #danewczyt()
-    zdekoduj_kwadrat()
-    print(generuj_magiczne(1))
+    #zdekoduj_kwadrat()
+    #print(generuj_magiczny())
