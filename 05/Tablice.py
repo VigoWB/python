@@ -9,23 +9,33 @@ def danewczyt():
         linijki.append(wiersze)
         l += 1
     pliczek.close()
-    print()
+
     return linijki
 
 def zdekoduj_kwadrat(test):
     dane = str.split(test,"|")
+    zmienna_none = 0
+
     if len(dane) != 2:
         print("Złe dane")
-        return None
+        return zmienna_none
     wielkosc = int(dane[0])
     if wielkosc < 2:
         print("To nie kwadrat")
-        return None
+        return zmienna_none
+
+    if zmienna_none == None:
+        print('ToNIEkfadrat')
+    else:
+        czyonmagiczny()
+
     parametry = dane[1]
     tablica = str.split(parametry, ",")
+
     for idf, igh in enumerate(tablica):
         tablica[idf] = int(igh)
     #print(tablica)
+
     if len(tablica) != wielkosc ** 2:
         print('sikalafon')
     kwadrat = []
