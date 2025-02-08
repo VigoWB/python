@@ -5,8 +5,9 @@ def danewczyt():
     l = 1
     linijki = []
     for wiersze in pliczek.readlines():
+        podzielonelinie = wiersze.strip()
         print(f"Linia nr {l}: {wiersze}", end="")
-        linijki.append(wiersze)
+        linijki.append(podzielonelinie)
         l += 1
     pliczek.close()
 
