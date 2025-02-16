@@ -6,9 +6,10 @@ def danewczyt():
     linijki = []
     for wiersze in pliczek.readlines():
         podzielonelinie = wiersze.strip()
-        print(f"Linia nr {l}: {wiersze}", end="")
+        print(f"Linia nr {l}: {podzielonelinie}")
         linijki.append(podzielonelinie)
         l += 1
+    print('')
     pliczek.close()
 
     return linijki
@@ -32,7 +33,8 @@ def zdekoduj_kwadrat(test):
     #print(tablica)
 
     if len(tablica) != wielkosc ** 2:
-        print('sikalafon')
+        print('Nie zgadza się ilość elementow')
+        return None
     kwadrat = []
     '''poczatek = 0
     koniec = wielkosc
@@ -147,10 +149,9 @@ if __name__ == '__main__':
     for linia in linie:
         kwadrat = zdekoduj_kwadrat(linia)
         if kwadrat == None:
-            print('ToJESTkfadrat')
+            print(kwadrat)
         else:
-            print('else')
-        print(kwadrat, czyonmagiczny(kwadrat))
+            print(kwadrat, czyonmagiczny(kwadrat))
     #zdekoduj_kwadrat('2|0,1,1,0')
     #print('Wiersze: ',suma_wiersz(testownik))
     #print('Kolumny: ',suma_kolumn(testownik))
