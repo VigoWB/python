@@ -15,20 +15,14 @@ def danewczyt():
 
 def zdekoduj_kwadrat(test):
     dane = str.split(test,"|")
-    zmienna_none = 0
 
     if len(dane) != 2:
         print("Złe dane")
-        return zmienna_none
+        return None
     wielkosc = int(dane[0])
     if wielkosc < 2:
         print("To nie kwadrat")
-        return zmienna_none
-
-    if zmienna_none == None:
-        print('ToNIEkfadrat')
-    else:
-        czyonmagiczny()
+        return None
 
     parametry = dane[1]
     tablica = str.split(parametry, ",")
@@ -152,6 +146,10 @@ if __name__ == '__main__':
     linie = danewczyt()
     for linia in linie:
         kwadrat = zdekoduj_kwadrat(linia)
+        if kwadrat == None:
+            print('ToJESTkfadrat')
+        else:
+            print('else')
         print(kwadrat, czyonmagiczny(kwadrat))
     #zdekoduj_kwadrat('2|0,1,1,0')
     #print('Wiersze: ',suma_wiersz(testownik))
