@@ -35,7 +35,7 @@ def zdekoduj_kwadrat(test):
     if len(tablica) != wielkosc ** 2:
         print('Nie zgadza się ilość elementow')
         return None
-    kwadrat = []
+    kwadratsprawdzony = []
     '''poczatek = 0
     koniec = wielkosc
     for ijk in range(wielkosc):
@@ -47,8 +47,8 @@ def zdekoduj_kwadrat(test):
         poczatek = idk * wielkosc
         koniec = (idk + 1) * wielkosc
         temp = tablica[poczatek:koniec]
-        kwadrat.append(temp)
-    return kwadrat
+        kwadratsprawdzony.append(temp)
+    return kwadratsprawdzony
 
 def tab():
     #n = input("podaj cyfre:" ) #ilosc wierszy no i kolumn
