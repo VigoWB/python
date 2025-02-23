@@ -2,28 +2,25 @@ from klasy import Kwadrator
 
 def suma_kwadratora(dane):
     ile_pozycji = len(dane)
-    #print(ile_pozycji, suma)
-    suma = []
+    sumaWiersza = 0
     for w in range(ile_pozycji):
-        sumaWiersza = 0
         for k in range(ile_pozycji):
             sumaWiersza += dane[w][k]
-        suma.append(sumaWiersza)
-    dlugosc = len(suma)
-    pelna = 0
-    for abc in range(dlugosc):
-        pelna = pelna + suma[abc]
-    return pelna
+    return sumaWiersza
 
 def ile_parzystych(dane):
     ile_pozycji = len(dane)
-
-    return ile_pozycji//2
+    suma_parzystych = 0
+    for gop in range(ile_pozycji):
+        for opi in range(ile_pozycji):
+            if gop % 2:
+                suma_parzystych += dane[gop][opi]
+    return suma_parzystych
 
 if __name__ == '__main__':
     kwa = Kwadrator()
     kwa.print()
     kwa.pretty()
     dane = kwa.get()
-    print(suma_kwadratora(dane))
-    print(ile_parzystych(dane))
+    print("Suma listy: ",suma_kwadratora(dane))
+    print('Suma parzystych wersów: ',ile_parzystych(dane))

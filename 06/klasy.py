@@ -3,7 +3,7 @@ import random
 
 class Kwadrator:
     def __init__(self):
-        self.size = random.randint(3, 4)
+        self.size = random.randint(3, 12)
         self.elements = self.__clear()
         self.__gen()
 
