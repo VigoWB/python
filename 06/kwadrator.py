@@ -2,12 +2,11 @@ from klasy import Kwadrator
 
 def suma_kwadratora(dane):
     ile_pozycji = len(dane)
-    suma = 0
-    print(ile_pozycji)
-    for abx in range(0, ile_pozycji):
+    suma = ile_pozycji*ile_pozycji
+    #print(ile_pozycji, suma)
+    '''for abx in range(0, ile_pozycji):
         for xba in range(0, ile_pozycji):
-            suma += xba
-        suma += abx
+            suma += (xba+abx)'''
     return suma
 
 if __name__ == '__main__':
