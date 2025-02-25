@@ -43,10 +43,12 @@ def transpozycja(dane):
 def obrot(dane):
     #obroc kwadrat o 90’ w prawo (pierwszy wiersz staje sie ostatnia kolumna)
     dl = len(dane)
+    nowa = []
     #print(dl)
-    for last in range(dl):
-        print(last)
-    return
+    for last in range(-dl):
+        for kolumna in range(dl):
+            nowa.append[last][kolumna]
+    return nowa
 
 def kierunki(dane):
     #-jesli elementy maja ideksy (x,y) wylicz dla kazdego elementu jego “kierunkowy” (x+y)
