@@ -47,7 +47,6 @@ def obrot(dane):
     for last in range(0,dl):
         for kolumna in range(0,dl):
             nowa[kolumna][dl-1-last] = dane[last][kolumna]
-            #nowa.append[last][kolumna]
     return nowa
 
 def kierunki(dane):
@@ -58,10 +57,11 @@ def kierunki(dane):
 
 if __name__ == '__main__':
     kwa = Kwadrator()
-    kwa.print()
     kwa.pretty()
     dane = kwa.get()
+
     print("Suma listy: ",suma_kwadratora(dane))
     print('Suma parzystych wersów: ',ile_parzystych(dane))
     print("Srednia tablicy: ", srednia(dane))
-    print("Obrócony kwadrat: ",obrot(dane))
+    print("Obrócony kwadrat: ")
+    kwa.prettyAny(obrot(dane))

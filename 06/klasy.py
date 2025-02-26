@@ -7,6 +7,15 @@ class Kwadrator:
         self.elements = self.__clear()
         self.__gen()
 
+    def pretty(self):
+        self.prettyAny(self.elements)
+
+    def prettyAny(self, tab):
+        for abx in range(len(tab)):
+            prefix = ' [' if abx == 0 else '  '
+            suffix = '] ' if abx == len(tab) - 1 else ', '
+            print(f"{prefix}{tab[abx]}{suffix}")
+
     def __clear(self):
         return [[0 for _ in range(0, self.size)] for _ in range(0, self.size)]
 
