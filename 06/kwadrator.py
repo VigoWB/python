@@ -43,11 +43,10 @@ def transpozycja(dane):
 def obrot(dane):
     #obroc kwadrat o 90’ w prawo (pierwszy wiersz staje sie ostatnia kolumna)
     dl = len(dane)
-    nowa = [[0 for _ in dl]for _ in dl]
+    nowa = [[0 for _ in range(dl)]for _ in range(dl)]
     for last in range(0,dl):
         for kolumna in range(0,dl):
-            #print(last,kolumna)
-            nowa[dl-1][dl-1] = dane[last][kolumna]
+            nowa[kolumna][dl-1-last] = dane[last][kolumna]
             #nowa.append[last][kolumna]
     return nowa
 
