@@ -34,7 +34,13 @@ def multi_ele(dane):
 
 def sumy_indeksow(dane):
     #sume wartosci ktore posiadaja indeksy (x,y) takie ze x+y jest wielokrotnoscia 3
-    return
+    dl = len(dane)
+    sumatrzy = 0
+    for tab in range(dl):
+        for bat in range(dl):
+            if (tab + bat) // 3:
+                sumatrzy += dane[tab][bat]
+    return sumatrzy
 
 def transpozycja(dane):
     #wypisz transpozycje kwadratu - zamiana wierszy z kolumnami
@@ -63,5 +69,6 @@ if __name__ == '__main__':
     print("Suma listy: ",suma_kwadratora(dane))
     print('Suma parzystych wersów: ',ile_parzystych(dane))
     print("Srednia tablicy: ", srednia(dane))
+    print("Suma indeksow podzielnych przez 3: ", sumy_indeksow(dane))
     print("Obrócony kwadrat: ")
     kwa.prettyAny(obrot(dane))
