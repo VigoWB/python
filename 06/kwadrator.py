@@ -38,7 +38,7 @@ def sumy_indeksow(dane):
     sumatrzy = 0
     for tab in range(dl):
         for bat in range(dl):
-            if (tab + bat) // 3:
+            if (tab + bat) % 3 == 0:
                 sumatrzy += dane[tab][bat]
     return sumatrzy
 
