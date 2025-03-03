@@ -44,14 +44,19 @@ def sumy_indeksow(dane):
 
 def transpozycja(dane):
     #wypisz transpozycje kwadratu - zamiana wierszy z kolumnami
-    return
-
-def obrot(dane):
-    #obroc kwadrat o 90’ w prawo (pierwszy wiersz staje sie ostatnia kolumna)
     dl = len(dane)
     nowa = [[0 for _ in range(dl)]for _ in range(dl)]
-    for last in range(0,dl):
-        for kolumna in range(0,dl):
+    for last in range(dl):
+        for kolumna in range(dl):
+            nowa[kolumna][last] = dane[last][kolumna]
+    return nowa
+
+def obrot(dane):
+    #obroc kwadrat o 90 stopni w prawo (pierwszy wiersz staje sie ostatnia kolumna)
+    dl = len(dane)
+    nowa = [[0 for _ in range(dl)]for _ in range(dl)]
+    for last in range(dl):
+        for kolumna in range(dl):
             nowa[kolumna][dl-1-last] = dane[last][kolumna]
     return nowa
 
@@ -70,5 +75,7 @@ if __name__ == '__main__':
     print('Suma parzystych wersów: ',ile_parzystych(dane))
     print("Srednia tablicy: ", srednia(dane))
     print("Suma indeksow podzielnych przez 3: ", sumy_indeksow(dane))
+    print("Transpozycja tabeli: ")
+    kwa.prettyAny(transpozycja(dane))
     print("Obrócony kwadrat: ")
     kwa.prettyAny(obrot(dane))
