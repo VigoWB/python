@@ -71,7 +71,7 @@ def kierunki(dane):
         for bat in range(dl):
             kierunki.append(tab+bat)
             kwadrat.append((dane[tab][bat])*(tab+bat))
-    return kierunki,kwadrat
+    return kierunki, kwadrat
 
 if __name__ == '__main__':
     kwa = Kwadrator()
@@ -86,5 +86,6 @@ if __name__ == '__main__':
     kwa.prettyAny(transpozycja(dane))
     print("Obrócony kwadrat: ")
     kwa.prettyAny(obrot(dane))
-    print("Kierunki: ", kierunki(dane))
+    print("Kierunki i wartosc razy kierunek: ", kierunki(dane))
+    kwa.prettyAny(kierunki(dane))
 
