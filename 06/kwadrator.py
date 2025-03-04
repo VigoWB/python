@@ -65,15 +65,13 @@ def kierunki(dane):
     #-wypisz kwadrat gdzie kazdy element to jego wartosc * kierunkowy
     #-oblicz roznice sum elementow o kierunkowym parzystym a kierunkowym nieparzystym
     dl = len(dane)
-    sumki = 0
+    kierunki = []
+    kwadrat = []
     for tab in range(dl):
         for bat in range(dl):
-            if tab == bat:
-                continue
-            else:
-                sumki += tab + bat
-
-    return sumki
+            kierunki.append(tab+bat)
+            kwadrat.append(([tab]+[bat])*(dane[tab][bat]))
+    return kierunki,kwadrat
 
 if __name__ == '__main__':
     kwa = Kwadrator()
