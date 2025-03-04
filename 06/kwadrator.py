@@ -64,7 +64,16 @@ def kierunki(dane):
     #-jesli elementy maja ideksy (x,y) wylicz dla kazdego elementu jego “kierunkowy” (x+y)
     #-wypisz kwadrat gdzie kazdy element to jego wartosc * kierunkowy
     #-oblicz roznice sum elementow o kierunkowym parzystym a kierunkowym nieparzystym
-    return
+    dl = len(dane)
+    sumki = 0
+    for tab in range(dl):
+        for bat in range(dl):
+            if tab == bat:
+                continue
+            else:
+                sumki += tab + bat
+
+    return sumki
 
 if __name__ == '__main__':
     kwa = Kwadrator()
@@ -79,3 +88,5 @@ if __name__ == '__main__':
     kwa.prettyAny(transpozycja(dane))
     print("Obrócony kwadrat: ")
     kwa.prettyAny(obrot(dane))
+    print("Kierunki: ", kierunki(dane))
+
