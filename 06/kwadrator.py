@@ -70,7 +70,8 @@ def kierunki(dane):
     for tab in range(dl):
         for bat in range(dl):
             kierunki.append(tab+bat)
-            kwadrat.append(([tab]+[bat])*(dane[tab][bat]))
+            print(dane[tab][bat]*(tab+bat))
+            kwadrat.append((dane[tab][bat])*(tab+bat))
     return kierunki,kwadrat
 
 if __name__ == '__main__':
