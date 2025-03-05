@@ -67,11 +67,18 @@ def kierunki(dane):
     dl = len(dane)
     kierunki = []
     kwadrat = []
+    parzyste = 0
+    nieparzyste = 0
     for tab in range(dl):
         for bat in range(dl):
             kierunki.append(tab+bat)
             kwadrat.append((dane[tab][bat])*(tab+bat))
-    return kierunki, kwadrat
+            if (tab+bat) % 2 == 0:
+               parzyste += dane[tab][bat]
+            if (tab+bat) %2 != 0:
+                nieparzyste += dane[tab][bat]
+    roznica = parzyste - nieparzyste
+    return kierunki, kwadrat, parzyste, nieparzyste, roznica
 
 if __name__ == '__main__':
     kwa = Kwadrator()
@@ -86,6 +93,7 @@ if __name__ == '__main__':
     kwa.prettyAny(transpozycja(dane))
     print("Obrócony kwadrat: ")
     kwa.prettyAny(obrot(dane))
-    print("Kierunki i wartosc razy kierunek: ", kierunki(dane))
+    print("Kierunki i wartosc razy kierunek: ")
     kwa.prettyAny(kierunki(dane))
-
+    #parzyste, nieparzyste = wojna_kierunkow(org)
+    print(f"Suma parzystych: {parzyste}")
