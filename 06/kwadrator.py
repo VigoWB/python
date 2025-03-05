@@ -94,5 +94,6 @@ if __name__ == '__main__':
     print("Obrócony kwadrat: ")
     kwa.prettyAny(obrot(dane))
     zwrot = kierunki(dane)
-    print(f"Kierunki: {zwrot[0]}\nwartosc * kierunek: {zwrot[1]}\nsuma parzystych: {zwrot[2]}\nsuma nieparzystych:  {zwrot[3]}\nróżnica: {zwrot[4]}")
+    print(f"Kierunki: {zwrot[0]}\nwartosc * kierunek: {zwrot[1]}\nsuma parzystych: {zwrot[2]}"
+          f"\nsuma nieparzystych: {zwrot[3]}\nróżnica: {zwrot[4]}")
     #kwa.prettyAny(kierunki(dane))
