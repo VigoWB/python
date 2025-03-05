@@ -25,7 +25,14 @@ def srednia(dane):
 
 def zmiany(dane):
     #zamien wszystkie elementy w kwadracie ktore sa ≤ sredniej wartoscia None
-    return
+    zmiana = dane
+    dl = len(dane)
+    sre = srednia(dane)
+    for dan in range(dl):
+        for ane in range(dl):
+            if dane[dan][ane] <= sre:
+                zmiana[dan][ane] = None
+    return zmiana
 
 def multi_ele(dane):
     #pomnoz wszystkie elelementy w kwadracie ktore sa > sredniej razy dwa,
@@ -88,6 +95,7 @@ if __name__ == '__main__':
     print("Suma listy: ",suma_kwadratora(dane))
     print('Suma parzystych wersów: ',ile_parzystych(dane))
     print("Srednia tablicy: ", srednia(dane))
+    print("Zmiany na None: ", zmiany(dane))
     print("Suma indeksow podzielnych przez 3: ", sumy_indeksow(dane))
     print("Transpozycja tabeli: ")
     kwa.prettyAny(transpozycja(dane))
