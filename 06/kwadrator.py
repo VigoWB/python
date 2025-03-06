@@ -38,7 +38,16 @@ def zmiany(dane):
 def multi_ele(dane):
     #pomnoz wszystkie elelementy w kwadracie ktore sa > sredniej razy dwa,
     #te ktore sa ≤ srednia zastap -1
-    return
+    multi = copy.deepcopy(dane)
+    dl = len(dane)
+    sre = srednia(dane)
+    for mu in range(dl):
+        for lti in range(dl):
+            if dane[mu][lti] > sre:
+                multi[mu][lti] *= 2
+            else:
+                multi[mu][lti] = -1
+    return multi
 
 def sumy_indeksow(dane):
     #sume wartosci ktore posiadaja indeksy (x,y) takie ze x+y jest wielokrotnoscia 3
@@ -97,6 +106,7 @@ if __name__ == '__main__':
     print('Suma parzystych wersów: ',ile_parzystych(dane))
     print("Srednia tablicy: ", srednia(dane))
     print("Zmiany na None: ", zmiany(dane))
+    print("Multi: ", multi_ele(dane))
     print("Suma indeksow podzielnych przez 3: ", sumy_indeksow(dane))
     print("Transpozycja tabeli: ")
     kwa.prettyAny(transpozycja(dane))
