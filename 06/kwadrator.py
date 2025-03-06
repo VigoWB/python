@@ -1,4 +1,5 @@
 from klasy import Kwadrator
+import copy
 
 def suma_kwadratora(dane):
     ile_pozycji = len(dane)
@@ -25,7 +26,7 @@ def srednia(dane):
 
 def zmiany(dane):
     #zamien wszystkie elementy w kwadracie ktore sa ≤ sredniej wartoscia None
-    zmiana = dane
+    zmiana = copy.deepcopy(dane)
     dl = len(dane)
     sre = srednia(dane)
     for dan in range(dl):
