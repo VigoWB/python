@@ -98,6 +98,11 @@ def kierunki(dane):
     return kierunki, kwadrat, parzyste, nieparzyste, roznica
 
 def apendy():
+    #- napisz funkcję która pomnoży elementy w liście tyle razy jaka jest ich wartość:
+    #- dla wsadu [0,1,2] wynikiem bedzie [1,2,2]
+    #- dla wsadu [2,4] wynikiem będzie [2,2,4,4,4,4]
+    #- Lista wsadowa zawsze bedzie posortowana rosnaco, i bedzie zawierac wylacznie liczby calkowite
+    #- Funkcja powinna akceptować listę i zwracać listę
     do_zmiany = [0,1,2,5]
     ile_ma = len(do_zmiany)
     zmieniona = []
