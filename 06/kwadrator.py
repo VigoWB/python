@@ -97,8 +97,17 @@ def kierunki(dane):
     roznica = parzyste - nieparzyste
     return kierunki, kwadrat, parzyste, nieparzyste, roznica
 
+def apendy():
+    do_zmiany = [0,1,2,5]
+    ile_ma = len(do_zmiany)
+    zmieniona = []
+    for apo in range(ile_ma):
+        for ned in range(apo):
+            zmieniona.append(do_zmiany[apo])
+    return zmieniona
+
 if __name__ == '__main__':
-    kwa = Kwadrator()
+    '''kwa = Kwadrator()
     kwa.pretty()
     dane = kwa.get()
 
@@ -114,5 +123,5 @@ if __name__ == '__main__':
     kwa.prettyAny(obrot(dane))
     zwrot = kierunki(dane)
     print(f"Kierunki: {zwrot[0]}\nwartosc * kierunek: {zwrot[1]}\nsuma parzystych: {zwrot[2]}"
-          f"\nsuma nieparzystych: {zwrot[3]}\nróżnica: {zwrot[4]}")
-    #kwa.prettyAny(kierunki(dane))
+          f"\nsuma nieparzystych: {zwrot[3]}\nróżnica: {zwrot[4]}")'''
+    print(f"Apendy: ", apendy())
