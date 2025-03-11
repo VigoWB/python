@@ -1,11 +1,15 @@
 def ile_znakow(napis):
     importowany = napis
-    ile_ma = len(importowany)
+    ile_znakow = len(importowany)
     doslowny = {}
     for litery in importowany:
-        doslowny[litery]=litery
-    print(doslowny)
-    return
+        doslowny[litery] = 1
+        #for cyfry in range(ile_znakow):
+        if litery==litery in doslowny:
+            doslowny[litery] += 1
+        else:
+            continue
+    return doslowny
 
 if __name__ == '__main__':
     napis = "ala ma kota"
