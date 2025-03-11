@@ -1,5 +1,5 @@
 def ile_znakow(napis):
-    importowany = napis
+    importowany = "".join(napis.split())
     ile_znakow = len(importowany)
     doslowny = {}
     for litery in importowany:
