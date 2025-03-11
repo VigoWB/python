@@ -97,13 +97,13 @@ def kierunki(dane):
     roznica = parzyste - nieparzyste
     return kierunki, kwadrat, parzyste, nieparzyste, roznica
 
-def apendy():
+def apendy(dane):
     #- napisz funkcję która pomnoży elementy w liście tyle razy jaka jest ich wartość:
     #- dla wsadu [0,1,2] wynikiem bedzie [1,2,2]
     #- dla wsadu [2,4] wynikiem będzie [2,2,4,4,4,4]
     #- Lista wsadowa zawsze bedzie posortowana rosnaco, i bedzie zawierac wylacznie liczby calkowite
     #- Funkcja powinna akceptować listę i zwracać listę
-    do_zmiany = [0,1,2,5]
+    do_zmiany = dane
     ile_ma = len(do_zmiany)
     zmieniona = []
     for apo in range(ile_ma):
@@ -112,11 +112,11 @@ def apendy():
     return zmieniona
 
 if __name__ == '__main__':
-    '''kwa = Kwadrator()
+    kwa = Kwadrator()
     kwa.pretty()
     dane = kwa.get()
 
-    print("Suma listy: ",suma_kwadratora(dane))
+    '''print("Suma listy: ",suma_kwadratora(dane))
     print('Suma parzystych wersów: ',ile_parzystych(dane))
     print("Srednia tablicy: ", srednia(dane))
     print("Zmiany na None: ", zmiany(dane))
@@ -129,4 +129,4 @@ if __name__ == '__main__':
     zwrot = kierunki(dane)
     print(f"Kierunki: {zwrot[0]}\nwartosc * kierunek: {zwrot[1]}\nsuma parzystych: {zwrot[2]}"
           f"\nsuma nieparzystych: {zwrot[3]}\nróżnica: {zwrot[4]}")'''
-    print(f"Apendy: ", apendy())
+    print(f"Apendy: ", apendy(dane))
