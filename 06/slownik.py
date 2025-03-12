@@ -19,6 +19,8 @@ def sum_dict(d1, d2):
     for klucz, wartosc in d2.items():
         print(klucz, wartosc)
         nowy_slowniczek[klucz] = wartosc
+        if klucze==klucz in nowy_slowniczek:
+            nowy_slowniczek[klucze] += wartosc
 
         '''if klucze==klucz in nowy_slowniczek:
             nowy_slowniczek[klucze] += 1
@@ -31,5 +33,5 @@ if __name__ == '__main__':
     napis = "ala ma kota"
     #print(ile_znakow(napis))
     d1 = ile_znakow(napis)
-    d2 = ile_znakow("jakis napis do sumowania")
+    d2 = ile_znakow("JakIS NaPIS Do SUmoWaNIa")
     print(sum_dict(d1, d2))
