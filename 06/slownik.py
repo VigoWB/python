@@ -14,15 +14,18 @@ def sum_dict(d1, d2):
     #print(d1,d2)
     nowy_slowniczek = {}
     for klucze, wartosci in d1.items():
-        print(klucze,wartosci)
-        for klucz in d2.keys():
-            #print(klucz)
-            if klucze==klucz:
-                nowy_slowniczek[klucze] += wartosci
-            else:
-                nowy_slowniczek[klucze] + d2.keys()
+        print(klucze, wartosci)
+        nowy_slowniczek[klucze] = wartosci
+    for klucz, wartosc in d2.items():
+        print(klucz, wartosc)
+        nowy_slowniczek[klucz] = wartosc
 
-    return d1, d2, nowy_slowniczek
+        '''if klucze==klucz in nowy_slowniczek:
+            nowy_slowniczek[klucze] += 1
+        else:
+            nowy_slowniczek[klucze] += klucz'''
+
+    return #d1, d2, nowy_slowniczek
 
 if __name__ == '__main__':
     napis = "ala ma kota"
