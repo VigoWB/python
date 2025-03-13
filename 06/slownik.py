@@ -11,20 +11,14 @@ def ile_znakow(napis):
     return doslowny
 
 def sum_dict(d1, d2):
-    #print(d1,d2)
-    #d2 = {}
-    #d1 = {}
     nowy_slowniczek = {}
     nowy_slowniczek.update(d1)
-    for klucze, wartosci in nowy_slowniczek.items():
-        print(klucze, wartosci)
-    if klucz in nowy_slowniczek:
-        nowy_slowniczek[klucze] = wartosc + wartosci
-    #for klucz, wartosc in d2.items():
-    #    print(klucz, wartosc)
-
-
-    return #d1, d2, nowy_slowniczek
+    for klucz in d2.keys():
+        if klucz in nowy_slowniczek:
+           nowy_slowniczek[klucz] += d2[klucz]
+        else:
+            nowy_slowniczek[klucz] = d2[klucz]
+    return d1, d2, nowy_slowniczek
 
 if __name__ == '__main__':
     napis = "ala ma kota"
