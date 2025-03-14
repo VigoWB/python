@@ -29,7 +29,6 @@ def wyswietl_produkty():
             print(f"Cena: {produkt['cena']}")
             print(f"Ilość: {produkt['ilosc']}\n")
 
-
 def main():
     while True:
         print("\n1. Dodaj produkt")
