@@ -28,9 +28,9 @@ def sum_dict(d1, d2):
             nowy_slowniczek[klucz] = d2[klucz]
     return nowy_slowniczek
 
-if __name__ == '__main__':
+def main():
     napis = "ala ma kota"
-    #print(ile_znakow(napis))
+    # print(ile_znakow(napis))
     d1 = ile_znakow(napis)
     d2 = ile_znakow("JakIS NaPIS Do SUmoWaNIa")
     #print(sum_dict(d1, d2))
@@ -42,3 +42,8 @@ if __name__ == '__main__':
         wynik = ile_znakow(ele)
         asd = sum_dict(asd, wynik)
     print(asd)
+    return
+
+if __name__ == '__main__':
+    main()
+
