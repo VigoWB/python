@@ -14,7 +14,7 @@ def ile_znakow(napis):
 def generuj_zakres(od, do):
     zakres = []
     for cyfra in range(od, do+1):
-        zakres.append(cyfra)
+        zakres.append(str(cyfra))
     return zakres
 
 
@@ -36,5 +36,9 @@ if __name__ == '__main__':
     #print(sum_dict(d1, d2))
     start_zakresu = 23
     koniec_zakresu = 34
-    zakres = generuj_zakres(23, 34)
-    print(zakres, ile_znakow(str(zakres)))
+    zakres = generuj_zakres(start_zakresu, koniec_zakresu)
+    asd = {}
+    for ele in zakres:
+        wynik = ile_znakow(ele)
+        asd = sum_dict(asd, wynik)
+    print(asd)
