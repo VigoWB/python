@@ -42,8 +42,10 @@ def main():
         wynik = ile_znakow(ele)
         asd = sum_dict(asd, wynik)
     print(asd)
-    return
 
+def system_trojki():
+
+    return
 if __name__ == '__main__':
     main()
 
