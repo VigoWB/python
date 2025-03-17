@@ -42,10 +42,16 @@ def main():
         wynik = ile_znakow(ele)
         asd = sum_dict(asd, wynik)
     print(asd)
+    print("1000 na trojkowy: ", system_trojki(1000))
 
-def system_trojki():
+def system_trojki(liczba):
+    wynikczy = ""
+    while liczba > 0:
+        wynikczy = str(liczba % 3) + wynikczy
+        liczba = liczba // 3
+    return wynikczy
 
-    return
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
 
