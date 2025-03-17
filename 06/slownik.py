@@ -28,6 +28,15 @@ def sum_dict(d1, d2):
             nowy_slowniczek[klucz] = d2[klucz]
     return nowy_slowniczek
 
+
+def system_trojki(liczba):
+    wynikczy = ""
+    while liczba > 0:
+        wynikczy = str(liczba % 3) + wynikczy
+        liczba = liczba // 3
+    return wynikczy
+
+
 def main():
     napis = "ala ma kota"
     # print(ile_znakow(napis))
@@ -43,14 +52,17 @@ def main():
         asd = sum_dict(asd, wynik)
     print(asd)
     print("1000 na trojkowy: ", system_trojki(1000))
+    print("1000 na jaki chcesz: ", system_dowolny(1000, 8))
 
-def system_trojki(liczba):
-    wynikczy = ""
-    while liczba > 0:
-        wynikczy = str(liczba % 3) + wynikczy
-        liczba = liczba // 3
-    return wynikczy
-
+def system_dowolny(liczba, co):
+    wynik = ""
+    if co > 2 and co < 9:
+        while liczba > 0:
+            wynik = str(liczba % co) + wynik
+            liczba = liczba // co
+    else:
+        wynik = None
+    return wynik
 
 if __name__ == "__main__":
     main()
