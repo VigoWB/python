@@ -53,8 +53,8 @@ def main():
     d1 = ile_znakow(napis)
     d2 = ile_znakow("JakIS NaPIS Do SUmoWaNIa")
     #print(sum_dict(d1, d2))
-    start_zakresu = 23
-    koniec_zakresu = 34
+    start_zakresu = 1
+    koniec_zakresu = 15
     zakres = generuj_zakres(start_zakresu, koniec_zakresu)
     asd = {}
     for ele in zakres:
