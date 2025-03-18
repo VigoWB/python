@@ -37,6 +37,16 @@ def system_trojki(liczba):
     return wynikczy
 
 
+def system_dowolny(liczba, potega):
+    wynik = ""
+    if potega < 2 or potega > 9:
+        return None
+    while liczba > 0:
+        wynik = str(liczba % potega) + wynik
+        liczba = liczba // potega
+    return wynik
+
+
 def main():
     napis = "ala ma kota"
     # print(ile_znakow(napis))
@@ -52,17 +62,9 @@ def main():
         asd = sum_dict(asd, wynik)
     print(asd)
     print("1000 na trojkowy: ", system_trojki(1000))
-    print("1000 na jaki chcesz: ", system_dowolny(1000, 8))
+    print("1000 na jaki chcesz: ", system_dowolny(1000, 5))
 
-def system_dowolny(liczba, co):
-    wynik = ""
-    if co > 2 and co < 9:
-        while liczba > 0:
-            wynik = str(liczba % co) + wynik
-            liczba = liczba // co
-    else:
-        wynik = None
-    return wynik
+
 
 if __name__ == "__main__":
     main()
