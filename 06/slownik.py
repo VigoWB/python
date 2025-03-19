@@ -38,9 +38,9 @@ def system_trojki(liczba):
 
 
 def system_dowolny(liczba, potega):
-    wynik = ""
     if potega < 2 or potega > 9:
         return None
+    wynik = ""
     while liczba > 0:
         wynik = str(liczba % potega) + wynik
         liczba = liczba // potega

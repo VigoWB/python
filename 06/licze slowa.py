@@ -5,11 +5,27 @@ def importer():
        #print(line)
     plik.close()
     llini = len(tekst)
-    return llini
+    return llini, plik
 
+
+def licz_slowa():
+    plik = open('./przyklad.txt')
+    tekst = plik.readlines()
+    podzial = "".join(tekst.split())
+
+    return
+
+def slownik():
+    #rozwiazanie = {}
+    #rozwiazanie[importer(plik)] = importer(llini)
+
+    return
 
 def main():
-    print(importer())
+    #print("Ilość wierszy to: ",importer())
+    rozwiazanie = {}
+    rozwiazanie["Plik"] = 21
+    print(rozwiazanie)
     return
 
 
