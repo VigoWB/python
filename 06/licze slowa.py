@@ -10,10 +10,13 @@ def importer():
 
 def licz_slowa():
     plik = open('./przyklad.txt')
-    tekst = plik.readlines()
-    podzial = "".join(tekst.split())
-
-    return
+    tekst = str(plik.readlines())
+    podzial = tekst.split()
+    ctn = 0
+    for slowo in podzial:
+        ctn += 1
+    print(ctn)
+    return podzial, ctn
 
 def slownik():
     #rozwiazanie = {}
@@ -26,6 +29,7 @@ def main():
     rozwiazanie = {}
     rozwiazanie["Plik"] = 21
     print(rozwiazanie)
+    print(licz_slowa())
     return
 
 
