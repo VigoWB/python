@@ -4,35 +4,37 @@ def co_za_plik(dokument):
     #plik = open(dokument)
     return dokument
 
-
-def licz_linie(dokument):
+def przygotowka(dokument):
     plik = open(dokument)
     tekst = plik.readlines()
     plik.close()
-    llini = len(tekst)
+    return tekst
+
+
+def licz_linie(dokument):
+    #plik = open(dokument)
+    #tekst = plik.readlines()
+    #plik.close()
+    przygotowka(dokument)
+    llini = len(przygotowka(dokument))
     return llini
 
 
 def licz_slowa(dokument):
-    plik = open(dokument)
-    tekst = str(plik.readlines())
+    tekst = str(przygotowka(dokument))
     podzial = tekst.split()
     ctn = 0
     for slowo in podzial:
         ctn += 1
-    print(ctn)
     return  ctn
 
 
 def licz_znaki(dokument):
-    plik = open(dokument)
-    tekst = str(plik.readlines())
-    podzial = tekst.split()
+    tekst = str(przygotowka(dokument))
     znk = ile_znakow(tekst)
     licznik = 0
     for ilosc in znk.values():
         licznik += ilosc
-
     return licznik
 
 
