@@ -11,14 +11,6 @@ def przygotowka(dokument):
     return tekst
 
 
-def licz_linie(dokument):
-    #plik = open(dokument)
-    #tekst = plik.readlines()
-    #plik.close()
-    #przygotowka(dokument)
-    return len(przygotowka(dokument))
-
-
 def licz_slowa(dokument):
     tekst = str(przygotowka(dokument))
     podzial = tekst.split()
@@ -45,14 +37,16 @@ def slownik():
 
 
 def main():
-    #print("Ilość wierszy to: ",importer())
     dokument = "przyklad.txt"
+    wczytane_linie = przygotowka(dokument)
     rozwiazanie = {}
     rozwiazanie["Plik"] = co_za_plik(dokument)
-    rozwiazanie["linie"] = licz_linie(dokument)
+    rozwiazanie["linie"] = len(wczytane_linie)
     rozwiazanie["slowa"] = licz_slowa(dokument)
     rozwiazanie["znaki"] = licz_znaki(dokument)
     print(rozwiazanie)
+
+
     #print(licz_slowa())
     return
 
