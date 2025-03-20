@@ -15,9 +15,8 @@ def licz_linie(dokument):
     #plik = open(dokument)
     #tekst = plik.readlines()
     #plik.close()
-    przygotowka(dokument)
-    llini = len(przygotowka(dokument))
-    return llini
+    #przygotowka(dokument)
+    return len(przygotowka(dokument))
 
 
 def licz_slowa(dokument):
