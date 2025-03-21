@@ -18,10 +18,11 @@ def liczenie(dokument):
     rozwiazanie["linie"] = len(wczytane_linie)
     rozwiazanie["slowa"] = 0
     rozwiazanie["znaki"] = 0
-    for slowo in wczytane_linie:
-        rozwiazanie["slowa"] += len(wczytane_linie)
+    for linia in wczytane_linie:
+        slowo = linia.split()
+        rozwiazanie["slowa"] += len(slowo)
         for znaki in slowo:
-            rozwiazanie["znaki"] += len(slowo)
+            rozwiazanie["znaki"] += len(znaki)
     return  rozwiazanie
 
 
