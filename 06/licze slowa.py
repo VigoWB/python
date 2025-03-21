@@ -1,8 +1,8 @@
 from slownik import ile_znakow
 
-def co_za_plik(dokument):
+#def co_za_plik(dokument):
     #plik = open(dokument)
-    return dokument
+    #return dokument
 
 def przygotowka(dokument):
     plik = open(dokument)
@@ -11,43 +11,32 @@ def przygotowka(dokument):
     return tekst
 
 
-def licz_slowa(dokument):
-    tekst = str(przygotowka(dokument))
-    podzial = tekst.split()
-    ctn = 0
-    for slowo in podzial:
-        ctn += 1
-    return  ctn
+def liczenie(dokument):
+    wczytane_linie = przygotowka(dokument)
+    rozwiazanie = {}
+    rozwiazanie["Plik"] = dokument
+    rozwiazanie["linie"] = len(wczytane_linie)
+    rozwiazanie["slowa"] = 0
+    rozwiazanie["znaki"] = 0
+    for slowo in wczytane_linie:
+        rozwiazanie["slowa"] += len(wczytane_linie)
+        for znaki in slowo:
+            rozwiazanie["znaki"] += len(slowo)
+    return  rozwiazanie
 
 
-def licz_znaki(dokument):
+'''def licz_znaki(dokument):
     tekst = str(przygotowka(dokument))
     znk = ile_znakow(tekst)
     licznik = 0
     for ilosc in znk.values():
         licznik += ilosc
-    return licznik
-
-
-def slownik():
-    #rozwiazanie = {}
-    #rozwiazanie[importer(plik)] = importer(llini)
-
-    return
+    return licznik'''
 
 
 def main():
     dokument = "przyklad.txt"
-    wczytane_linie = przygotowka(dokument)
-    rozwiazanie = {}
-    rozwiazanie["Plik"] = co_za_plik(dokument)
-    rozwiazanie["linie"] = len(wczytane_linie)
-    rozwiazanie["slowa"] = licz_slowa(dokument)
-    rozwiazanie["znaki"] = licz_znaki(dokument)
-    print(rozwiazanie)
-
-
-    #print(licz_slowa())
+    print(liczenie(dokument))
     return
 
 
