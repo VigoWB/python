@@ -1,5 +1,3 @@
-from slownik import ile_znakow
-
 
 def przygotowka(dokument):
     plik = open(dokument)
@@ -20,7 +18,7 @@ def liczenie(dokument):
         rozwiazanie["slowa"] += len(slowo)
         for znaki in slowo:
             rozwiazanie["znaki"] += len(znaki)
-    return  rozwiazanie
+    return rozwiazanie
 
 
 def main():
