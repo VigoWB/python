@@ -18,6 +18,7 @@ def licz_znaki(plik):
                     zebrane_dane[znak] += 1
                 else:
                     zebrane_dane[znak] = 1
+    del zebrane_dane['slowa']
     return zebrane_dane
 
 
@@ -34,6 +35,7 @@ def main():
     plik = "przyklad.txt"
     print(licz_znaki(plik))
     print(najczesciej_uzywane_literki(plik))
+    print(najczesciej_uzywane_literki_all(plik))
     return
 
 
