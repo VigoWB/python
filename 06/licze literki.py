@@ -25,11 +25,8 @@ def najczesciej_uzywane_literki(plik):
     zbior_literek = licz_znaki(plik)
     same_literki_ze_slownika = zbior_literek[0]
     lista_liter = list(same_literki_ze_slownika.items())
-    print(lista_liter)
     lista_liter.sort(key=lambda x: x[1])
-    # sorted_same_literki = tuple(sorted(same_literki))
-    print(lista_liter)
-    return
+    return lista_liter[-10:]
 
 
 def najczesciej_uzywane_literki_all(plik):
