@@ -8,34 +8,39 @@ def plik_wczytaj_linie(plik):
 def licz_znaki(plik):
     co_licze = plik_wczytaj_linie(plik)
     zebrane_dane = {}
-    zebrane_dane["slowa"] = 0
+    licznik_slow = 0
     for linia in co_licze:
         slowa = linia.split()
-        zebrane_dane["slowa"] += len(slowa)
+        licznik_slow += len(slowa)
         for slowo in slowa:
             for znak in slowo:
                 if znak in zebrane_dane:
                     zebrane_dane[znak] += 1
                 else:
                     zebrane_dane[znak] = 1
-    del zebrane_dane['slowa']
-    return zebrane_dane
+    return (zebrane_dane, licznik_slow)
 
 
 def najczesciej_uzywane_literki(plik):
-    print(licz_znaki(plik))
+    zbior_literek = licz_znaki(plik)
+    same_literki_ze_slownika = zbior_literek[0]
+    lista_liter = same_literki_ze_slownika.items()
+    print(lista_liter)
+    lista_liter.sort(key=lambda x: x[1])
+    # sorted_same_literki = tuple(sorted(same_literki))
+    print(lista_liter)
     return
 
 
 def najczesciej_uzywane_literki_all(plik):
-    print(licz_znaki(plik))
+
     return
 
 def main():
     plik = "przyklad.txt"
-    print(licz_znaki(plik))
+    #print(licz_znaki(plik))
     print(najczesciej_uzywane_literki(plik))
-    print(najczesciej_uzywane_literki_all(plik))
+    #print(najczesciej_uzywane_literki_all(plik))
     return
 
 
