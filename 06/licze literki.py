@@ -30,15 +30,17 @@ def najczesciej_uzywane_literki(plik):
     return najwiecej_literek
 
 
-def najczesciej_uzywane_literki_all(plik):
-
-    return
+def najczesciej_uzywane_literki_duze(plik):
+    zbior_literek = licz_znaki(plik)
+    same_literki_ze_slownika = zbior_literek[0]
+    suma_wartosci = sum(same_literki_ze_slownika.values())
+    return suma_wartosci
 
 def main():
     plik = "przyklad.txt"
     #print(licz_znaki(plik))
     print(najczesciej_uzywane_literki(plik))
-    #print(najczesciej_uzywane_literki_all(plik))
+    print("Suma literek w slowniku: ", najczesciej_uzywane_literki_duze(plik))
     return
 
 
