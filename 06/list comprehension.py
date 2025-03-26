@@ -23,12 +23,17 @@ def main():
     lista_liczb3 = [l for l in range(500, 576) if l % 5 == 0]
     print(lista_liczb3)
     #- listę zawierającą potęgi pierwszych 20 liczb naturalnych `[1,4,9,16 ... ]`
-    lista_liczb4 = [l for l in range(21) if l * 2]
+    lista_liczb4 = [l**2 for l in range(21)]
     print(lista_liczb4)
-
     #- przefiltruj listę zawierającą potęgi za pomocą comprehension zwróć wyłącznie parzyste potęgi
+    lista_liczb5 = [l for l in lista_liczb4 if l % 2 == 0]
+    print(lista_liczb5)
     #- wygeneruj listę zawierającą same 1 o rozmiarze 7
+    lista_liczb6 =[1 for _ in range(7)]
+    print(lista_liczb6)
     #- wygeneruj listę list gdzie każda zawiera 3 kolejne potegi dla liczb 2-5 `[[2,4,8],[3,9,27]...`
+    lista_liczb7 = [[l for l in range(2, 6)] for l in l ** 3]
+    print(lista_liczb7)
 
 if __name__ == '__main__':
     main()
