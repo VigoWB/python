@@ -32,7 +32,7 @@ def main():
     lista_liczb6 =[1 for _ in range(7)]
     print(lista_liczb6)
     #- wygeneruj listę list gdzie każda zawiera 3 kolejne potegi dla liczb 2-5 `[[2,4,8],[3,9,27]...`
-    lista_liczb7 = [_ ** 3 for _ in [l for l in range(2, 6)]]
+    lista_liczb7 = [(l ** 3) for _ in range(3) [_ for _ in range(2, 6)]]
     print(lista_liczb7)
 
 if __name__ == '__main__':
