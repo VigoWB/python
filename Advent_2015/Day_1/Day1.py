@@ -1,8 +1,5 @@
 from Advent_2015.scaffolding.utils import loadFile, loadLines
 
-
-
-
 def licz_znaki():
     co_licze = loadLines("Day1_input.txt")
     zebrane_dane = {}
@@ -21,19 +18,17 @@ def kiedy_piwnica():
     importowany = loadFile("Day1_input.txt")
     licznik_pietra = 0
     licznik_zmiany = 0
-    for linia in importowany:
-        slowa = linia.split()
-        for slowo in slowa:
-            for znak in slowo:
-                if znak == '(' in slowo:
-                    licznik_pietra += 1
-                    licznik_zmiany += 1
-                if znak == ')' in slowo:
-                    licznik_pietra -= 1
-                    licznik_zmiany += 1
-                if licznik_pietra == -1:
-                    print("piwnica")
-                    break
+
+    for znak in importowany:
+        if znak == '(' in importowany:
+            licznik_pietra += 1
+            licznik_zmiany += 1
+        if znak == ')' in importowany:
+            licznik_pietra -= 1
+            licznik_zmiany += 1
+        if licznik_pietra == -1:
+            print("piwnica")
+            break
     return licznik_zmiany
 
 def main():
