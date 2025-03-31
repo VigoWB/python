@@ -1,3 +1,6 @@
+from Advent_2015.scaffolding.utils import loadFile, loadLines
+
+
 def plik_wczytaj_linie(plik):
     plik = open(plik)
     tekst = plik.readlines()
@@ -39,7 +42,7 @@ def kiedy_piwnica(plik):
     return licznik_zmiany
 
 def main():
-    plik = "Day1_input.txt"
+    plik = loadLines("Day1_input.txt")
     #print(plik_wczytaj_linie(plik))
     print(licz_znaki(plik))
     print(kiedy_piwnica(plik))
