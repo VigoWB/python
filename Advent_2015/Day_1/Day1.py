@@ -1,15 +1,10 @@
 from Advent_2015.scaffolding.utils import loadFile, loadLines
 
 
-def plik_wczytaj_linie(plik):
-    plik = open(plik)
-    tekst = plik.readlines()
-    plik.close()
-    return tekst
 
 
-def licz_znaki(plik):
-    co_licze = plik_wczytaj_linie(plik)
+def licz_znaki():
+    co_licze = loadLines("Day1_input.txt")
     zebrane_dane = {}
     for linia in co_licze:
         slowa = linia.split()
@@ -22,8 +17,8 @@ def licz_znaki(plik):
     return zebrane_dane
 
 
-def kiedy_piwnica(plik):
-    importowany = plik_wczytaj_linie(plik)
+def kiedy_piwnica():
+    importowany = loadFile("Day1_input.txt")
     licznik_pietra = 0
     licznik_zmiany = 0
     for linia in importowany:
@@ -42,10 +37,10 @@ def kiedy_piwnica(plik):
     return licznik_zmiany
 
 def main():
-    plik = loadLines("Day1_input.txt")
+    #plik = loadLines("Day1_input.txt")
     #print(plik_wczytaj_linie(plik))
-    print(licz_znaki(plik))
-    print(kiedy_piwnica(plik))
+    print(licz_znaki())
+    print(kiedy_piwnica())
 
 if __name__ == '__main__':
     main()
