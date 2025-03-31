@@ -8,10 +8,8 @@ def plik_wczytaj_linie(plik):
 def licz_znaki(plik):
     co_licze = plik_wczytaj_linie(plik)
     zebrane_dane = {}
-
     for linia in co_licze:
         slowa = linia.split()
-
         for slowo in slowa:
             for znak in slowo:
                 if znak in zebrane_dane:
@@ -21,10 +19,30 @@ def licz_znaki(plik):
     return zebrane_dane
 
 
+def kiedy_piwnica(plik):
+    importowany = plik_wczytaj_linie(plik)
+    licznik_pietra = 0
+    licznik_zmiany = 0
+    for linia in importowany:
+        slowa = linia.split()
+        for slowo in slowa:
+            for znak in slowo:
+                if znak == '(' in slowo:
+                    licznik_pietra += 1
+                    licznik_zmiany += 1
+                if znak == ')' in slowo:
+                    licznik_pietra -= 1
+                    licznik_zmiany += 1
+                if licznik_pietra == -1:
+                    print("piwnica")
+                    break
+    return licznik_zmiany
+
 def main():
     plik = "Day1_input.txt"
     #print(plik_wczytaj_linie(plik))
     print(licz_znaki(plik))
+    print(kiedy_piwnica(plik))
 
 if __name__ == '__main__':
     main()
