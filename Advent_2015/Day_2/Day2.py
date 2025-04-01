@@ -5,7 +5,8 @@ def ile_kartonow():
     plik = splitLines("Day2_input.txt")
     for linijka in plik:
         linia_mnozenie = linijka.split('x')
-        for
+        for najmniejszy in linia_mnozenie:
+            print(najmniejszy, min(najmniejszy))
 
     return
 
