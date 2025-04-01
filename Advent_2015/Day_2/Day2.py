@@ -6,8 +6,8 @@ def ile_kartonow():
     for linijka in plik:
         szer, wys, gleb = [int(opz) for opz in linijka.split('x')]
         zapas = min((szer*wys),(wys*gleb),(gleb*szer))
-        liczenie = szer*wys+wys*gleb+gleb*szer
-        suma += (liczenie*2 + zapas)
+        liczenie = (szer*wys+wys*gleb+gleb*szer)*2
+        suma += liczenie + zapas
     return suma
 
 def main():
