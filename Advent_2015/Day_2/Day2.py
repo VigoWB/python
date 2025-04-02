@@ -12,12 +12,12 @@ def ile_kartonow():
 
 def wstazki():
     plik = splitLines("Day2_input.txt")
+    balot_wstazki = 0
     for linijka in plik:
         szer, wys, gleb = [int(opz) for opz in linijka.split('x')]
-        kokarda = [szer * wys * gleb]
-        wstazka = [min(szer, wys, gleb)]
-        print(kokarda + wstazka)
-    return
+        balot_wstazki += szer * wys * gleb
+        balot_wstazki += (szer + wys + gleb - max(szer, wys, gleb))*2
+    return balot_wstazki
 
 
 def main():
