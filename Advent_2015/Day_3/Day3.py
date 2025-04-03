@@ -14,32 +14,24 @@ def pozycje():
             else:
                 mapa[krok] = 1
 
-        if znaczek in plik == "^":
-            krok = mapa[(-1,0)]
-            if krok in mapa:
-                mapa[krok] = 1
-            else:
-                mapa[krok] += 1
-
     return mapa
 
 def kierunek():
     plik = loadFile("Day3_input.txt")
     mapa = {}
     mapa[0, 0] = 1
-    mapa[0, 1] = 11
     for znaczek in plik:
         if znaczek == ">":
-            mapa[0, +1] = 1
+            mapa[0, +1] = "prawo"
             continue
         if znaczek == "<":
-            mapa[0, -1] = 1
+            mapa[0, -1] = "lewo"
             continue
         if znaczek == "^":
-            mapa[-1, 0] = 1
+            mapa[-1, 0] = "gora"
             continue
         if znaczek == "v":
-            mapa[+1, 0] = 1
+            mapa[+1, 0] = "dol"
             continue
     return mapa
 
