@@ -7,10 +7,15 @@ def pozycje():
     #print(mapa[(0,1)])
     for znaczek in plik:
         ruch = kierunek(znaczek)
-        if ruch in mapa.keys():
+        #czy_jest = mapa.get(ruch, 0)
+        if mapa[(ruch)] in mapa.get[(ruch, 0)] == 0:
             mapa[(ruch)] += 1
         else:
             mapa[(ruch)] = 1
+        #if ruch in mapa.keys():
+        #    mapa[(ruch)] += 1
+        #else:
+        #    mapa[(ruch)] = 1
     return mapa
 
 def kierunek(kierunek: str) -> (int, int):
