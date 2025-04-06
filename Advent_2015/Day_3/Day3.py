@@ -31,11 +31,8 @@ def pozycje():
 
 def ile_domow():
     zbior = pozycje()
-    policzone_domy = 1
-    for klucz, wartosc in zbior.items():
-        if wartosc >= 1:
-            policzone_domy += 1
-    return policzone_domy
+    return len(zbior.items())
+
 
 def kierunek(kierunek: str) -> (int, int):
     if kierunek == ">":
