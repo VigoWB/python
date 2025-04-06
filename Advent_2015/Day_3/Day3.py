@@ -3,20 +3,23 @@ from Advent_2015.scaffolding.utils import loadFile, loadLines, splitLines
 def pozycje():
     plik = loadFile("Day3_input.txt")
     mapa = {}
-    mapa[(0,0)] = 1
-    #print(mapa[(0,1)])
+    pozycja = (0, 0)
+    mapa[pozycja] = 0
     for znaczek in plik:
         ruch = kierunek(znaczek)
-        #czy_jest = mapa.get(ruch, 0)
-        if mapa[(ruch)] in mapa.get[(ruch, 0)] == 0:
-            mapa[(ruch)] += 1
-        else:
-            mapa[(ruch)] = 1
-        #if ruch in mapa.keys():
-        #    mapa[(ruch)] += 1
-        #else:
-        #    mapa[(ruch)] = 1
+        #print(ruch, pozycja)
+        pozycja = (pozycja[0] + ruch[0], pozycja[1] + ruch[1])
+        mapa[pozycja] = mapa.get(pozycja, 0) +1
     return mapa
+
+
+def ile_domow():
+    zbior = pozycje()
+    policzone_domy = 0
+    for klucz, wartosc in zbior.items():
+        if wartosc >= 1:
+            policzone_domy += 1
+    return policzone_domy
 
 def kierunek(kierunek: str) -> (int, int):
     if kierunek == ">":
@@ -30,9 +33,9 @@ def kierunek(kierunek: str) -> (int, int):
 
 
 def main():
-    print(pozycje())
-    print(kierunek())
-
+    print(ile_domow())
+    #print(pozycje())
+    # print(kierunek())
 
 
 if __name__ == '__main__':
