@@ -23,11 +23,10 @@ def pozycje():
         if idx % 2 == 0:
             pozycja_mikolaj = (pozycja_mikolaj[0] + ruch[0], pozycja_mikolaj[1] + ruch[1])
             mapa[pozycja_mikolaj] = mapa.get(pozycja_mikolaj, 0) + 1
-        if znaczek % 2 == 1:
+        if idx % 2 == 1:
             pozycja_robot = (pozycja_robot[0] + ruch[0], pozycja_robot[1] + ruch[1])
             mapa[pozycja_robot] = mapa.get(pozycja_robot, 0) + 1
         #print(ruch, pozycja)
-
     return mapa
 
 def ile_domow():
@@ -50,8 +49,8 @@ def kierunek(kierunek: str) -> (int, int):
 
 
 def main():
-    #print(ile_domow())
-    print(pozycje())
+    print(ile_domow())
+    #print(pozycje())
     # print(kierunek())
 
 
