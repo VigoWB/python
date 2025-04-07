@@ -1,7 +1,7 @@
 from Advent_2015.scaffolding.utils import loadFile, loadLines, splitLines
 
 def os():
-    plik = loadFile("Day5_input.txt")
+    plik = splitLines("Day5_input.txt")
     return plik
 
 
