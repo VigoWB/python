@@ -6,13 +6,20 @@ def os():
     znalezione = False
     for linia in plik:
         for literki in szukane_znaki:
-            if literki in linia:
+            if not znalezione in szukane_znaki:
+                bez_ciagu(linia)
+            else:
                 znalezione = True
                 continue
-        if not znalezione:
-            print(linia)
                 #print(f"Nie znaleziono znaczkow: {linia}")
-                #jak to wyswietlic raz?
+    return
+
+def bez_ciagu(linia):
+    print(linia)
+    return
+
+def z_ciagiem():
+fggghfhf
     return
 
 
@@ -20,12 +27,9 @@ def os():
 #     return
 
 
-
-
-
 def main():
     print(os())
-
+    print(bez_ciagu())
 
 if __name__ == '__main__':
     main()
