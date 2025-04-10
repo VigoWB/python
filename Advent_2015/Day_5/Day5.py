@@ -19,7 +19,7 @@ def bez_ciagu(linia):
     return
 
 def z_ciagiem():
-fggghfhf
+
     return
 
 
