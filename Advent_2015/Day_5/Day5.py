@@ -12,7 +12,7 @@ def szukanie_ciagu():
             else:
                 znalezione_z += [linia]
                 continue
-                #print(f"Nie znaleziono znaczkow: {linia}")
+                #print(f"    Nie znaleziono znaczkow: {linia}")
     return znalezione_bez, znalezione_z
 
 
