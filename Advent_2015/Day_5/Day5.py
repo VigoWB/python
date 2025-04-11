@@ -1,24 +1,26 @@
 from Advent_2015.scaffolding.utils import loadFile, loadLines, splitLines
 
-def os():
+def szukanie_ciagu():
     plik = splitLines("Day5_input.txt")
     szukane_znaki = ["ab", "cd", "pq", "xy"]#'ab' or 'cd' or 'pq' or 'xy'
-    znalezione = False
+    znalezione_bez = []
+    znalezione_z = []
     for linia in plik:
-        for literki in szukane_znaki:
-            if not znalezione in szukane_znaki:
-                bez_ciagu(linia)
+        for ciagi in szukane_znaki:
+            if not ciagi in linia:
+                znalezione_bez += [linia]
             else:
-                znalezione = True
+                znalezione_z += [linia]
                 continue
                 #print(f"Nie znaleziono znaczkow: {linia}")
+    return znalezione_bez, znalezione_z
+
+
+def bez_ciagu(znalezione_bez):
+
     return
 
-def bez_ciagu(linia):
-    print(linia)
-    return
-
-def z_ciagiem():
+def z_ciagiem(znalezione_z):
 
     return
 
@@ -28,8 +30,9 @@ def z_ciagiem():
 
 
 def main():
-    print(os())
-    print(bez_ciagu())
+    print(szukanie_ciagu())
+    #print("bezciagowe: ",bez_ciagu(znalezione_bez))
+    #print("Z ciagiem: ", z_ciagiem(znalezione_z))
 
 if __name__ == '__main__':
     main()
