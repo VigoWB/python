@@ -10,26 +10,30 @@ def szukanie_ciagu():
     return True
 
 
-
-def bez_ciagu(znalezione_bez):
-    szukamydalej = znalezione_bez
-    #aeiou
+#"Napisz funkcje nice() ktora akceptuje jako argument napis(string) i sprawdza czy dany napis zawiera przynajmniej trzy samogloski,
+# oraz przynajmniej jedno powtorzenie bezposrednio po sobie tego samego znaku (np. aa),
+# jesli oba warunki sa spelnion zwroc True w przeciwnym wypadku zwroc False"
+def nice(napis: str) -> bool:
+    # aeiou
+    samogloski = ["a","e","i","o","u"]
+    licze = 0
+    for literka in napis:
+        if literka in samogloski:
+            licze += 1
+    return licze >= 3
     #podwojne znaki
-    return
+
 
 def z_ciagiem(znalezione_z):
 
     return
 
 
-# def po():
-#     return
-
-
 def main():
-    print(szukanie_ciagu())
-    #print("bezciagowe: ",bez_ciagu(znalezione_bez))
-    #print("Z ciagiem: ", z_ciagiem(znalezione_z))
+    napis = 'fujcauyucsrxgatisb'
+    print("ciagi ", szukanie_ciagu())
+    print("najs: ",napis, nice(napis))
+
 
 if __name__ == '__main__':
     main()
