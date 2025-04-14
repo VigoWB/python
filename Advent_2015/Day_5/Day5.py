@@ -16,22 +16,28 @@ def szukanie_ciagu():
 def nice(napis: str) -> bool:
     # aeiou
     samogloski = ["a","e","i","o","u"]
+    podwojne = False
     licze = 0
+
     for literka in napis:
         if literka in samogloski:
             licze += 1
     return licze >= 3
+
     #podwojne znaki
+    for litera in range(len(napis) - 1):
+        if napis[litera] == napis[litera + 1]:
+            podwojne = True
+            break
 
 
-def z_ciagiem(znalezione_z):
-
-    return
+    if podwojne == True and licze >= 3:
+        return
 
 
 def main():
-    napis = 'fujcauyucsrxgatisb'
-    print("ciagi ", szukanie_ciagu())
+    napis = 'fujcauyucsrxxgatisb'
+    #print("ciagi ", szukanie_ciagu())
     print("najs: ",napis, nice(napis))
 
 
