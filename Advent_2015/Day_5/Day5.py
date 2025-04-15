@@ -28,11 +28,13 @@ def nice(napis: str) -> bool:
     for litera in range(len(napis) - 1):
         if napis[litera] == napis[litera + 1]:
             podwojne = True
-            break
+    return podwojne
 
-
+    wiersz = False
     if podwojne == True and licze >= 3:
-        return
+        wiersz = True
+
+    return wiersz
 
 
 def main():
