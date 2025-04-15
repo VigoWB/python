@@ -22,13 +22,13 @@ def nice(napis: str) -> bool:
     for literka in napis:
         if literka in samogloski:
             licze += 1
-    return licze >= 3
+
 
     #podwojne znaki
     for litera in range(len(napis) - 1):
         if napis[litera] == napis[litera + 1]:
             podwojne = True
-    return podwojne
+
 
     wiersz = False
     if podwojne == True and licze >= 3:
