@@ -1,6 +1,22 @@
 from Advent_2015.scaffolding.utils import loadFile, loadLines, splitLines
 
-def szukanie_ciagu(napis):
+# wczytaj plik, podziel go na linie
+# utworz licznik z wartoscia zero
+# dla kazdej linii sprawdz czy:
+# - jesli not_nice to nastepna linia
+# - jesli nice to dodaj jeden do licznika
+# zwroc wartosc licznika
+def dziel_licz():
+    plik = splitLines('Day5_input.txt')
+    licznik = 0
+    for napis in plik:
+        if szukanie_ciagu(napis) == True and nice(napis) == True:
+                licznik += 1
+    return licznik
+
+
+
+def szukanie_ciagu(napis: str) -> bool:
     plik = napis# splitLines("Day5_input.txt")
     szukane_znaki = ["ab", "cd", "pq", "xy"]
     for linia in plik:
@@ -37,12 +53,12 @@ def nice(napis: str) -> bool:
 
 
 
-
 def main():
     napis = splitLines('Day5_input.txt')
     #napis = 'fujcauyucsrxxgatisb'
-    print("ciagi ", szukanie_ciagu(napis))
-    print("najs: ", nice(napis))
+    print(dziel_licz())
+    # print("ciagi ", szukanie_ciagu(napis))
+    # print("najs: ", nice(napis))
 
 
 if __name__ == '__main__':
