@@ -10,8 +10,8 @@ def dziel_licz():
     plik = splitLines('Day5_input.txt')
     licznik = 0
     for napis in plik:
-        if szukanie_ciagu(napis) == True:
-            if nice(napis) == True:
+        if szukanie_ciagu(napis):
+            if nice(napis):
                 licznik += 1
     return licznik
 
