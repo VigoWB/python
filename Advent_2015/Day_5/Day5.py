@@ -1,4 +1,4 @@
-from Advent_2015.scaffolding.utils import loadFile, loadLines, splitLines
+from Advent_2015.scaffolding.utils import splitLines
 
 # wczytaj plik, podziel go na linie
 # utworz licznik z wartoscia zero
