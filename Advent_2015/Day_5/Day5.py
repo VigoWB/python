@@ -10,9 +10,11 @@ def dziel_licz():
     plik = splitLines('Day5_input.txt')
     licznik = 0
     for napis in plik:
-        if szukanie_ciagu(napis):
-            if nice(napis):
-                licznik += 1
+        if czesc_dwa(napis):
+            licznik += 1
+        # if szukanie_ciagu(napis):
+        #     if nice(napis):
+        #         licznik += 1
     return licznik
 
 
@@ -24,6 +26,12 @@ def szukanie_ciagu(napis: str) -> bool:
             return False
     return True
 
+def czesc_dwa(napis: str) -> bool:
+    podwojne = False
+    for litera in range(len(napis) - 2):     #szukam podwojne znaki ale rozdzielone
+        if napis[litera] == napis[litera + 2]:
+            podwojne = True
+    return podwojne
 
 #"Napisz funkcje nice() ktora akceptuje jako argument napis(string) i sprawdza czy dany napis zawiera przynajmniej trzy samogloski,
 # oraz przynajmniej jedno powtorzenie bezposrednio po sobie tego samego znaku (np. aa),
