@@ -31,7 +31,16 @@ def czesc_dwa(napis: str) -> bool:
     for litera in range(len(napis) - 2):     #szukam podwojne znaki ale rozdzielone
         if napis[litera] == napis[litera + 2]:
             podwojne = True
-    return podwojne
+
+    powtorka = False
+    for a in range(len(napis) - 1):     #podwojne powtorzone gdzies w wierszu
+        if napis[a+2] == napis[a + 3]:
+            powtorka = True
+
+    wiersz = False
+    if podwojne == True and powtorka == True:
+        wiersz = True
+    return wiersz
 
 #"Napisz funkcje nice() ktora akceptuje jako argument napis(string) i sprawdza czy dany napis zawiera przynajmniej trzy samogloski,
 # oraz przynajmniej jedno powtorzenie bezposrednio po sobie tego samego znaku (np. aa),
