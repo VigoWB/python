@@ -29,4 +29,4 @@ class Instrukcja:
         self.stop = tuple(map(int, stop_str.split(',')))
 
     def __repr__(self):
-        return f"Instrukcja(operacja='{self.operacja}', start={self.start}, stop={self.stop})"
+        return f'{self.operacja}, {self.start}, {self.stop}' #f"Instrukcja (operacja: {self.operacja}, start->{self.start}, stop->{self.stop})"
