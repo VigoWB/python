@@ -7,5 +7,5 @@ class Instrukcja:
 
 
     def parse(self, linia: str):
-
-        return None
+        print(linia)
+        return

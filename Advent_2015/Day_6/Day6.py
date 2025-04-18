@@ -1,11 +1,11 @@
-from Advent_2015.scaffolding.utils import splitLines
+#from Advent_2015.scaffolding.utils import splitLines
 from instrukcje import Instrukcja
 
 
 def wer():
-    plik = splitLines('Day6_input.txt')
 
-    return plik
+
+    return
 
 
 def qwe():
@@ -15,7 +15,8 @@ def qwe():
 
 
 def main():
-    print(wer())
+    tpx = Instrukcja("toggle 880,25 through 903,973")
+    #print(tpx.operacje, tpx.start, tpx.stop)
 
 
 if __name__ == '__main__':
