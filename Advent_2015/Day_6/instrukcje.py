@@ -6,6 +6,27 @@ class Instrukcja:
         self.parse(linia)
 
 
-    def parse(self, linia: str):
-        print(linia)
-        return
+    def parse(self, linia: str) -> None:
+        # Podziel linię na słowa
+        # Przykład: "turn on 931,331 through 939,812"
+        # -> ['turn', 'on', '931,331', 'through', '939,812']
+
+        czesci = linia.strip().split()
+
+        # Operacja może być jedno- lub dwuwyrazowa ("turn on", "turn off", "toggle")
+        if czesci[0] == "toggle":
+            self.operacja = "toggle"
+            start_str = czesci[1]
+            stop_str = czesci[3]
+        else:
+            # "turn on" lub "turn off"
+            self.operacja = f"{czesci[0]} {czesci[1]}"
+            start_str = czesci[2]
+            stop_str = czesci[4]
+
+        # Parsowanie współrzędnych start i stop
+        self.start = tuple(map(int, start_str.split(',')))
+        self.stop = tuple(map(int, stop_str.split(',')))
+
+    def __repr__(self):
+        return f"Instrukcja(operacja='{self.operacja}', start={self.start}, stop={self.stop})"
