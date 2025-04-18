@@ -33,8 +33,8 @@ def czesc_dwa(napis: str) -> bool:
             podwojne = True
 
     powtorka = False
-    for a in range(len(napis) - 1):     #podwojne powtorzone gdzies w wierszu
-        if napis[a+2] == napis[a + 3]:
+    for znak in range(len(napis) - 1):     #podwojne powtorzone gdzies w wierszu
+        if napis[znak:znak +2] in napis[znak:]:
             powtorka = True
 
     wiersz = False
