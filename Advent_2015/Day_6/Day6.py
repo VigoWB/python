@@ -41,18 +41,18 @@ def main():
     # dla kazdego (ix,iy) -> wykonac operacje
     for ins in instrukcje:
         if ins.operacja == OP_ON:# zapalam lampki
-            for linia in range(ins.start[0], ins.stop[0]):
-                for kolumna in range(ins.start[1], ins.stop[1]):
+            for linia in range(ins.start[0], ins.stop[0]+1):
+                for kolumna in range(ins.start[1], ins.stop[1]+1):
                     tablica[linia][kolumna] = True
 
         if ins.operacja == OP_OFF:# gazimy lampki
-            for linia in range(ins.start[0], ins.stop[0]):
-                for kolumna in range(ins.start[1], ins.stop[1]):
+            for linia in range(ins.start[0], ins.stop[0]+1):
+                for kolumna in range(ins.start[1], ins.stop[1]+1):
                     tablica[linia][kolumna] = False
 
         if ins.operacja == OP_TOGGLE:# zmienamy lampki
-            for linia in range(ins.start[0], ins.stop[0]):
-                for kolumna in range(ins.start[1], ins.stop[1]):
+            for linia in range(ins.start[0], ins.stop[0]+1):
+                for kolumna in range(ins.start[1], ins.stop[1]+1):
                     tablica[linia][kolumna] = not tablica[linia][kolumna]
 
     licze_tru = 0
