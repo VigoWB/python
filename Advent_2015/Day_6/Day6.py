@@ -33,7 +33,7 @@ def main():
     # Plansze 1000 x 1000
     # i w zaleznosci od operacji zapalic lampki od start do koniec lub je zgasic lub zmienic ich stan na przeciwny
 
-    print(wczytaj_instrukcje())
+    #print(wczytaj_instrukcje())
     rozmiar = 1000
     tablica = [[False for _ in range(rozmiar)] for _ in range(rozmiar)]
     instrukcje = wczytaj_instrukcje()
@@ -44,23 +44,23 @@ def main():
             for linia in range(ins.start[0], ins.stop[0]):
                 for kolumna in range(ins.start[1], ins.stop[1]):
                     tablica[linia][kolumna] = True
-            pass
+
         if ins.operacja == OP_OFF:# gazimy lampki
             for linia in range(ins.start[0], ins.stop[0]):
                 for kolumna in range(ins.start[1], ins.stop[1]):
                     tablica[linia][kolumna] = False
-            pass
+
         if ins.operacja == OP_TOGGLE:# zmienamy lampki
             for linia in range(ins.start[0], ins.stop[0]):
                 for kolumna in range(ins.start[1], ins.stop[1]):
                     tablica[linia][kolumna] = not tablica[linia][kolumna]
-            pass
+
     licze_tru = 0
     for lic in range(rozmiar):
         for nik in range(rozmiar):
-            print(lic, nik)
-            licze_tru += 1
-        return licze_tru
+            if tablica[lic][nik] == True:
+                licze_tru += 1
+    print(licze_tru)
 
 
 if __name__ == '__main__':
