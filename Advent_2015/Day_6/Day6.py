@@ -7,14 +7,6 @@ def wer():
 
 
 def wczytaj_instrukcje() -> list[Instrukcja]:
-    linie = splitLines('Day6_input.txt')
-    instrukcje: list[Instrukcja] = []
-    for linia in linie:
-        instrukcje.append(Instrukcja(linia))
-    return instrukcje
-
-
-def wczytaj_instrukcje() -> list[Instrukcja]:
         linie = splitLines('Day6_input.txt')
         instrukcje: list[Instrukcja] = []
         for linia in linie:
@@ -58,8 +50,9 @@ def main():
     licze_tru = 0
     for lic in range(rozmiar):
         for nik in range(rozmiar):
-            if tablica[lic][nik] == True:
-                licze_tru += 1
+            if not tablica[lic][nik] == True:
+                continue
+            licze_tru += 1
     print(licze_tru)
 
 
