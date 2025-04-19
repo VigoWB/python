@@ -1,11 +1,6 @@
 from Advent_2015.scaffolding.utils import splitLines
 from instrukcje import Instrukcja, OP_ON, OP_OFF, OP_TOGGLE
 
-
-def wer():
-    return
-
-
 def wczytaj_instrukcje() -> list[Instrukcja]:
         linie = splitLines('Day6_input.txt')
         instrukcje: list[Instrukcja] = []
