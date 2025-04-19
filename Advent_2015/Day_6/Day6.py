@@ -39,19 +39,28 @@ def main():
     instrukcje = wczytaj_instrukcje()
     # dla kazdej instrukcji policzyc start -> koniec w X i Y
     # dla kazdego (ix,iy) -> wykonac operacje
-    # for ins in instrukcje:
-    #     if ins.operacja == OP_ON:
-    #         tablica[0][0] = True
-    #         # zapalam lampki
-    #         pass
-    #     if ins.operacja == OP_OFF:
-    #         # gazimy lampki
-    #         tablica[0][0] = False
-    #         pass
-    #     if ins.operacja == OP_TOGGLE:
-    #         tablica[0][0] = not tablica[0][0]
-    #         # zmienamy lampki
-    #         pass
+    for ins in instrukcje:
+        if ins.operacja == OP_ON:# zapalam lampki
+            for linia in range(ins.start[0], ins.stop[0]):
+                for kolumna in range(ins.start[1], ins.stop[1]):
+                    tablica[linia][kolumna] = True
+            pass
+        if ins.operacja == OP_OFF:# gazimy lampki
+            for linia in range(ins.start[0], ins.stop[0]):
+                for kolumna in range(ins.start[1], ins.stop[1]):
+                    tablica[linia][kolumna] = False
+            pass
+        if ins.operacja == OP_TOGGLE:# zmienamy lampki
+            for linia in range(ins.start[0], ins.stop[0]):
+                for kolumna in range(ins.start[1], ins.stop[1]):
+                    tablica[linia][kolumna] = not tablica[linia][kolumna]
+            pass
+    licze_tru = 0
+    for lic in range(rozmiar):
+        for nik in range(rozmiar):
+            print(lic, nik)
+            licze_tru += 1
+        return licze_tru
 
 
 if __name__ == '__main__':
