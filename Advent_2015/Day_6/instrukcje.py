@@ -1,6 +1,12 @@
+from typing import Final
+
+OP_ON: Final[str] = "turn on"
+OP_OFF: Final[str] = "turn off"
+OP_TOGGLE: Final[str] = "toggle"
+
 class Instrukcja:
     def __init__(self, linia: str) -> None:
-        self.operacje = None
+        self.operacja = None
         self.start = (0, 0)
         self.stop = (999, 999)
         self.parse(linia)
