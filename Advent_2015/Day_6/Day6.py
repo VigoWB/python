@@ -22,36 +22,28 @@ def main():
 
     #print(wczytaj_instrukcje())
     rozmiar = 1000
-    tablica = [[False for _ in range(rozmiar)] for _ in range(rozmiar)]
+    tablica = [[0 for _ in range(rozmiar)] for _ in range(rozmiar)]
     instrukcje = wczytaj_instrukcje()
     # dla kazdej instrukcji policzyc start -> koniec w X i Y
     # dla kazdego (ix,iy) -> wykonac operacje
     for ins in instrukcje:
-        if ins.operacja == OP_ON:# zapalam lampki
-            for linia in range(ins.start[0], ins.stop[0]+1):
-                for kolumna in range(ins.start[1], ins.stop[1]+1):
+        for linia in range(ins.start[0], ins.stop[0] + 1):
+            for kolumna in range(ins.start[1], ins.stop[1] + 1):
+                if ins.operacja == OP_ON:# zapalam lampki
                     tablica[linia][kolumna] += 1
-
-        if ins.operacja == OP_OFF:# gazimy lampki
-            for linia in range(ins.start[0], ins.stop[0]+1):
-                for kolumna in range(ins.start[1], ins.stop[1]+1):
-                    if tablica[linia][kolumna] >= 1:
-                        tablica[linia][kolumna] -= 1
-
-        if ins.operacja == OP_TOGGLE:# zmienamy lampki
-            for linia in range(ins.start[0], ins.stop[0]+1):
-                for kolumna in range(ins.start[1], ins.stop[1]+1):
+                if ins.operacja == OP_OFF:  # gazimy lampki
+                    tablica[linia][kolumna] = max(tablica[linia][kolumna] - 1, 0)
+                if ins.operacja == OP_TOGGLE: # zmienamy lampki
                     tablica[linia][kolumna] += 2
 
-    licze_tru = 0
-    for lic in range(rozmiar):
-        for nik in range(rozmiar):
-            if tablica[lic][nik] == type(bool):
-                continue
-            else:
-                licze_tru += tablica[lic][nik]
-
-    print(licze_tru)
+    #licze_tru = 150
+    # for lic in range(rozmiar):
+    #     for nik in range(rozmiar):
+    #         if tablica[lic][nik] == type(bool):
+    #             continue
+    #         else:
+    #             licze_tru += tablica[lic][nik]
+    print(sum(sum(wiersz) for wiersz in tablica))
 
 
 
