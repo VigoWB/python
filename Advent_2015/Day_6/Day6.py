@@ -30,25 +30,29 @@ def main():
         if ins.operacja == OP_ON:# zapalam lampki
             for linia in range(ins.start[0], ins.stop[0]+1):
                 for kolumna in range(ins.start[1], ins.stop[1]+1):
-                    tablica[linia][kolumna] = True
+                    tablica[linia][kolumna] += 1
 
         if ins.operacja == OP_OFF:# gazimy lampki
             for linia in range(ins.start[0], ins.stop[0]+1):
                 for kolumna in range(ins.start[1], ins.stop[1]+1):
-                    tablica[linia][kolumna] = False
+                    if tablica[linia][kolumna] >= 1:
+                        tablica[linia][kolumna] -= 1
 
         if ins.operacja == OP_TOGGLE:# zmienamy lampki
             for linia in range(ins.start[0], ins.stop[0]+1):
                 for kolumna in range(ins.start[1], ins.stop[1]+1):
-                    tablica[linia][kolumna] = not tablica[linia][kolumna]
+                    tablica[linia][kolumna] += 2
 
     licze_tru = 0
     for lic in range(rozmiar):
         for nik in range(rozmiar):
-            if not tablica[lic][nik] == True:
+            if tablica[lic][nik] == type(bool):
                 continue
-            licze_tru += 1
+            else:
+                licze_tru += tablica[lic][nik]
+
     print(licze_tru)
+
 
 
 if __name__ == '__main__':
