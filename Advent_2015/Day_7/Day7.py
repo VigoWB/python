@@ -5,9 +5,14 @@ def wczytaj():
     plik = splitLines('Day7_input.txt')
     return plik
 
+def fib(n):
+    #F(n) = F(n-1) + F(n-2)
+    F = (n-1) + (n-2)
+    return F
 
 def main():
-    print(wczytaj())
+    #print(wczytaj())
+    print(fib(15))
     return
 
 
