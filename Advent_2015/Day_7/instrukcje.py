@@ -13,10 +13,10 @@ class Instrukcja:
         # Przykład: "turn on 931,331 through 939,812"
         # -> ['turn', 'on', '931,331', 'through', '939,812']
 
-        czesci = linia.strip().split()
+        czesci = linia.strip().split(->)
 
         # Operacja może być jedno- lub dwuwyrazowa ("turn on", "turn off", "toggle")
-        if czesci[0] == "toggle":
+        if czesci[0] <= 3:
             self.operacja = "toggle"
             start_str = czesci[1]
             stop_str = czesci[3]
