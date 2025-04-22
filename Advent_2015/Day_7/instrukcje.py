@@ -1,6 +1,6 @@
 
 
-class Instrukcja():
+class Instrukcja:
     def __init__(self, linia: str):
         self.operacja = None
         self.wartosc:  list = []

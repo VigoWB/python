@@ -15,7 +15,7 @@ def main():
     # print(smart_fib(50))
     # for i in range(0, 5):
     #     print(f"FIB {i} - {fib(i)}")
-    return
+    return instrukcje
 
 
 pamiec = [0 for i in range(10_000)]
