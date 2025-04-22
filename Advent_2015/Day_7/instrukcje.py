@@ -1,7 +1,7 @@
 
 
-class Instrukcja:
-    def __init__(self, linia: str) -> None:
+class Instrukcja():
+    def __init__(self, linia: str):
         self.operacja = None
         self.wartosc:  list = []
         self.wynik: str = ''
@@ -9,13 +9,39 @@ class Instrukcja:
 
 
     def parse(self, linia: str):
-        czesci = linia.strip()
+        czesci = linia.split()
         # czesci = list(map(str.strip, czesci))
         if len(czesci) == 5:
             if czesci[1] == "AND":
                 self.operacja = 'AND'
                 self.wartosc.append(czesci[0])
                 self.wartosc.append(czesci[2])
+                self.wynik = czesci[-1]
+            if czesci[1] == "OR":
+                self.operacja = 'OR'
+                self.wartosc.append(czesci[0])
+                self.wartosc.append(czesci[2])
+                self.wynik = czesci[-1]
+            if czesci[1] == "RSHIFT":
+                self.operacja = 'RSHIFT'
+                self.wartosc.append(czesci[0])
+                self.wartosc.append(czesci[2])
+                self.wynik = czesci[-1]
+            if czesci[1] == "LSHIFT":
+                self.operacja = 'LSHIFT'
+                self.wartosc.append(czesci[0])
+                self.wartosc.append(czesci[2])
+                self.wynik = czesci[-1]
+        if len(czesci) == 4:
+            if czesci[0] == "NOT":
+                self.operacja = 'NOT'
+                self.wartosc.append(czesci[1])
+                self.wynik = czesci[-1]
+        if len(czesci) == 3:
+            if czesci[1] == "->":
+                self.operacja = "________przypisanie_____________"
+                # self.wartosc = czesci[0]
+                self.wartosc.append(czesci[0])
                 self.wynik = czesci[-1]
 
         # if "RSHIFT" in czesci[0]:
@@ -43,4 +69,4 @@ class Instrukcja:
 
 
     def __repr__(self):
-        return f'{self.operacja}, {self.wartosc}, {self.wynik}' #f"Instrukcja (operacja: {self.operacja}, start->{self.start}, stop->{self.stop})"
+        return f'OPERACJA: {self.operacja}, WARTOSCI: {self.wartosc}, WYNIK TO: {self.wynik}' #f"Instrukcja (operacja: {self.operacja}, start->{self.start}, stop->{self.stop})"
