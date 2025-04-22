@@ -2,7 +2,7 @@ from Advent_2015.Day_7.instrukcje import Instrukcja
 from Advent_2015.scaffolding.utils import splitLines
 
 
-def wczytaj():
+def wczytaj()-> list[Instrukcja]:
     linie = splitLines('Day7_input.txt')
     instrukcje: list[Instrukcja] = []
     for linia in linie:
@@ -14,7 +14,7 @@ def main():
     # print(smart_fib(50))
     # for i in range(0, 5):
     #     print(f"FIB {i} - {fib(i)}")
-    # return
+    return
 
 
 pamiec = [0 for i in range(10_000)]
