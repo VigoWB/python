@@ -13,13 +13,29 @@ class Instrukcja:
         # Przykład: "turn on 931,331 through 939,812"
         # -> ['turn', 'on', '931,331', 'through', '939,812']
 
-        czesci = linia.strip('->').split()
+        czesci = linia.strip().split('->')
+        czesci = list(map(str.strip, czesci))
 
         # Operacja może być jedno- lub dwuwyrazowa ("turn on", "turn off", "toggle")
-        if "AND" in czesci:
-            print("TU JES AND", czesci)
-        if "NOT" in czesci:
+        if "LSHIFT" in czesci[0]:
+            print("OR TU jest", czesci)
+        if "OR" in czesci[0]:
+            print("OR TU jest", czesci)
+        if "RSHIFT" in czesci[0]:
             print(czesci[0], czesci)
+        if "AND" in czesci[0]:
+            print("TU JES AND", czesci)
+        if "NOT" in czesci[0]:
+            print(czesci[0], czesci)
+        # if czesci[0] == isdigit:
+        #     print("TU JEST SAnnnnnnnnnnnnnnnnnnnnnnnnnnMA CYFERKA", czesci)
+        # if type(czesci[0]) != 'str':
+        # if isinstance(czesci[0], 'int'):
+        #     print("TU JEST SAnnnnnnnnnnnnnnnnnnnnnnnnnnMA CYFERKA", czesci)
+        # if not type(str) in czesci[0]:
+        #     print("TU JEST SAnnnnnnnnnnnnnnnnnnnnnnnnnnMA CYFERKA", czesci)
+        #     return
+
 
         # else:
         #     # "turn on" lub "turn off"
