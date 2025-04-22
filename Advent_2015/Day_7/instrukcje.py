@@ -3,7 +3,7 @@
 class Instrukcja:
     def __init__(self, linia: str) -> None:
         self.operacja = None
-        self.start = (0, 0)
+        self.lewa = None
         self.stop = (999, 999)
         self.parse(linia)
 
@@ -17,16 +17,23 @@ class Instrukcja:
         czesci = list(map(str.strip, czesci))
 
         # Operacja może być jedno- lub dwuwyrazowa ("turn on", "turn off", "toggle")
-        if "LSHIFT" in czesci[0]:
-            print("OR TU jest", czesci)
-        if "OR" in czesci[0]:
-            print("OR TU jest", czesci)
-        if "RSHIFT" in czesci[0]:
-            print(czesci[0], czesci)
+        # if "RSHIFT" in czesci[0]:
+        #     print("RS", czesci)
+        # if "LSHIFT" in czesci[0]:
+        #     print("LS", czesci)
+        # if "NOT" in czesci[0]:
+        #     print(czesci[0], czesci)
+        # if "OR" in czesci[0]:
+        #     print("OR TU jest", czesci)
+
         if "AND" in czesci[0]:
-            print("TU JES AND", czesci)
-        if "NOT" in czesci[0]:
-            print(czesci[0], czesci)
+            print(self.lewa)
+            for i in self.lewa:
+                suma =  i[0] & i[2]
+            print("TU JES AND", suma, czesci)
+
+        self.lewa = tuple(map(str, czesci[0].split()))
+
         # if czesci[0] == isdigit:
         #     print("TU JEST SAnnnnnnnnnnnnnnnnnnnnnnnnnnMA CYFERKA", czesci)
         # if type(czesci[0]) != 'str':
@@ -37,15 +44,5 @@ class Instrukcja:
         #     return
 
 
-        # else:
-        #     # "turn on" lub "turn off"
-        #     self.operacja = f"{czesci[0]} {czesci[1]}"
-        #     start_str = czesci[2]
-        #     stop_str = czesci[4]
-
-        # Parsowanie współrzędnych start i stop
-        # self.start = tuple(map(int, start_str.split(',')))
-        # self.stop = tuple(map(int, stop_str.split(',')))
-
     def __repr__(self):
-        return f'{self.operacja}, {self.start}, {self.stop}' #f"Instrukcja (operacja: {self.operacja}, start->{self.start}, stop->{self.stop})"
+        return f'{self.operacja}, {self.lewa}, {self.stop}' #f"Instrukcja (operacja: {self.operacja}, start->{self.start}, stop->{self.stop})"
