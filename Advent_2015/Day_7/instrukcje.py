@@ -3,15 +3,15 @@
 class Instrukcja:
     def __init__(self, linia: str) -> None:
         self.operacja = None
-        self.wartosc:  list = None
+        self.wartosc:  list = []
         self.wynik: str = ''
         self.parse(linia)
 
 
     def parse(self, linia: str):
         czesci = linia.strip()
-        # /czesci = list(map(str.strip, czesci))
-        if len(czesci)  == 5:
+        # czesci = list(map(str.strip, czesci))
+        if len(czesci) == 5:
             if czesci[1] == "AND":
                 self.operacja = 'AND'
                 self.wartosc.append(czesci[0])
@@ -42,5 +42,5 @@ class Instrukcja:
         #     return
 
 
-    # def __repr__(self):
-        # return f'{self.operacja}, {self.wartosci}, {self.stop}' #f"Instrukcja (operacja: {self.operacja}, start->{self.start}, stop->{self.stop})"
+    def __repr__(self):
+        return f'{self.operacja}, {self.wartosc}, {self.wynik}' #f"Instrukcja (operacja: {self.operacja}, start->{self.start}, stop->{self.stop})"
