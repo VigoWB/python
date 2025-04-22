@@ -13,11 +13,14 @@ class Instrukcja:
         # Przykład: "turn on 931,331 through 939,812"
         # -> ['turn', 'on', '931,331', 'through', '939,812']
 
-        czesci = linia.strip().split()
+        czesci = linia.strip('->').split()
 
         # Operacja może być jedno- lub dwuwyrazowa ("turn on", "turn off", "toggle")
         if "AND" in czesci:
-            print("TU JEST AND")
+            print("TU JES AND", czesci)
+        if "NOT" in czesci:
+            print(czesci[0], czesci)
+
         # else:
         #     # "turn on" lub "turn off"
         #     self.operacja = f"{czesci[0]} {czesci[1]}"
