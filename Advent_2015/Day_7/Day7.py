@@ -6,7 +6,6 @@ def wczytaj()-> list[Instrukcja]:
     linie = splitLines('Day7_input.txt')
     instrukcje: list[Instrukcja] = []
     for linia in linie:
-        # print(Instrukcja(linia))
         instrukcje.append(Instrukcja(linia))
     return instrukcje
 
