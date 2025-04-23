@@ -6,16 +6,27 @@ def wczytaj()-> list[Instrukcja]:
     linie = splitLines('Day7_input.txt')
     instrukcje: list[Instrukcja] = []
     for linia in linie:
-        print(Instrukcja(linia))
+        # print(Instrukcja(linia))
         instrukcje.append(Instrukcja(linia))
     return instrukcje
 
+
+def slownik(instrukcje):
+    lista_znaczkow = {}
+    for ins in instrukcje:
+        lista_znaczkow[ins.wynik] = ins
+    return lista_znaczkow
+
+
+
 def main():
     instrukcje = wczytaj()
+    print(slownik(instrukcje))
+
     # print(smart_fib(50))
     # for i in range(0, 5):
     #     print(f"FIB {i} - {fib(i)}")
-    return instrukcje
+
 
 
 pamiec = [0 for i in range(10_000)]
