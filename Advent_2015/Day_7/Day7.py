@@ -11,11 +11,27 @@ def wczytaj()-> list[Instrukcja]:
 
 
 def slownik(instrukcje):
-    lista_znaczkow = {}
+    lista_znaczkow: dict = {}
     for ins in instrukcje:
         lista_znaczkow[ins.wynik] = ins
     return lista_znaczkow
 
+def wykonaj(ins: Instrukcja):
+#sprawdzasz jakie sa argumenty i jaka operacja zaciagnac wartosci wiec abx = wykonaj(TUTAJ OPERACJA DLA B)
+# bbx = wykonaj(TUTAJ OPERACJA DLA C)
+# return abx [TUTAJ TE BITOWE] bbx
+# b OR x -> a
+# z OR y -> b
+# b OR 4 -> x
+# y -> 8
+# z -> 16
+# takie cos prostego wynik to wedle mojej logiki powinno byc
+# x = 12
+# b = 24
+# a = 26
+# kindla nie podlaczylem do ladowania
+
+    return
 
 
 def main():
