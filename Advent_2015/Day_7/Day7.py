@@ -16,7 +16,16 @@ def slownik(instrukcje):
         lista_znaczkow[ins.wynik] = ins
     return lista_znaczkow
 
-def wykonaj(ins: Instrukcja):
+def wykonaj(slownik_znaczkow):
+    pobieram = slownik_znaczkow
+    for klucz in pobieram:
+         print(klucz)
+
+    # x & y
+
+
+
+
 #sprawdzasz jakie sa argumenty i jaka operacja zaciagnac wartosci wiec abx = wykonaj(TUTAJ OPERACJA DLA B)
 # bbx = wykonaj(TUTAJ OPERACJA DLA C)
 # return abx [TUTAJ TE BITOWE] bbx
@@ -31,12 +40,14 @@ def wykonaj(ins: Instrukcja):
 # a = 26
 # kindla nie podlaczylem do ladowania
 
-    return
+    return pobieram
 
 
 def main():
     instrukcje = wczytaj()
-    print(slownik(instrukcje))
+    slownik_znaczkow = slownik(instrukcje)
+    print(wykonaj(slownik_znaczkow))
+
 
     # print(smart_fib(50))
     # for i in range(0, 5):
