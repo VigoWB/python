@@ -17,10 +17,7 @@ def slownik(instrukcje):
         lista_znaczkow[ins.wynik] = ins
     return lista_znaczkow
 
-def wykonaj(ins: slownik_znaczkow, data: dict) -> int:
-    dfsafhalkj = slownik_znaczkow
-    # for kej, warotsc in dfsafhalkj.items():
-    #     # print(kej, warotsc)
+def wykonaj(ins: pierwsza_operacja, data: dict) -> int:
 
     if ins.operacja == 'ASSIGN':
         print(f"Nie zaleze od innych argumentow zwracam wartosc {ins.wynik}")
@@ -58,8 +55,10 @@ def main():
     # ins = Instrukcja('af AND ah -> ai')
     # print(ins.wynik, ins)
     instrukcje = wczytaj()
-    slownik_znaczkow = slownik(instrukcje)
-    print(wykonaj(slownik_znaczkow, instrukcje))
+    slownik_operacji = slownik(instrukcje)
+    pierwsza_operacja = slownik_operacji["a"]
+
+    print(wykonaj(pierwsza_operacja, slownik_operacji))
 
 
     # print(smart_fib(50))
