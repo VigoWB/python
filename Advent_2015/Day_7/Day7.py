@@ -20,8 +20,8 @@ def slownik(instrukcje):
 def wykonaj(ins: Instrukcja, data: dict) -> int:
     # print(ins)
     if ins.operacja == 'ASSIGN':
-        print(ins.wynik)
-        return
+
+        return ins.wynik[0]
 
     print(f"Rozwazam {ins.wynik}")
     argumenty = {}
