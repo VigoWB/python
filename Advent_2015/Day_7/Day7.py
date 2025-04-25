@@ -16,11 +16,18 @@ def slownik(instrukcje):
         lista_znaczkow[ins.wynik] = ins
     return lista_znaczkow
 
-def wykonaj(slownik_znaczkow):
-    pobieram = slownik_znaczkow
-    for klucz, wartosci in pobieram.items():
-        for wartosc in wartosci:
-            print(wartosc)
+def wykonaj(slownik_znaczkow, data: dict) -> int:
+    print(slownik_znaczkow)
+    if ins.operacja == 'ASSIGN':
+        print(f"Nie zaleze od innych argumentow zwracam wartosc {ins.wynik}")
+        return 1
+
+    print(f"Rozwazam {ins.wynik}")
+    argumenty = {}
+    for arg in ins.argumenty:
+        argumenty[ins.wynik] = wykonaj(data[arg], data)
+
+    return 1
     # x & y
 
 
