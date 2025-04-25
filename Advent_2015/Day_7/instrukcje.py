@@ -41,7 +41,7 @@ class Instrukcja:
         if len(czesci) == 3:
             if czesci[1] == "->":
                 self.operacja = "ASSIGN"
-                self.argumenty.append(czesci[0])
+                self.argumenty.append(int(czesci[0]))
 
         # if "RSHIFT" in czesci[0]:
         #     print("RS", czesci)

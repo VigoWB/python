@@ -18,10 +18,10 @@ def slownik(instrukcje):
     return lista_znaczkow
 
 def wykonaj(ins: Instrukcja, data: dict) -> int:
-
+    # print(ins)
     if ins.operacja == 'ASSIGN':
-        print(f"Nie zaleze od innych argumentow zwracam wartosc {ins.wynik}")
-        return 1
+        print(ins.wynik)
+        return
 
     print(f"Rozwazam {ins.wynik}")
     argumenty = {}
