@@ -18,9 +18,9 @@ def slownik(instrukcje):
 
 def wykonaj(slownik_znaczkow):
     pobieram = slownik_znaczkow
-    for klucz in pobieram:
-         print(klucz)
-
+    for klucz, wartosci in pobieram.items():
+        for wartosc in wartosci:
+            print(wartosc)
     # x & y
 
 
@@ -40,7 +40,7 @@ def wykonaj(slownik_znaczkow):
 # a = 26
 # kindla nie podlaczylem do ladowania
 
-    return pobieram
+    return
 
 
 def main():
