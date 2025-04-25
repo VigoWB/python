@@ -17,8 +17,8 @@ def slownik(instrukcje):
         lista_znaczkow[ins.wynik] = ins
     return lista_znaczkow
 
-def wykonaj(slownik_znaczkow, data: dict) -> int:
-    # dfsafhalkj = slownik_znaczkow
+def wykonaj(ins: slownik_znaczkow, data: dict) -> int:
+    dfsafhalkj = slownik_znaczkow
     # for kej, warotsc in dfsafhalkj.items():
     #     # print(kej, warotsc)
 
@@ -51,7 +51,7 @@ def wykonaj(slownik_znaczkow, data: dict) -> int:
 # a = 26
 # kindla nie podlaczylem do ladowania
 
-    return
+
 
 
 def main():
@@ -59,7 +59,7 @@ def main():
     # print(ins.wynik, ins)
     instrukcje = wczytaj()
     slownik_znaczkow = slownik(instrukcje)
-    print(wykonaj(slownik_znaczkow))
+    print(wykonaj(slownik_znaczkow, instrukcje))
 
 
     # print(smart_fib(50))
