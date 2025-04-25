@@ -3,7 +3,8 @@ from Advent_2015.scaffolding.utils import splitLines
 
 
 def wczytaj()-> list[Instrukcja]:
-    linie = splitLines('Day7_input.txt')
+    linie = splitLines('test.txt')
+    # linie = splitLines('Day7_input.txt')
     instrukcje: list[Instrukcja] = []
     for linia in linie:
         instrukcje.append(Instrukcja(linia))
@@ -17,7 +18,10 @@ def slownik(instrukcje):
     return lista_znaczkow
 
 def wykonaj(slownik_znaczkow, data: dict) -> int:
-    print(slownik_znaczkow)
+    # dfsafhalkj = slownik_znaczkow
+    # for kej, warotsc in dfsafhalkj.items():
+    #     # print(kej, warotsc)
+
     if ins.operacja == 'ASSIGN':
         print(f"Nie zaleze od innych argumentow zwracam wartosc {ins.wynik}")
         return 1
@@ -51,6 +55,8 @@ def wykonaj(slownik_znaczkow, data: dict) -> int:
 
 
 def main():
+    # ins = Instrukcja('af AND ah -> ai')
+    # print(ins.wynik, ins)
     instrukcje = wczytaj()
     slownik_znaczkow = slownik(instrukcje)
     print(wykonaj(slownik_znaczkow))

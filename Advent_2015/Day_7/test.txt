@@ -1,0 +1,6 @@
+b OR x -> a
+z OR y -> b
+b OR j -> x
+4 -> j
+8 -> y
+16 -> z
