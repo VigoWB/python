@@ -17,7 +17,7 @@ def slownik(instrukcje):
         lista_znaczkow[ins.wynik] = ins
     return lista_znaczkow
 
-def wykonaj(ins: pierwsza_operacja, data: dict) -> int:
+def wykonaj(ins: Instrukcja, data: dict) -> int:
 
     if ins.operacja == 'ASSIGN':
         print(f"Nie zaleze od innych argumentow zwracam wartosc {ins.wynik}")
@@ -58,8 +58,8 @@ def main():
     slownik_operacji = slownik(instrukcje)
     pierwsza_operacja = slownik_operacji["a"]
 
-    print(wykonaj(pierwsza_operacja, slownik_operacji))
-
+    wynik = (wykonaj(pierwsza_operacja, slownik_operacji))
+    print(wynik)
 
     # print(smart_fib(50))
     # for i in range(0, 5):
