@@ -18,7 +18,7 @@ def slownik(instrukcje):
     return lista_znaczkow
 
 def wykonaj(ins: Instrukcja, data: dict) -> int:
-    # print(ins)
+    print(ins)
     if ins.operacja == 'ASSIGN':
 
         return ins.wynik[0]
