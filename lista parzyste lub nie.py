@@ -43,21 +43,20 @@ def zbiory():
         zbiorb.append(random.randint(7,17))
 
     sumaab: list = [zbiora + zbiorb]
+    iloczynab: list = []#te ktore sa w obu
     roznicaab: list = []
     for cya in zbiora:
         for cyb in zbiorb:
             if cya == cyb:
-                zbiora.remove(cya)
-
-    iloczynab: list = []#te ktore sa w obu
-    for cya in zbiora:
-        for cyb in zbiorb:
-            if cya == cyb:
                 iloczynab.append(cyb)
+    szukane = 0
+    for dya in zbiora:
+        for szukane in iloczynab:
+            if dya == szukane:
+                zbiora -= szukane
 
-            # if cya != cyb:
-            #     zbiora.append(cyb)
-    print(f"Zbiory: ", sumaab, zbiora, iloczynab)
+
+    print(f"Zbiory: ", sumaab, roznicaab, iloczynab)
     return
 
 
