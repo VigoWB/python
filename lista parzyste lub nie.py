@@ -1,4 +1,5 @@
 import random
+random.seed(1)
 
 def lista(policz):
     #print(f"Lista ma dlugosc:  {len(lista)}")
@@ -29,11 +30,30 @@ def generator():
 
     for indeks in range(len(losowe)):
         print(f"indeks[{indeks}]:" , losowe[indeks])
-    print(f"Max to indeks: [{indeks_max}], i ma on wartosc: ",losowe[indeks_max])
-    print(f"Długosc listy to: ",len(losowe))
+    print(f"Max to indeks: [{indeks_max}], i ma on wartość: ",losowe[indeks_max])
+    print(f"Długość listy to: ",len(losowe))
+
+def zbiory():
+    zbiora: list = []
+    #lista = [for i in range(random.randint(2, 12))] for i in zbiora]
+    for icp in range(5):
+        zbiora.append(random.randint(5,15))
+    zbiorb: list = []
+    for pci in range(5):
+        zbiorb.append(random.randint(7,17))
+    print(f"Suma zbiorow: ", sum(zbiora)+sum(zbiorb))
+    print(f"Roznica zbiorow: ",sum(zbiorb)-sum(zbiora))
+    for cya in zbiora:
+        for cyb in zbiorb:
+            if cya == cyb:
+                print(f"te sie powtarzaja: ", cyb)
+    print(f"Zbiory: ", zbiora, zbiorb)
+    return
+
 
 def main():
-    generator()
+    #generator()
+    zbiory()
 
 if __name__ == '__main__':
     main()
