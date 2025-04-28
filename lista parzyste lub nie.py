@@ -41,13 +41,23 @@ def zbiory():
     zbiorb: list = []
     for pci in range(5):
         zbiorb.append(random.randint(7,17))
-    print(f"Suma zbiorow: ", sum(zbiora)+sum(zbiorb))
-    print(f"Roznica zbiorow: ",sum(zbiorb)-sum(zbiora))
+
+    sumaab: list = [zbiora + zbiorb]
+    roznicaab: list = []
     for cya in zbiora:
         for cyb in zbiorb:
             if cya == cyb:
-                print(f"te sie powtarzaja: ", cyb)
-    print(f"Zbiory: ", zbiora, zbiorb)
+                zbiora.remove(cya)
+
+    iloczynab: list = []#te ktore sa w obu
+    for cya in zbiora:
+        for cyb in zbiorb:
+            if cya == cyb:
+                iloczynab.append(cyb)
+
+            # if cya != cyb:
+            #     zbiora.append(cyb)
+    print(f"Zbiory: ", sumaab, zbiora, iloczynab)
     return
 
 
