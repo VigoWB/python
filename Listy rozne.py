@@ -60,7 +60,7 @@ def merge(lis1: list, lis2: list) -> list:
     lismerg: list = []
     for raz in lis1:
         for dwa in lis2:
-            if raz <= dwa:
+            if raz >= dwa:
                 lismerg.append(raz)
 
     return lismerg
