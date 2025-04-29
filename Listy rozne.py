@@ -74,7 +74,7 @@ def merge(lis1: list, lis2: list) -> list:
             continue
 
         if lis1[ptra] >= lis2[ptrb]:
-            lismerg.append(lis1[ptrb])
+            lismerg.append(lis2[ptrb])
             ptrb += 1
             continue
 
@@ -82,11 +82,6 @@ def merge(lis1: list, lis2: list) -> list:
             lismerg.append(lis1[ptra])
             ptra += 1
             continue
-
-
-
-
-
     return lismerg
 
 
