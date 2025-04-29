@@ -58,10 +58,20 @@ def zbiory():
 
 def merge(lis1: list, lis2: list) -> list:
     lismerg: list = []
-    for raz in lis1:
-        for dwa in lis2:
-            if raz >= dwa:
-                lismerg.append(raz)
+    listrange = len(lis1) + len(lis2)
+
+    for miejsce in range(listrange+1):
+        if lis1[miejsce] > lis2[miejsce]:
+            lismerg.append(lis1[miejsce])
+            lismerg.append(lis2[miejsce])
+        if lis1[miejsce] < lis2[miejsce]:
+            lismerg.append(lis1[miejsce])
+            lismerg.append(lis2[miejsce])
+        if lis1[miejsce] == lis2[miejsce]:
+            lismerg.append(lis2[miejsce])
+            lismerg.append(lis1[miejsce])
+
+
 
     return lismerg
 
