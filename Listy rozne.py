@@ -51,15 +51,30 @@ def zbiory():
     for dya in zbiora:
         if dya in iloczynab:
             zbiora.remove(dya)
-
-
     print(f"Zbiory: ", sumaab, zbiora, iloczynab)
     return
 
 
+
+def merge(lis1: list, lis2: list) -> list:
+    lismerg: list = []
+    for raz in lis1:
+        for dwa in lis2:
+            if raz <= dwa:
+                lismerg.append(raz)
+
+    return lismerg
+
+
+
 def main():
+    lis1 = [1, 2, 3, 5, 8]
+    lis2 = [2, 4, 6, 8, 10]
+    print(merge(lis1, lis2))
     #generator()
-    zbiory()
+    #zbiory()
+
+
 
 if __name__ == '__main__':
     main()
