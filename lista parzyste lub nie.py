@@ -42,21 +42,18 @@ def zbiory():
     for pci in range(5):
         zbiorb.append(random.randint(7,17))
 
-    sumaab: list = [zbiora + zbiorb]
+    sumaab: list = zbiora + zbiorb
     iloczynab: list = []#te ktore sa w obu
-    roznicaab: list = []
+
     for cya in zbiora:
-        for cyb in zbiorb:
-            if cya == cyb:
-                iloczynab.append(cyb)
-    szukane = 0
+        if cya in zbiorb:
+            iloczynab.append(cya)
     for dya in zbiora:
-        for szukane in iloczynab:
-            if dya == szukane:
-                zbiora -= szukane
+        if dya in iloczynab:
+            zbiora.remove(dya)
 
 
-    print(f"Zbiory: ", sumaab, roznicaab, iloczynab)
+    print(f"Zbiory: ", sumaab, zbiora, iloczynab)
     return
 
 
