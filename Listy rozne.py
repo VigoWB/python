@@ -62,20 +62,25 @@ def merge(lis1: list, lis2: list) -> list:
     ptra = 0
     ptrb = 0
 
-    for _ in range(listrange+1):
+    for _ in range(listrange):
+        if ptra == len(lis1):
+            lismerg.append(lis2[ptrb])
+            ptrb += 1
+            continue
+
+        if ptrb == len(lis2):
+            lismerg.append(lis1[ptra])
+            ptra += 1
+            continue
+
         if lis1[ptra] >= lis2[ptrb]:
             lismerg.append(lis1[ptrb])
             ptrb += 1
-            if ptra == len(lis1):
-                lismerg.append(lis2[ptrb])
             continue
-
 
         if lis1[ptra] <= lis2[ptrb]:
             lismerg.append(lis1[ptra])
             ptra += 1
-            if ptrb == len(lis2):
-                lismerg.append(lis1[ptra])
             continue
 
 
