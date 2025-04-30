@@ -78,17 +78,32 @@ def merge(lis1: list, lis2: list) -> list:
             ptrb += 1
             continue
 
-        if lis1[ptra] <= lis2[ptrb]:
+        if lis1[ptra] < lis2[ptrb]:
             lismerg.append(lis1[ptra])
             ptra += 1
             continue
     return lismerg
 
+def dziel()->list:
+    do_dziel: list = []
+    for tro in range(5):
+        do_dziel.append(random.randint(5,15))
+    print(f"Lista do dzielenia: ", do_dziel)
 
+    # dzielenie
+    odjeta: list = []
+    for jedna in range(len(do_dziel)//2):
+        odjeta.append(do_dziel[jedna])
+        do_dziel.remove(do_dziel[jedna])
+
+    #sortowanie
+
+    return do_dziel, odjeta
 
 def main():
-    lis1 = [1, 2, 3, 5, 8]
-    lis2 = [2, 4, 6, 8, 10]
+    dziel()
+    # # lis1 = [1, 2, 3, 5, 8]
+    # # lis2 = [2, 4, 6, 8, 10]
     print(merge(lis1, lis2))
     #generator()
     #zbiory()
