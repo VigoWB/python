@@ -83,28 +83,31 @@ def merge(lis1: list, lis2: list) -> list:
             ptra += 1
             continue
     return lismerg
-
-def dziel()->list:
+def genlist(rozmiar:int, wmin: int, wmax:int) -> list:
     do_dziel: list = []
-    for tro in range(5):
-        do_dziel.append(random.randint(5,15))
+    for tro in range(rozmiar):
+        do_dziel.append(random.randint(wmin, wmax))
     print(f"Lista do dzielenia: ", do_dziel)
+    return do_dziel
 
+def dziel(arg: list)->list:
     # dzielenie
     odjeta: list = []
-    for jedna in range(len(do_dziel)//2):
-        odjeta.append(do_dziel[jedna])
-        do_dziel.remove(do_dziel[jedna])
+
+    for jedna in range(len(arg)//2):
+        odjeta.append(arg[jedna])
+        arg.remove(arg[jedna])
 
     #sortowanie
 
-    return do_dziel, odjeta
+    return arg, odjeta
 
 def main():
-    dziel()
-    # # lis1 = [1, 2, 3, 5, 8]
-    # # lis2 = [2, 4, 6, 8, 10]
-    print(merge(lis1, lis2))
+    losowalista = genlist(10,1,20)
+    dziel(losowalista)
+    # lis1 = [1, 2, 3, 5, 8]
+    # lis2 = [2, 4, 6, 8, 10]
+    # print(merge(lis1, lis2))
     #generator()
     #zbiory()
 
