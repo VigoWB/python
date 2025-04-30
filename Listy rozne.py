@@ -83,6 +83,9 @@ def merge(lis1: list, lis2: list) -> list:
             ptra += 1
             continue
     return lismerg
+
+
+
 def genlist(rozmiar:int, wmin: int, wmax:int) -> list:
     do_dziel: list = []
     for tro in range(rozmiar):
@@ -90,21 +93,26 @@ def genlist(rozmiar:int, wmin: int, wmax:int) -> list:
     print(f"Lista do dzielenia: ", do_dziel)
     return do_dziel
 
+
+
 def dziel(arg: list)->list:
-    # dzielenie
+
     odjeta: list = []
-
-    for jedna in range(len(arg)//2):
-        odjeta.append(arg[jedna])
-        arg.remove(arg[jedna])
-
-    #sortowanie
-
+    if len(arg) == 2:
+        # tu uzupelnienie
+        return merge(arg[:1], arg[-1:0])
+    else:
+        if len(arg) > 2:
+            for jedna in range(len(arg)//2):
+                odjeta.append(arg[jedna])
+                arg.remove(arg[jedna])
     return arg, odjeta
 
+
 def main():
-    losowalista = genlist(10,1,20)
-    dziel(losowalista)
+    losowalista = genlist(4,1,20)
+    lis1, lis2 = dziel(losowalista)
+    print(merge(lis1, lis2))
     # lis1 = [1, 2, 3, 5, 8]
     # lis2 = [2, 4, 6, 8, 10]
     # print(merge(lis1, lis2))
