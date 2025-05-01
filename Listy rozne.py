@@ -1,5 +1,5 @@
 import random
-random.seed(1)
+random.seed(0)
 
 def lista(policz):
     #print(f"Lista ma dlugosc:  {len(lista)}")
