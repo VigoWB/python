@@ -98,14 +98,18 @@ def genlist(rozmiar:int, wmin: int, wmax:int) -> list:
 def dziel(arg: list)->list:
 
     odjeta: list = []
+    dl = len(arg)
     if len(arg) == 2:
-        # tu uzupelnienie
-        return merge(arg[:1], arg[-1:0])
+        if arg[0] < arg[1]:
+            return merge(arg[:1], arg[-1:0])
     else:
         if len(arg) > 2:
-            for jedna in range(len(arg)//2):
-                odjeta.append(arg[jedna])
-                arg.remove(arg[jedna])
+            for podziel in arg:
+                odjeta.append(arg[dl//2])
+                arg.remove(arg[dl//2])
+            # for jedna in range(dl//2):
+            #     odjeta.append(arg[jedna])
+            #     arg.remove(arg[jedna])
     return arg, odjeta
 
 
