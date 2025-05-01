@@ -105,8 +105,9 @@ def dziel(arg: list)->tuple[list, list]:
     else:
         if len(arg) > 2:
             for podziel in arg:
-                odjeta.append(arg[dl//2])
-                arg.remove(arg[dl//2])
+                if podziel < podziel+1:
+                    odjeta.append(arg[dl//2])
+                    arg.remove(arg[dl//2])
             # for jedna in range(dl//2):
             #     odjeta.append(arg[jedna])
             #     arg.remove(arg[jedna])
