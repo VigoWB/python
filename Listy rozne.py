@@ -95,7 +95,7 @@ def genlist(rozmiar:int, wmin: int, wmax:int) -> list:
 
 
 
-def dziel(arg: list)->list:
+def dziel(arg: list)->tuple[list, list]:
 
     odjeta: list = []
     dl = len(arg)
