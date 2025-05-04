@@ -95,21 +95,20 @@ def genlist(rozmiar:int, wmin: int, wmax:int) -> list:
 
 
 
-def dziel(arg: list)-> list: #tuple[list, list]:
+def dziel(arg: list)-> list:
     if len(arg) == 2:
-        return merge(arg[:1], arg[-1:0])
+        return merge(arg[:1], arg[-1:])
     if len(arg) == 1:
         return merge(arg[:1], [])
     else:
         srodek = len(arg) // 2
         return merge(dziel(arg[0:srodek]), dziel(arg[srodek:len(arg)]))
-    return
 
 
 def main():
     losowalista = genlist(4,1,20)
-    lis1, lis2 = dziel(losowalista)
-    print(merge())
+    print(dziel(losowalista))
+    # print(merge())
     # lis1 = [1, 2, 3, 5, 8]
     # lis2 = [2, 4, 6, 8, 10]
     # print(merge(lis1, lis2))
