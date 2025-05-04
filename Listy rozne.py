@@ -2,7 +2,7 @@ import random
 random.seed(0)
 
 def lista(policz):
-    #print(f"Lista ma dlugosc:  {len(lista)}")
+
     nilosc = 0
     pilosc = 0
     for i in policz:

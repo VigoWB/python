@@ -20,13 +20,24 @@ def slownik(instrukcje):
 def wykonaj(ins: Instrukcja, data: dict) -> int:
     print(ins)
     if ins.operacja == 'ASSIGN':
+        if type(ins.argumenty[0]) == int:
+            return ins.argumenty[0]
+        else:
+            return wykonaj(data[ins.argumenty[0]], data)
 
-        return ins.wynik[0]
+
 
     print(f"Rozwazam {ins.wynik}")
     argumenty = {}
     for arg in ins.argumenty:
-        argumenty[ins.wynik] = wykonaj(data[arg], data)
+        argumenty[arg] = wykonaj(data[arg], data)
+
+    if ins.operacja == 'OR':
+        return argumenty[ins.argumenty[0]] | argumenty[ins.argumenty[1]]
+
+    if ins.operacja == 'AND':
+        return argumenty[ins.argumenty[0]] & argumenty[ins.argumenty[1]]
+
 
     return 1
     # x & y
