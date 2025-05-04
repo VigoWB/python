@@ -3,8 +3,8 @@ from Advent_2015.scaffolding.utils import splitLines
 
 
 def wczytaj()-> list[Instrukcja]:
-    linie = splitLines('test.txt')
-    # linie = splitLines('Day7_input.txt')
+    # linie = splitLines('test.txt')
+    linie = splitLines('Day7_input.txt')
     instrukcje: list[Instrukcja] = []
     for linia in linie:
         instrukcje.append(Instrukcja(linia))
@@ -37,6 +37,15 @@ def wykonaj(ins: Instrukcja, data: dict) -> int:
 
     if ins.operacja == 'AND':
         return argumenty[ins.argumenty[0]] & argumenty[ins.argumenty[1]]
+
+    if ins.operacja == 'RSHIFT':
+        return argumenty[ins.argumenty[0]] >> argumenty[ins.argumenty[1]]
+
+    if ins.operacja == 'LSHIFT':
+        return argumenty[ins.argumenty[0]] << argumenty[ins.argumenty[1]]
+
+    if ins.operacja == 'NOT':
+        return ~argumenty[ins.argumenty[0]]
 
 
     return 1
