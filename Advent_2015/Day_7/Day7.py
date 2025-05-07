@@ -15,6 +15,7 @@ def slownik(instrukcje):
     lista_znaczkow: dict = {}
     for ins in instrukcje:
         lista_znaczkow[ins.wynik] = ins
+    lista_znaczkow['b'] = Instrukcja('956 -> b')
     return lista_znaczkow
 
 def wykonaj(ins: Instrukcja, data: dict) -> int:
@@ -34,7 +35,7 @@ def wykonaj(ins: Instrukcja, data: dict) -> int:
     for arg in ins.argumenty:
         if type(arg) == str:
             if arg in cache.keys():
-                return cache[arg]
+                argumenty[arg] = cache[arg]
             else:
                 argumenty[arg] = wykonaj(data[arg], data)
         else:
