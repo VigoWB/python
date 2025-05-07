@@ -25,12 +25,13 @@ def wykonaj(ins: Instrukcja, data: dict) -> int:
         else:
             return wykonaj(data[ins.argumenty[0]], data)
 
-
-
     print(f"Rozwazam {ins.wynik}")
     argumenty = {}
     for arg in ins.argumenty:
-        argumenty[arg] = wykonaj(data[arg], data)
+        if type(arg) == str:
+            argumenty[arg] = wykonaj(data[arg], data)
+        else:
+            argumenty[arg] = arg
 
     if ins.operacja == 'OR':
         return argumenty[ins.argumenty[0]] | argumenty[ins.argumenty[1]]
