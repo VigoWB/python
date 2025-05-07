@@ -19,37 +19,45 @@ def slownik(instrukcje):
 
 def wykonaj(ins: Instrukcja, data: dict) -> int:
     print(ins)
+    wynik = None
     if ins.operacja == 'ASSIGN':
         if type(ins.argumenty[0]) == int:
             return ins.argumenty[0]
         else:
-            return wykonaj(data[ins.argumenty[0]], data)
+            if ins.argumenty[0] in cache.keys():
+                return cache[ins.argumenty[0]]
+            else:
+                return wykonaj(data[ins.argumenty[0]], data)
 
     print(f"Rozwazam {ins.wynik}")
     argumenty = {}
     for arg in ins.argumenty:
         if type(arg) == str:
-            argumenty[arg] = wykonaj(data[arg], data)
+            if arg in cache.keys():
+                return cache[arg]
+            else:
+                argumenty[arg] = wykonaj(data[arg], data)
         else:
             argumenty[arg] = arg
 
     if ins.operacja == 'OR':
-        return argumenty[ins.argumenty[0]] | argumenty[ins.argumenty[1]]
+        wynik = argumenty[ins.argumenty[0]] | argumenty[ins.argumenty[1]]
 
     if ins.operacja == 'AND':
-        return argumenty[ins.argumenty[0]] & argumenty[ins.argumenty[1]]
+        wynik = argumenty[ins.argumenty[0]] & argumenty[ins.argumenty[1]]
 
     if ins.operacja == 'RSHIFT':
-        return argumenty[ins.argumenty[0]] >> argumenty[ins.argumenty[1]]
+        wynik = argumenty[ins.argumenty[0]] >> argumenty[ins.argumenty[1]]
 
     if ins.operacja == 'LSHIFT':
-        return argumenty[ins.argumenty[0]] << argumenty[ins.argumenty[1]]
+        wynik = argumenty[ins.argumenty[0]] << argumenty[ins.argumenty[1]]
 
     if ins.operacja == 'NOT':
-        return ~argumenty[ins.argumenty[0]]
+        wynik = ~argumenty[ins.argumenty[0]]
 
+    cache[ins.wynik] = wynik
 
-    return 1
+    return wynik
     # x & y
 
 
@@ -87,6 +95,7 @@ def main():
     #     print(f"FIB {i} - {fib(i)}")
 
 
+cache = {}
 
 pamiec = [0 for i in range(10_000)]
 pamiec[0] = 1
@@ -102,6 +111,8 @@ def fib(n):
     if n == 0 or n == 1:
         return 1
     return fib(n-1) + fib(n-2)
+
+
 
 if __name__ == '__main__':
     main()
