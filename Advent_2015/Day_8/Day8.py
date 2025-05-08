@@ -7,10 +7,16 @@ def wykonaj():
     for linia in tekst:
         znaki += len(linia)
         litery += sum(c.isalpha() for c in linia)
-        if '\"' in linia:
-            print(f"tu jest slasz ", {linia})
-        if '\\' in linia:
-            print(f"tu jest 2x slasz'", {linia})
+        # if "\"" in linia:
+        #     print(f"slasz i cudzyslow", {linia})
+        #     continue
+        # if '\\' in linia:
+        #     print(f"tu jest 2x slasz'", {linia})
+        if 'c' in linia:
+            if linia.index('c') + 2 < len(linia):
+                print(f"",linia[linia.index('c') + 2])
+            if linia.index('c') + 2 >= len(linia):
+                print('za dlugie')
         # if '\x' in linia:
         #     print(f"tu jest \ x", {linia})
     return
