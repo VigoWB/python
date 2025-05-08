@@ -1,11 +1,20 @@
 from Advent_2015.scaffolding.utils import splitLines
 
-def wykonaj():
-    tekst = splitLines('Day8_input.txt')
+def wczytaj():
+    linia = splitLines('Day8_input.txt')
+    return linia
+
+def wykonaj(linia: str)->tuple[int, int]:
+    tekst = linia
     znaki = 0
     litery = 0
     for linia in tekst:
         print(linia, len(linia))
+        for znak in linia:
+            if '\\' in linia:
+                continue
+            print(znak)
+            znaki += 1
         # znaki += len(linia)
         # litery += sum(c.isalpha() for c in linia)
 
@@ -15,11 +24,11 @@ def wykonaj():
         #         print(f"",linia[linia.index('c') + 2])
         #     if linia.index('c') + 2 >= len(linia):
         #         print('za dlugie')
-    return
+    return znaki, litery
 
 def main():
-    # print(wczytaj())
-    print(wykonaj())
+    wczytaj()
+    print(wykonaj(wczytaj()))
 
 if __name__ == '__main__':
     main()
