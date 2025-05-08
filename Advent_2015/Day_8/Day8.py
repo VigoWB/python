@@ -5,20 +5,16 @@ def wykonaj():
     znaki = 0
     litery = 0
     for linia in tekst:
-        znaki += len(linia)
-        litery += sum(c.isalpha() for c in linia)
-        # if "\"" in linia:
-        #     print(f"slasz i cudzyslow", {linia})
-        #     continue
-        # if '\\' in linia:
-        #     print(f"tu jest 2x slasz'", {linia})
-        if 'c' in linia:
-            if linia.index('c') + 2 < len(linia):
-                print(f"",linia[linia.index('c') + 2])
-            if linia.index('c') + 2 >= len(linia):
-                print('za dlugie')
-        # if '\x' in linia:
-        #     print(f"tu jest \ x", {linia})
+        print(linia, len(linia))
+        # znaki += len(linia)
+        # litery += sum(c.isalpha() for c in linia)
+
+        # if 'c' in linia:
+        #     if linia.index('c') + 2 < len(linia):
+        #         print(ord('\\'), format(ord('\\'), '08b')) # kod ASCII i konwersja na 8-bitowy binarny string
+        #         print(f"",linia[linia.index('c') + 2])
+        #     if linia.index('c') + 2 >= len(linia):
+        #         print('za dlugie')
     return
 
 def main():
