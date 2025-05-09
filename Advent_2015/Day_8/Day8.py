@@ -6,12 +6,11 @@ def wczytaj():
 
 def wykonaj(linia: str)->tuple[int, int]:
     tekst = linia
-    znaki = 0
     litery = 0
     for linia in tekst:
         res = policz(linia)
         print(linia, len(linia), res)
-    return 1, 1 #tu beda kiedys wyniki
+    return res, litery
 
 
 
@@ -19,7 +18,7 @@ def policz(linia: str)->int:
     znaki = 0
     for znak in linia[1:-1]:
         if znak == '\\':
-            if znak in linia[znak+1] == 'x':
+            if znak in linia[+1] == 'x':
                 print('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
             continue
         znaki += 1
@@ -31,7 +30,7 @@ def policz(linia: str)->int:
         #         print(f"",linia[linia.index('c') + 2])
         #     if linia.index('c') + 2 >= len(linia):
         #         print('za dlugie')
-    return znaki, litery
+    return znaki
 
 def main():
     wczytaj()
