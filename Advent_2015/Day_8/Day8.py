@@ -19,8 +19,12 @@ def policz(linia: str)->int:
     znaki = 0
     for znak in linia[1:-1]:
         if znak == '\\':
+            if znak in linia[znak+1] == 'x':
+                print('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
             continue
         znaki += 1
+
+
     return znaki
 
 
