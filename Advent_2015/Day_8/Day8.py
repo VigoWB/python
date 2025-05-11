@@ -19,17 +19,18 @@ def policz(linia: str)->int:
     znaki = 0
     for pozycja, znak in enumerate(linia):
         if znak == '\\':
-            isescape(linia[pozycja:pozycja+4])
+            if isescape(linia[pozycja:pozycja+4]) == True:
+                print(f"test ZDANy ", linia)
+                # print(isescape(linia[pozycja:pozycja+4]))
             continue
-        # if znak == '\x':
         znaki += 1
     return znaki
 
 def isescape(linia: str) -> bool:
     print(f'TESTY LINI: ', len(linia), linia)
     if linia[0] == '\\' and linia[1] == 'x' and len(linia) == 4:
-        # if linia[-1] == 'a-f' and linia[-2] == 0-9:
-        return True
+        if linia[-2] == 0: '''linia[-1] == 'a-f' and :'''
+            return True
     else:
         return False
 
