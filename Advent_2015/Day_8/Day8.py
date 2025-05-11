@@ -27,9 +27,10 @@ def policz(linia: str)->int:
     return znaki
 
 def isescape(linia: str) -> bool:
-    print(f'TESTY LINI: ', len(linia), linia)
+    print(f'TESTY LINI: ', linia)
     if linia[0] == '\\' and linia[1] == 'x' and len(linia) == 4:
-        if linia[-2] == 0: '''linia[-1] == 'a-f' and :'''
+         # if linia[:-1] == 0:
+        if linia[-2] == znak in range(0,9) and linia[-1] == range('a-f'):
             return True
     else:
         return False
