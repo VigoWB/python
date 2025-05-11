@@ -17,12 +17,13 @@ def wykonaj(linia: str)->tuple[int, int]:
 
 def policz(linia: str)->int:
     znaki = 0
-    for znak in linia:
+    for pozycja, znak in enumerate(linia):
         if znak == '\\':
-            isEscape(linia[znak:znak+3])
+            isEscape(linia[pozycja:pozycja+3])
             continue
         # if znak == '\x':
         znaki += 1
+    return znaki
 
 def isEscape(linia: str) -> bool:
     print(f'WWWWWWWW',linia)
@@ -34,7 +35,7 @@ def isEscape(linia: str) -> bool:
         #         print(f"",linia[linia.index('c') + 2])
         #     if linia.index('c') + 2 >= len(linia):
         #         print('za dlugie')
-    return znaki
+
 
 def main():
     wczytaj()
