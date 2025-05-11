@@ -1,4 +1,5 @@
-"abc\x00"
+"abc\x0"
+"dfgsac\x00gg"
 "abc\x00abc"
 "abc\xzzabc"
 "abxabx\x"
