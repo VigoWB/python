@@ -1,4 +1,4 @@
-abc\x00
-abc\x00abc
-abc\xzzabc
-abxabx\x
+"abc\x00"
+"abc\x00abc"
+"abc\xzzabc"
+"abxabx\x"

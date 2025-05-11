@@ -9,24 +9,23 @@ def wykonaj(linia: str)->tuple[int, int]:
     tekst = linia
     litery = 0
     for linia in tekst:
-        res = policz(linia)
-        print(linia, len(linia), res)
+        res = policz(linia[1:-1])
+        # print(linia, len(linia), res)
     return res, litery
 
 
 
 def policz(linia: str)->int:
     znaki = 0
-    for znak in linia[1:-1]:
+    for znak in linia:
         if znak == '\\':
-            isEscape(linia[znak]+3)
+            isEscape(linia[znak:znak+3])
             continue
         # if znak == '\x':
-
         znaki += 1
 
-def isEscape(znak: str) -> bool:
-    print(znak)
+def isEscape(linia: str) -> bool:
+    print(f'WWWWWWWW',linia)
     return
 
         # if 'c' in linia:
