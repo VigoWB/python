@@ -1,5 +1,5 @@
 "abc\x0"
-"dfgsac\x00gg"
+"dfgsac\x0Dgg"
 "abc\x00abc"
-"abc\xzzabc"
+"abc\x2dabc"
 "abxabx\x"
