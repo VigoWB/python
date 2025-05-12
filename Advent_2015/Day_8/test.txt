@@ -3,3 +3,7 @@
 "abc\x00abc"
 "abc\x2dabc"
 "abxabx\x"
+"k\"a"
+"\xPP"
+"\x0A"
+"jdaDA\\"
