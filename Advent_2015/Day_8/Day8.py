@@ -8,8 +8,9 @@ def wczytaj():
 def wykonaj(linia: str)->tuple[int, int]:
     tekst = linia
     litery = 0
+    res = 0
     for linia in tekst:
-        res = policz(linia[1:-1])
+        res += policz(linia[1:-1])
         litery += len(linia)
         # print(linia, len(linia), res)
     return res, litery
@@ -26,8 +27,8 @@ def policz(linia: str)->int:
                 # print(isescape(linia[pozycja:pozycja+4]))
             if not isescape(linia[pozycja:pozycja + 4]):
                 print(f"test niezdany ", linia)
+                znaki += 2
             continue
-        znaki += 1
     return znaki
 
 def isescape(linia: str) -> bool:
