@@ -24,6 +24,8 @@ def policz(linia: str)->int:
                 print(f"test ZDANy ", linia)
                 znaki += 4
                 # print(isescape(linia[pozycja:pozycja+4]))
+            if not isescape(linia[pozycja:pozycja + 4]):
+                print(f"test niezdany ", linia)
             continue
         znaki += 1
     return znaki
