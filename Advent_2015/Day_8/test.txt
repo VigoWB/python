@@ -6,4 +6,5 @@
 "k\"a"
 "\xPP"
 "\x0A"
+"x0A\n"
 "jdaDA\\"

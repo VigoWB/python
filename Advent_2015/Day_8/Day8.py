@@ -32,6 +32,8 @@ def policz(linia: str)->int:
                 # print(f"test niezdany ", linia)
                 znaki += 1
             continue
+        if znak =='\n':
+            print('tu jest N')
     return znaki
 
 def isescape(linia: str) -> bool:
