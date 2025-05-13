@@ -22,22 +22,23 @@ def wykonaj(linia: str)->tuple[int, int]:
 
 def policz(linia: str)->int:
     znaki = 0
-    for pozycja, znak in enumerate(linia):
+    pozycja = 0
+    while pozycja < len(linia):
+        znak = linia[pozycja]
         if znak == '\\':
-            if pozycja == len(linia)-1:
+            if pozycja == len(linia) - 1:
                 znaki += 1
+                pozycja += 1
                 continue
             if isescape(linia[pozycja:pozycja + 4]):
-                # print(f"test ZDANy ", linia)
-                znaki += 4
-                # print(isescape(linia[pozycja:pozycja+4]))
-            else:
-                # print(f"test niezdany ", linia)
                 znaki += 1
-            continue
+                pozycja += 4  # przeskocz 4 znaki, bo to sekwencja ucieczki \xNN
+            else:
+                znaki += 2
+                pozycja += 2  # przeskocz 2 znaki, bo to np. \\ lub \"
         else:
             znaki += 1
-
+            pozycja += 1
     return znaki
 
 def isescape(linia: str) -> bool:
