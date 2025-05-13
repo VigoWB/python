@@ -1,8 +1,8 @@
 from Advent_2015.scaffolding.utils import splitLines
 
 def wczytaj():
-    # linia = splitLines('Day8_input.txt')
-    linia = splitLines('test.txt')
+    linia = splitLines('Day8_input.txt')
+    # linia = splitLines('test.txt')
     return linia
 
 def wykonaj(linia: str)->tuple[int, int]:
@@ -34,8 +34,13 @@ def policz(linia: str)->int:
                 znaki += 1
                 pozycja += 4  # przeskocz 4 znaki, bo to sekwencja ucieczki \xNN
             else:
-                znaki += 2
-                pozycja += 2  # przeskocz 2 znaki, bo to np. \\ lub \"
+                if linia[pozycja + 1] in ["\\", "\""]:  # przeskocz 2 znaki, bo to np. \\ lub \"
+                    znaki += 1
+                    pozycja += 2
+                else:
+                    znaki += 1
+                    pozycja += 1
+
         else:
             znaki += 1
             pozycja += 1
