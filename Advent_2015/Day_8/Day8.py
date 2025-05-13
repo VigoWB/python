@@ -1,8 +1,8 @@
 from Advent_2015.scaffolding.utils import splitLines
 
 def wczytaj():
-    linia = splitLines('Day8_input.txt')
-    # linia = splitLines('test.txt')
+    # linia = splitLines('Day8_input.txt')
+    linia = splitLines('test.txt')
     return linia
 
 def wykonaj(linia: str)->tuple[int, int]:
@@ -24,9 +24,9 @@ def policz(linia: str)->int:
     znaki = 0
     for pozycja, znak in enumerate(linia):
         if znak == '\\':
-            if linia[-1] == '\\':
+            if pozycja == len(linia)-1:
                 znaki += 1
-                return False
+                continue
             if isescape(linia[pozycja:pozycja + 4]):
                 # print(f"test ZDANy ", linia)
                 znaki += 4
@@ -35,6 +35,9 @@ def policz(linia: str)->int:
                 # print(f"test niezdany ", linia)
                 znaki += 1
             continue
+        else:
+            znaki += 1
+
     return znaki
 
 def isescape(linia: str) -> bool:
