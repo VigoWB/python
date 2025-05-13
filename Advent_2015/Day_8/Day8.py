@@ -24,6 +24,9 @@ def policz(linia: str)->int:
     znaki = 0
     for pozycja, znak in enumerate(linia):
         if znak == '\\':
+            if linia[-1] == '\\':
+                znaki += 1
+                return False
             if isescape(linia[pozycja:pozycja + 4]):
                 # print(f"test ZDANy ", linia)
                 znaki += 4
@@ -32,13 +35,9 @@ def policz(linia: str)->int:
                 # print(f"test niezdany ", linia)
                 znaki += 1
             continue
-        if znak =='\n':
-            print('tu jest N')
     return znaki
 
 def isescape(linia: str) -> bool:
-    if linia[-1] == '\\':
-        return False
     if linia[1] != 'x':
         return False
     if len(linia) != 4:
@@ -54,7 +53,8 @@ def isescape(linia: str) -> bool:
 
 def main():
     wczytaj()
-    print(wykonaj(wczytaj()))
+    res, litery = wykonaj(wczytaj())
+    print(litery - res)
 
 if __name__ == '__main__':
     main()
