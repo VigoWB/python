@@ -19,6 +19,10 @@ def wykonaj(linia: str)->tuple[int, int]:
     return res, litery
 
 
+def partdwa():
+
+    return
+
 
 def policz(linia: str)->int:
     znaki = 0
@@ -40,7 +44,6 @@ def policz(linia: str)->int:
                 else:
                     znaki += 1
                     pozycja += 1
-
         else:
             znaki += 1
             pozycja += 1
