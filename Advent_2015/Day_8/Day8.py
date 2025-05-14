@@ -1,8 +1,8 @@
 from Advent_2015.scaffolding.utils import splitLines
 
 def wczytaj():
-    linia = splitLines('Day8_input.txt')
-    # linia = splitLines('test.txt')
+    # linia = splitLines('Day8_input.txt')
+    linia = splitLines('test.txt')
     return linia
 
 def wykonaj(linia: str)->tuple[int, int]:
@@ -10,7 +10,7 @@ def wykonaj(linia: str)->tuple[int, int]:
     litery = 0
     res = 0
     for linia in tekst:
-        tres = policz(linia[1:-1])
+        tres = policz(linia[1:-1])# pierwsza czesc zadania
         res += tres
         tlitery = len(linia)
         litery += tlitery
@@ -19,9 +19,47 @@ def wykonaj(linia: str)->tuple[int, int]:
     return res, litery
 
 
-def partdwa():
+def wykonajdwa(linia: str)->tuple[int, int]:
+    tekst = linia
+    litery = 0
+    res = 0
+    for linia in tekst:
+        tres = partdwa(linia)
+        res += tres
+        tlitery = len(linia)
+        litery += tlitery
+        print(linia, tlitery, tres)
+        # print(linia, len(linia), res)
+    return res, litery
 
-    return
+def partdwa(linia: str) -> int:
+    znaki = 0
+    pozycja = 0
+    while pozycja < len(linia):
+        znak = linia[pozycja]
+        if znak == '\"':
+            if pozycja == len(linia) - 1:
+                znaki += 3
+                pozycja += 1
+                continue
+            if pozycja == len(linia) - len(linia):
+                znaki += 3
+                pozycja += 1
+                continue
+        if znak == '\\':
+            if pozycja == linia[1:-1]:
+                if pozycja + 1 == '\"':
+                    znaki += 4
+                    pozycja += 2
+                else:
+                    znaki += 1
+                    pozycja += 1
+                continue
+        else:
+            znaki += 1
+            pozycja += 1
+
+    return znaki
 
 
 def policz(linia: str)->int:
@@ -49,6 +87,8 @@ def policz(linia: str)->int:
             pozycja += 1
     return znaki
 
+
+
 def isescape(linia: str) -> bool:
     if linia[1] != 'x':
         return False
@@ -65,7 +105,7 @@ def isescape(linia: str) -> bool:
 
 def main():
     wczytaj()
-    res, litery = wykonaj(wczytaj())
+    res, litery = wykonajdwa(wczytaj())
     print(litery - res)
 
 if __name__ == '__main__':
