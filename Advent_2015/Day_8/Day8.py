@@ -96,7 +96,7 @@ def isescape(linia: str) -> bool:
 def main():
     wczytaj()
     res, litery = wykonajdwa(wczytaj())
-    print(litery - res)
+    print(res - litery)
 
 if __name__ == '__main__':
     main()
