@@ -1,8 +1,7 @@
 from Advent_2015.scaffolding.utils import splitLines
 
 def wczytaj():
-    linia = splitLines('Day8_input.txt')
-    # linia = splitLines('test.txt')
+    linia = splitLines('Day9_input.txt')
     return linia
 
 def wykonaj(linia: str)->tuple[int, int]:
@@ -10,11 +9,11 @@ def wykonaj(linia: str)->tuple[int, int]:
     litery = 0
     res = 0
     for linia in tekst:
-        tres = policz(linia[1:-1])# pierwsza czesc zadania
-        res += tres
+
+        res += len(linia)
         tlitery = len(linia)
         litery += tlitery
-        print(linia, tlitery, tres)
+        print(linia, tlitery)
         # print(linia, len(linia), res)
     return res, litery
 
@@ -24,9 +23,9 @@ def wykonaj(linia: str)->tuple[int, int]:
 
 
 def main():
-    wczytaj()
-    res, litery = wykonajdwa(wczytaj())
-    print(res - litery)
+    print(wczytaj())
+
+
 
 if __name__ == '__main__':
     main()
