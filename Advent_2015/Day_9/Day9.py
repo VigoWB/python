@@ -4,20 +4,23 @@ def wczytaj():
     linia = splitLines('Day9_input.txt')
     return linia
 
-def wykonaj(linia: str):
-    tekst = linia
-    for linia in tekst:
-        dane = podzial(linia)
+def wykonaj(linie: str):
+    tekst = linie
+    for linie in tekst:
+        dane = podzial(linie)
         print(dane)
     return
 
-def podzial(linia: str)->tuple[str, str, int]:
-    czesci = linia.split()
-    for dane in czesci:
-        zkad = czesci[0]
-        dokad = czesci[2]
-        odleglosc = czesci[-1]
-    return zkad, dokad, odleglosc
+def podzial(linie: list[str])->dict[tuple[str, str], int]:
+    polaczenia ={}
+    for linia in linie:
+        linia = linie.split()
+        zkad = linia[0]
+        dokad = linia[2]
+        odleglosc = int(linia[-1])
+        polaczenia[(zkad, dokad)] = odleglosc
+        polaczenia[(dokad, zkad)] = odleglosc
+    return polaczenia
 
 
 
