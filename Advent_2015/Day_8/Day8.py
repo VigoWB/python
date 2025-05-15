@@ -38,15 +38,13 @@ def partdwa(linia: str) -> int:
     dlugosc = len(linia)
     while pozycja < dlugosc:
         znak = linia[pozycja]
-        if znak == '\\':
-            znaki += 1
+        if znak == '"':
+            znaki += 2
             pozycja += 1
-            if pozycja < dlugosc and linia[pozycja] == '"':
-                znaki += 4
-                pozycja += 2
-            if pozycja < dlugosc and linia[pozycja-1] == '"':
-                znaki += 5
-                pozycja += 1
+            continue
+        if znak == '\\':
+            znaki += 2
+            pozycja += 1
             continue
         else:
             znaki += 1
