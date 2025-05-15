@@ -1,8 +1,8 @@
 from Advent_2015.scaffolding.utils import splitLines
 
 def wczytaj():
-    # linia = splitLines('Day8_input.txt')
-    linia = splitLines('test.txt')
+    linia = splitLines('Day8_input.txt')
+    # linia = splitLines('test.txt')
     return linia
 
 def wykonaj(linia: str)->tuple[int, int]:
@@ -33,17 +33,17 @@ def wykonajdwa(linia: str)->tuple[int, int]:
     return res, litery
 
 def partdwa(linia: str) -> int:
-    znaki = 0
+    znaki = 2
     pozycja = 0
     dlugosc = len(linia)
     while pozycja < dlugosc:
         znak = linia[pozycja]
         if znak == '"':
-            znaki += 3
+            znaki += 2
             pozycja += 1
             continue
         if znak == '\\':
-            znaki += 3
+            znaki += 2
             pozycja += 1
             continue
         else:
