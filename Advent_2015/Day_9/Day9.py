@@ -4,26 +4,26 @@ def wczytaj():
     linia = splitLines('Day9_input.txt')
     return linia
 
-def wykonaj(linia: str)->tuple[int, int]:
+def wykonaj(linia: str):
     tekst = linia
-    litery = 0
-    res = 0
     for linia in tekst:
+        dane = podzial(linia)
+        print(dane)
+    return
 
-        res += len(linia)
-        tlitery = len(linia)
-        litery += tlitery
-        print(linia, tlitery)
-        # print(linia, len(linia), res)
-    return res, litery
-
-
+def podzial(linia: str)->tuple[str, str, int]:
+    czesci = linia.split()
+    for dane in czesci:
+        zkad = czesci[0]
+        dokad = czesci[2]
+        odleglosc = czesci[-1]
+    return zkad, dokad, odleglosc
 
 
 
 
 def main():
-    print(wczytaj())
+    print(wykonaj(wczytaj()))
 
 
 
