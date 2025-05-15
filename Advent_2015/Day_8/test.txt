@@ -1,5 +1,5 @@
-"aaa\xZZ\"
-"\x0A\x0a\"
+"aaa\"aaa"
+"\x27"
 "abc\x0"
 "dfgsac\x0Dgg"
 "abc\x00abc"

@@ -35,30 +35,22 @@ def wykonajdwa(linia: str)->tuple[int, int]:
 def partdwa(linia: str) -> int:
     znaki = 0
     pozycja = 0
-    while pozycja < len(linia):
+    dlugosc = len(linia)
+    while pozycja < dlugosc:
         znak = linia[pozycja]
-        if znak == '\"':
-            if pozycja == len(linia) - 1:
-                znaki += 3
-                pozycja += 1
-                continue
-            if pozycja == len(linia) - len(linia):
-                znaki += 3
-                pozycja += 1
-                continue
         if znak == '\\':
-            if pozycja == linia[1:-1]:
-                if pozycja + 1 == '\"':
-                    znaki += 4
-                    pozycja += 2
-                else:
-                    znaki += 1
-                    pozycja += 1
-                continue
+            znaki += 1
+            pozycja += 1
+            if pozycja < dlugosc and linia[pozycja] == '"':
+                znaki += 4
+                pozycja += 2
+            if pozycja < dlugosc and linia[pozycja-1] == '"':
+                znaki += 5
+                pozycja += 1
+            continue
         else:
             znaki += 1
             pozycja += 1
-
     return znaki
 
 
