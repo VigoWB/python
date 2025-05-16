@@ -5,7 +5,7 @@ class mapki:
 
     def dodaj(self, nazwa: str) -> int:
         if nazwa not in self.miasta.keys():
-            lepszanazwa = len(self.miasta)
+            lepszanazwa: int = len(self.miasta)
             self.miasta[nazwa] = lepszanazwa
             return lepszanazwa
         else:

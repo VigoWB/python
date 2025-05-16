@@ -30,8 +30,11 @@ def podzial(linia: str) -> dict:
 
 
 def main():
+    mapa = mapki(wczytaj())
+    mapa.wykonaj(linie)
+    print("Miasta i ich numery:")
 
-    print(wykonaj(wczytaj()))
+
 
 
 
