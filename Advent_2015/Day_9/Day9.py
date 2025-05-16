@@ -8,15 +8,14 @@ def wykonaj(linie: str):
     tekst = linie
     miasta = {}
 
-    for linie in tekst:
-        dane = podzial(linie)
+    for linia in tekst:
+        dane = podzial(linia)
         for asd in dane:
-            numer = len(miasta)
-            miasta[asd[0]] = numer + 1
-            if miasta[asd[0]] == miasta.keys():
-                return
-            else:
+            if asd[0] not in miasta:
+                numer = len(miasta)
                 miasta[asd[0]] = numer + 1
+            else:
+                pass
 
 
     print(len(miasta),miasta)
