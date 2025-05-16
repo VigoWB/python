@@ -42,7 +42,7 @@ def podzial(linia: str) -> dict:
 
 
 def main():
-    print("Miasta i ich numery przez funkcje:", wykonaj(wczytaj()))
+    print("Miasta i ich numery przez funkcje:", wczytaj())
 
 
 
