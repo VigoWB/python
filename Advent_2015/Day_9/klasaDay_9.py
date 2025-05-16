@@ -1,4 +1,4 @@
-class mapki:
+class Mapki:
     def __init__(self, linia: str):
         self.miasta: dict = {}
         self.polaczenia: dict = {}
