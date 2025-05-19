@@ -32,19 +32,16 @@ def wykonaj(linie: list[str]) -> dict[str, int]:
     return miasta
 
 def podzial(linia: str) -> dict:
-    slowa = linia.split()
-    zkad = slowa[0]
-    dokad = slowa[2]
-    odleglosc = int(slowa[-1].lstrip('='))
+    wiersz = [item.split() for item in linia]
+    zkad = wiersz[0]
+    dokad = wiersz[2]
+    odleglosc = wiersz[-1]
     return {(zkad, dokad): odleglosc, (dokad, zkad): odleglosc}
 
 
 
-
 def main():
-    print("Miasta i ich numery przez funkcje:", wczytaj())
-
-
+    print("Miasta i ich numery:", wczytaj())
 
 
 
