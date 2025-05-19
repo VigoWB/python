@@ -31,10 +31,10 @@ class Kombinator:
         self.bazoweMiasta = miasta
 
     def kombinacje(self) -> list:
-        lista = [self]
+        lista = self.bazoweMiasta
         kombinacje = list(combinations(lista, 2))
         # tutaj wygeneruj kombinacje za pomoca itertools
-        return [kombinacje]
+        return kombinacje
 
     def pozostale(self, kombinacja: tuple) -> list:
         # tutaj odejmi miasta ktore sa w kombinacji ld tych kotre sa w self.bazoweMiasta

@@ -48,7 +48,7 @@ def main():
     print("Miasta i ich numery:", wczytane)
 
     kombinuje = Kombinator([x for x in range(8)])
-    print(f'sddas', kombinuje)
+    print(f'kombinacje:', kombinuje.kombinacje())
 
 
 if __name__ == '__main__':
