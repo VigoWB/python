@@ -1,6 +1,7 @@
 from Advent_2015.scaffolding.utils import splitLines
 from Advent_2015.Day_9.klasaDay_9 import Mapki
 
+
 def wczytaj() -> tuple[dict, Mapki]:
     surowe_dane = splitLines('Day9_input.txt')
     # przeksztalc wczytane linie na dane (slownik tupli str, str int)
@@ -17,6 +18,7 @@ def wczytaj() -> tuple[dict, Mapki]:
     # zamiast zwracac surowa kolekcje elementow zwracam dane i slownik miast
     return dane, miasta
 
+
 def wykonaj(linie: list[str]) -> dict[str, int]:
     miasta = {}
     numer = 1
@@ -31,20 +33,19 @@ def wykonaj(linie: list[str]) -> dict[str, int]:
                 numer += 1
     return miasta
 
-def podzial(linia: str) -> dict:
-    wiersz = [item.split() for item in linia]
-    zkad = wiersz[0]
-    dokad = wiersz[2]
-    odleglosc = wiersz[-1]
-    return {(zkad, dokad): odleglosc, (dokad, zkad): odleglosc}
 
+def podzial(linie: list[str]) -> dict:
+    slownik = {}
+    for wpis in linie:
+        wynik = wpis.split()
+        slownik[(wynik[0], wynik[2])] = wynik[-1]
+        slownik[(wynik[2], wynik[0])] = wynik[-1]
+    return slownik
 
 
 def main():
-    print("Miasta i ich numery:", wczytaj())
-
-
-
+    wczytane = wczytaj()
+    print("Miasta i ich numery:", wczytane)
 
 
 if __name__ == '__main__':

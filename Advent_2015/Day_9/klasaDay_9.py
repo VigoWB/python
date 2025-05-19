@@ -1,5 +1,5 @@
 class Mapki:
-    def __init__(self, linia: str):
+    def __init__(self):
         self.miasta: dict = {}
         self.polaczenia: dict = {}
 
@@ -17,9 +17,22 @@ class Mapki:
         else:
             return -1
 
+    def __repr__(self):
+        return f"{self.miasta} {self.polaczenia}"
+
     # i ma dwie metody
     # 1. ktora zwraca na zewnatrz wszystkie mozliwe kombinacje
     # 2. ktora zwraca ta sama liste miast - wybrana kombinacja
 
-    # def __repr__(self):
-    #     return f'{self.operacja}, {self.argumenty}, {self.wynik}'
+
+class Kombinator:
+    def __init__(self, miasta: list):
+        self.bazoweMiasta = miasta
+
+    def kombinacje(self) -> list:
+        # tutaj wygeneruj kombinacje za pomoca itertools
+        return []
+
+    def pozostale(self, kombinacja: tuple) -> list:
+        # tutaj odejmi miasta ktore sa w kombinacji ld tych kotre sa w self.bazoweMiasta
+        return []
