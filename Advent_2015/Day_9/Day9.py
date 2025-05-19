@@ -1,5 +1,5 @@
 from Advent_2015.scaffolding.utils import splitLines
-from Advent_2015.Day_9.klasaDay_9 import Mapki
+from Advent_2015.Day_9.klasaDay_9 import Mapki, Kombinator
 
 
 def wczytaj() -> tuple[dict, Mapki]:
@@ -19,19 +19,19 @@ def wczytaj() -> tuple[dict, Mapki]:
     return dane, miasta
 
 
-def wykonaj(linie: list[str]) -> dict[str, int]:
-    miasta = {}
-    numer = 1
-    for linia in linie:
-        dane = podzial(linia)
-        for (skad, dokad) in dane.keys():
-            if skad not in miasta:
-                miasta[skad] = numer
-                numer += 1
-            if dokad not in miasta:
-                miasta[dokad] = numer
-                numer += 1
-    return miasta
+# def wykonaj(linie: list[str]) -> dict[str, int]:
+#     miasta = {}
+#     numer = 1
+#     for linia in linie:
+#         dane = podzial(linia)
+#         for (skad, dokad) in dane.keys():
+#             if skad not in miasta:
+#                 miasta[skad] = numer
+#                 numer += 1
+#             if dokad not in miasta:
+#                 miasta[dokad] = numer
+#                 numer += 1
+#     return miasta
 
 
 def podzial(linie: list[str]) -> dict:
@@ -46,6 +46,9 @@ def podzial(linie: list[str]) -> dict:
 def main():
     wczytane = wczytaj()
     print("Miasta i ich numery:", wczytane)
+
+    kombinuje = Kombinator([x for x in range(8)])
+    print(f'sddas', kombinuje)
 
 
 if __name__ == '__main__':

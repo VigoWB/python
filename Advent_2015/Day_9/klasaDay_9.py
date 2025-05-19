@@ -1,3 +1,4 @@
+from itertools import combinations
 class Mapki:
     def __init__(self):
         self.miasta: dict = {}
@@ -5,7 +6,7 @@ class Mapki:
 
     def dodaj(self, nazwa: str) -> int:
         if nazwa not in self.miasta.keys():
-            lepszanazwa: int = len(self.miasta)
+            lepszanazwa: int = len(self.miasta) +1
             self.miasta[nazwa] = lepszanazwa
             return lepszanazwa
         else:
@@ -30,8 +31,10 @@ class Kombinator:
         self.bazoweMiasta = miasta
 
     def kombinacje(self) -> list:
+        lista = [self]
+        kombinacje = list(combinations(lista, 2))
         # tutaj wygeneruj kombinacje za pomoca itertools
-        return []
+        return [kombinacje]
 
     def pozostale(self, kombinacja: tuple) -> list:
         # tutaj odejmi miasta ktore sa w kombinacji ld tych kotre sa w self.bazoweMiasta
