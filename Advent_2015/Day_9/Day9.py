@@ -38,8 +38,8 @@ def podzial(linie: list[str]) -> dict:
     slownik = {}
     for wpis in linie:
         wynik = wpis.split()
-        slownik[(wynik[0], wynik[2])] = wynik[-1]
-        slownik[(wynik[2], wynik[0])] = wynik[-1]
+        slownik[(wynik[0], wynik[2])] = int(wynik[-1])
+        slownik[(wynik[2], wynik[0])] = int(wynik[-1])
     return slownik
 
 
