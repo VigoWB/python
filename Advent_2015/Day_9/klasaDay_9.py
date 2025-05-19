@@ -17,7 +17,9 @@ class Mapki:
         else:
             return -1
 
-
+    # i ma dwie metody
+    # 1. ktora zwraca na zewnatrz wszystkie mozliwe kombinacje
+    # 2. ktora zwraca ta sama liste miast - wybrana kombinacja
 
     # def __repr__(self):
     #     return f'{self.operacja}, {self.argumenty}, {self.wynik}'
