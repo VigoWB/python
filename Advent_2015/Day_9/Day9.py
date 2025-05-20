@@ -34,13 +34,19 @@ def wczytaj() -> tuple[dict, Mapki]:
 #     return miasta
 
 def perm(trasy: dict, miasta: Mapki):
-    # trasy, miasta = wczytaj()
-    # miasta = Mapki()
-    print(type(miasta))
-    # klucze = miasta.keys()
-    # print(klucze)
-    return
+    klucze = Kombinator(miasta.miasta.keys())
+    return klucze.kombinacje()
 
+
+def odleglosci(trasy: dict, permutacje):
+    for linia in permutacje:
+        for kmm in trasy.values():
+            if linia == trasy.keys():
+                print(f'Permutacja do odleglosci:',linia, kmm)
+
+
+
+    return trasy
 
 
 def podzial(linie: list[str]) -> dict:
@@ -53,15 +59,13 @@ def podzial(linie: list[str]) -> dict:
 
 
 def main():
-    wczytane = wczytaj()
+    # wczytane = wczytaj()
     # print("Miasta i ich numery:", wczytane)
 
-    # permutuje = Kombinator(wczytaj(podzial()))
-    # print(f'Permutuje:', permutuje.kombinacje())
-
     trasy, miasta = wczytaj()
-    w = perm(trasy, miasta)
-    print(w)
+    permutacje = perm(trasy, miasta)
+    print(permutacje)
+    print(odleglosci(trasy, permutacje))
 
 
 if __name__ == '__main__':
