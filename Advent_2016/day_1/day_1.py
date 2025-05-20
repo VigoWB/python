@@ -1,5 +1,14 @@
+from Advent_2015.scaffolding.utils import splitLines
+
+
+def danepodane():
+    surowe_dane = splitLines('Day1_input.txt')
+    return surowe_dane
+
+
+
 def main():
-    print("Dzien 1 roku 2016")
+    print(danepodane())
     pass
 
 
