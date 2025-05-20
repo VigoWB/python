@@ -33,6 +33,15 @@ def wczytaj() -> tuple[dict, Mapki]:
 #                 numer += 1
 #     return miasta
 
+def perm(trasy: dict, miasta: Mapki):
+    # trasy, miasta = wczytaj()
+    # miasta = Mapki()
+    print(type(miasta))
+    # klucze = miasta.keys()
+    # print(klucze)
+    return
+
+
 
 def podzial(linie: list[str]) -> dict:
     slownik = {}
@@ -45,10 +54,14 @@ def podzial(linie: list[str]) -> dict:
 
 def main():
     wczytane = wczytaj()
-    print("Miasta i ich numery:", wczytane)
+    # print("Miasta i ich numery:", wczytane)
 
-    kombinuje = Kombinator([x for x in range(8)])
-    print(f'kombinacje:', kombinuje.kombinacje())
+    # permutuje = Kombinator(wczytaj(podzial()))
+    # print(f'Permutuje:', permutuje.kombinacje())
+
+    trasy, miasta = wczytaj()
+    w = perm(trasy, miasta)
+    print(w)
 
 
 if __name__ == '__main__':

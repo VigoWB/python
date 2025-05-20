@@ -1,4 +1,4 @@
-from itertools import combinations
+from itertools import combinations, permutations
 class Mapki:
     def __init__(self):
         self.miasta: dict = {}
@@ -32,8 +32,7 @@ class Kombinator:
 
     def kombinacje(self) -> list:
         lista = self.bazoweMiasta
-        kombinacje = list(combinations(lista, 2))
-        # tutaj wygeneruj kombinacje za pomoca itertools
+        kombinacje = list(permutations(lista, 2))
         return kombinacje
 
     def pozostale(self, kombinacja: tuple) -> list:
