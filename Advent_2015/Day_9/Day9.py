@@ -38,15 +38,12 @@ def perm(trasy: dict, miasta: Mapki):
     return klucze.kombinacje()
 
 
-def odleglosci(trasy: dict, permutacje):
+def odleglosci(trasy: dict, permutacje) -> dict:
+    permzwart = {}
     for linia in permutacje:
-        for kmm in trasy.values():
-            if linia == trasy.keys():
-                print(f'Permutacja do odleglosci:',linia, kmm)
-
-
-
-    return trasy
+        if linia in trasy:
+            permzwart[linia] = trasy[linia]
+    return permzwart
 
 
 def podzial(linie: list[str]) -> dict:
