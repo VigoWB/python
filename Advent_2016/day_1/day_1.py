@@ -9,7 +9,7 @@ def kalkulacje(surowe_dane: list[str]) -> int:
     # Kierunki: 0 = Północ, 1 = Wschód, 2 = Południe, 3 = Zachód
     direction = 0  # startujemy patrząc na północ
     x, y = 0, 0    # współrzędne startowe
-
+    zbior = set([])
     steps = surowe_dane[0].split(', ')
     for step in steps:
         turn = step[0]
@@ -28,6 +28,11 @@ def kalkulacje(surowe_dane: list[str]) -> int:
             y -= blocks
         elif direction == 3:  # Zachód
             x -= blocks
+
+        if (x,y) not in zbior:
+            zbior.add((x, y))
+        else:
+            print(f'jakas pozycja: ',x, y)
 
     # Odległość Manhattan
     return abs(x) + abs(y)
