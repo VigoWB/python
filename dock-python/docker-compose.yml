@@ -2,9 +2,10 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "80:80"
-    depends_on:
-      - app
+      - "8080:80"
+    volumes:
+      -./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:
+
 
   app:
     image: python:latest
