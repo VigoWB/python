@@ -4,14 +4,14 @@ services:
     ports:
       - "8080:80"
     volumes:
-      -./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
 
 
   app:
     image: python:latest
     working_dir: /app
     volumes:
-      - .:/app
+      - ./python:/app
     command: ["python", "-m", "http.server"]
     expose:
       - "8000:80"
