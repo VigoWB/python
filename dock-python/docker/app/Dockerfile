@@ -1,0 +1,6 @@
+FROM python:3.13-alpine
+WORKDIR /app
+COPY assets/requirements.txt .
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]
+
