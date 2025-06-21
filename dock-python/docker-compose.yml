@@ -1,0 +1,25 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
+  app:
+    image: python:latest
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ["python", "-m", "http.server"]
+    expose:
+      - "8000:80"
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD:   password123
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
