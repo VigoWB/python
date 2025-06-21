@@ -2,7 +2,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "8080:80"
+      - '8080:80'
     volumes:
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
 
@@ -12,8 +12,8 @@ services:
       dockerfile: docker/app/Dockerfile
     volumes:
       - ./python:/app
-    expose:
-      - "5000:5000"
+    ports:
+      - '5000:5000'
 
   postgres:
     image: postgres:latest
