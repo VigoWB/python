@@ -10,17 +10,20 @@ services:
     build:
       context: .
       dockerfile: docker/app/Dockerfile
+    stop_signal: SIGINT
     volumes:
       - ./python:/app
     ports:
       - '5000:5000'
+    entrypoint: [ "python", "app.py","runserver" ]
+
 
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_USER:  user
-      POSTGRES_PASSWORD:  password123
-      POSTGRES_DB:  mydatabase
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: mydatabase
     ports:
       - "5432:5432"
     volumes:
