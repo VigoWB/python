@@ -1,8 +1,8 @@
 import time
 
 class ListaNotatek:
-    def __init__(self, id: int):
-        self.id = id
+    def __init__(self):
+        self.id = 0
         self.title: str = ''
         self.created_at: str = "2020-05-02 10:00:00"
         self.updated_at: str = "2023-09-15 15:22:33"

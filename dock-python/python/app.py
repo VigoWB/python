@@ -29,7 +29,8 @@ def potega(liczba):
 
 @app.route('/lists/<int:listId>', methods=['GET'])
 def lista(listId: int):
-    lista = ListaNotatek(listId)
+    lista = ListaNotatek()
+    lista.id = 20
     lista.title = "Test"
     lista.pin = False
     lista.created_at = "2020-05-02 13:00:00"
