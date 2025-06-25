@@ -29,7 +29,8 @@ def potega(liczba):
 
 @app.route('/lists/<int:listId>', methods=['GET'])
 def lista(listId: int):
-    lista = ListaNotatek(listId)
+    lista = ListaNotatek()
+    lista.id = 20
     lista.title = "Test"
     lista.pin = False
     lista.color = "Magenta"
