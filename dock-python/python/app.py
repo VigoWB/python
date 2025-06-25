@@ -1,5 +1,5 @@
 import time
-from flask import Flask
+from flask import Flask, jsonify
 from models.lista_notatek import ListaNotatek
 
 app = Flask(__name__)
@@ -32,13 +32,16 @@ def lista(listId: int):
     lista = ListaNotatek(listId)
     lista.title = "Test"
     lista.pin = False
+    lista.created_at = "2020-05-02 13:00:00"
+    lista.updated_at = "2028-08-22 21:00:00"
     lista.color = "Magenta"
-    return lista.response()
+    lista.set_timestamp()
+    return jsonify(lista.response())
 
 
-@app.route("/time")
-def time():
-    return {'time': time.time()}
+# @app.route("/time")
+# def time():
+#     return {'time': time.time()}
 
 
 if __name__ == "__main__":

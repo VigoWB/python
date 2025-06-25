@@ -1,3 +1,5 @@
+import time
+
 class ListaNotatek:
     def __init__(self, id: int):
         self.id = id
@@ -6,7 +8,10 @@ class ListaNotatek:
         self.updated_at: str = "2023-09-15 15:22:33"
         self.pin = True
         self.color: str = 'red'
-        pass
+        self.timestamp = time.time()
+
+    def set_timestamp(self):
+        self.timestamp = time.time()
 
     def response(self):
         return {
@@ -16,4 +21,5 @@ class ListaNotatek:
             "updated_at": self.updated_at,
             "pin": self.pin,
             "color": self.color,
+            "timestamp": self.timestamp
         }
