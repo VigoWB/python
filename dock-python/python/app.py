@@ -1,4 +1,3 @@
-import time
 from flask import Flask, jsonify
 from models.lista_notatek import ListaNotatek
 
