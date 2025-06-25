@@ -1,4 +1,5 @@
 import time
+import datetime
 
 class ListaNotatek:
     def __init__(self):
@@ -13,6 +14,9 @@ class ListaNotatek:
     def set_timestamp(self):
         self.timestamp = time.time()
 
+    def czytelna_data(self):
+        return datetime.datetime.fromtimestamp(self.timestamp).strftime("%Y-%m-%d %H:%M:%S")
+
     def response(self):
         return {
             "id": self.id,
@@ -21,5 +25,6 @@ class ListaNotatek:
             "updated_at": self.updated_at,
             "pin": self.pin,
             "color": self.color,
-            "timestamp": self.timestamp
+            "timestamp": self.timestamp,
+            "timestamp_normalna": self.czytelna_data()
         }
