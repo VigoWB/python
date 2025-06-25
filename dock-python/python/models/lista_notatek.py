@@ -1,5 +1,6 @@
 import time
 import datetime
+import zoneinfo
 
 class ListaNotatek:
     def __init__(self):
@@ -15,7 +16,8 @@ class ListaNotatek:
         self.timestamp = time.time()
 
     def czytelna_data(self):
-        return datetime.datetime.fromtimestamp(self.timestamp).strftime("%Y-%m-%d %H:%M:%S")
+        dt = datetime.datetime.fromtimestamp(self.timestamp, tz=zoneinfo.ZoneInfo("Europe/Warsaw"))
+        return dt.strftime("%Y-%m-%d %H:%M:%S %Z")
 
     def response(self):
         return {
