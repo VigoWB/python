@@ -1,8 +1,6 @@
-
-
 class ListaNotatek:
-    def __init__(self):
-        self.id = 20
+    def __init__(self, id: int):
+        self.id = id
         self.title: str = ''
         self.created_at: str = "2020-05-02 10:00:00"
         self.updated_at: str = "2023-09-15 15:22:33"
@@ -10,9 +8,7 @@ class ListaNotatek:
         self.color: str = 'red'
         pass
 
-
-
-    def toResponse(self):
+    def response(self):
         return {
             "id": self.id,
             "title": self.title,
