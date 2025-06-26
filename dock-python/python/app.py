@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
 from models.lista_notatek import ListaNotatek
+from config import Config #a co to i po co to?
 
 app = Flask(__name__)
+app.config.from_object(Config) #a co to i po co to?
 
 
 @app.route("/")
@@ -10,8 +12,18 @@ def hello():
 
 
 @app.route("/hello")
-def BU():
-    return "Witaj wielki BU"
+def vigo():
+    user = {'username': 'Vigo'}
+    return '''
+<html>
+    <head>
+        <title> Witanko!!!</title>
+    </head>
+    <body>
+        <h1> Hello, ''' + user['username'] + '''! </h1>
+    </body>
+</html> '''
+
 
 
 @app.route('/potega/<int:liczba>')
