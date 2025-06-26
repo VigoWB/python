@@ -14,7 +14,7 @@ services:
     volumes:
       - ./python:/app
     ports:
-      - '5000:5000'
+      - '5001:5001'
     entrypoint: [ "python", "app.py","runserver" ]
 
 

@@ -28,5 +28,5 @@ class ListaNotatek:
             "pin": self.pin,
             "color": self.color,
             "timestamp": self.timestamp,
-            "timestamp_normalna": self.czytelna_data()
+            "ludzka_godzina": self.czytelna_data()
         }
