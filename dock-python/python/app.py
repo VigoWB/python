@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request, render_template
 from models.lista_notatek import ListaNotatek
 from config import Config #a co to i po co to?
 
@@ -6,9 +6,22 @@ app = Flask(__name__)
 app.config.from_object(Config) #a co to i po co to?
 
 
-@app.route("/")
-def hello():
-    return "Co do chuja aaa?"
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('index.html')
+    elif request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        if username == "Vigo" and password == "haslo":
+            return "Super"
+        else:
+            return "Błąd"
+
+@app.route("/file_upload", ,methods=[''])
+def pliki():
+
 
 
 @app.route("/hello")
