@@ -19,9 +19,9 @@ def login():
         else:
             return "Błąd"
 
-@app.route("/file_upload", ,methods=[''])
+@app.route("/file_upload", methods=['POST'])
 def pliki():
-
+    return ""
 
 
 @app.route("/hello")
