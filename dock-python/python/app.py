@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, render_template
 from models.lista_notatek import ListaNotatek
 from config import Config #a co to i po co to?
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/')
 app.config.from_object(Config) #a co to i po co to?
 
 
