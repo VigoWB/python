@@ -7,7 +7,7 @@ import sys
 def main() -> None:
     """Run administrative tasks."""
     # Zastąp ‹project_name› faktyczną nazwą pakietu projektu
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangonauki.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "moj_projekt.settings")
 
     try:
         from django.core.management import execute_from_command_line
