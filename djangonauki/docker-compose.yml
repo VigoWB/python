@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   web:
     build: .
@@ -8,7 +6,7 @@ services:
              python manage.py collectstatic --noinput &&
              gunicorn projectname.wsgi:application --bind 0.0.0.0:8000"
     volumes:
-      - .:/app
+      - ./app:/app
     ports:
       - "5001:5001"
     depends_on:
