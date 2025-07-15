@@ -12,7 +12,7 @@ services:
     depends_on:
       - db
     environment:
-      - DJANGO_SETTINGS_MODULE=projectname.settings
+      - DJANGO_SETTINGS_MODULE=moj_projekt.settings
       - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
 
   db:
