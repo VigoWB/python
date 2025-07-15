@@ -20,4 +20,4 @@ EXPOSE 5001
 
 # Domyślne polecenie – dev-server Django
 # Do produkcji zastąp poniższe dwie linie Gunicornem
-CMD ["python", "manage.py", "runserver", "0.0.0.0:5001"]
+CMD ["gunicorn", "moj_projekt.wsgi:application", "--bind", "0.0.0.0:5001"]
