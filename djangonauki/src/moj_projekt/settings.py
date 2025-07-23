@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "todo"
+    "moj_projekt"
     # Twoje aplikacje tutaj
 ]
 
@@ -65,7 +65,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.{}'.format(
             os.getenv('DATABASE_ENGINE', 'sqlite3')
         ),
-        'NAME': BASE_DIR / "db.sqlite3",
+        'NAME': os.getenv('DATABASE_NAME', 'django'),
         'USER': os.getenv('DATABASE_USERNAME', 'myprojectuser'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD', 'password'),
         'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),

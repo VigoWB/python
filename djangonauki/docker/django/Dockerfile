@@ -7,12 +7,12 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Skopiuj requirements i zainstaluj zależności
-COPY requirements.txt .
+COPY ./src/requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Skopiuj cały kod projektu
-COPY . .
+COPY ./src .
 
 EXPOSE 8000
 

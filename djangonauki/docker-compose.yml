@@ -13,10 +13,14 @@ services:
      - .env
 
  django-web:
-   build: .
+   build:
+    context: .
+    dockerfile: docker/django/Dockerfile
    container_name: django-docker
    ports:
-     - "8000:8000"
+     - "8001:8000"
+   volumes:
+     - ./src:/app
    depends_on:
      - db
    environment:
@@ -27,11 +31,9 @@ services:
      DATABASE_ENGINE: ${DATABASE_ENGINE}
      DATABASE_NAME: ${DATABASE_NAME}
      DATABASE_USERNAME: ${DATABASE_USERNAME}
-
      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
      DATABASE_HOST: ${DATABASE_HOST}
      DATABASE_PORT: ${DATABASE_PORT}
-   env_file:
-     - .env
+
 volumes:
    postgres_data:
