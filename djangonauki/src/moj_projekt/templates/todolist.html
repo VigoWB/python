@@ -55,8 +55,11 @@
                                 <p>Editing this todo item... </p>
                                 <a href="/"> Cancel</a>
                                 {% else %}
-                                <a href="{% url 'EditTodo' item_id=todo.id %}" class="btn btn-primary">Edytuj</a>
-                                <a href="{% url 'DeleteTodo' item_id=todo.id %}" class="btn btn-danger">Usuń</a>
+                                <a href="/todo/{{ todo.id }}/edit" class="btn btn-primary">Eytuj</a>
+                                <form action="/todo/{{todo.id}}/delete" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Usuń</button>
+                                </form>
                                 {% endif %}
                             </td>
                         </tr>
