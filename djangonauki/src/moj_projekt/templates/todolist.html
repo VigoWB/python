@@ -43,22 +43,22 @@
                     <thead>
                         <tr class="d-flex">
                             <th scope="col" class="col-8">Pozycje listy:</th>
-                            <!-- <th scope="col" class="col-4">Actions:</th> -->
+                            <th scope="col" class="col-4">Akcje:</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for todo in all_items %}
                         <tr class="d-flex">
                             <td class="col-8">{{ todo.content }}</td>
-                            <!-- <td class="col-4 btn-group" role="group">
+                            <td class="col-4 btn-group" role="group">
                                 {% if edit_item and edit_item.id == todo.id %}
                                 <p>Editing this todo item... </p>
                                 <a href="/"> Cancel</a>
                                 {% else %}
-                                <a href="/todo/{{ todo.id }}/edit" class="btn btn-primary">Edit</a>
-                                <a href="/todo/{{ todo.id }}/delete" class="btn btn-danger">Delete</a>
+                                <a href="/todo/{{ todo.id }}/edit" class="btn btn-primary">Eytuj</a>
+                                <a href="/todo/{{ todo.id }}/delete" class="btn btn-danger">Usuń</a>
                                 {% endif %}
-                            </td> -->
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

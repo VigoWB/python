@@ -25,6 +25,7 @@ urlpatterns = [
     path("", TodoAppView, name="todolist"),
     path("todo/", AddTodo, name="addTodo"),
     # Delete todo
+    path("todo/{{ todo.id }}/delete", DeleteTodo, name="delete"),
     # Edit todo
     # Update todo
 ]
