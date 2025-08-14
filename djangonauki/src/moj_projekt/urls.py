@@ -17,7 +17,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from moj_projekt.views import DeleteTodo, EditTodo, TodoAppView, AddTodo, UpdateTodoItem
+from .views import DeleteTodo, EditTodo, TodoAppView, AddTodo, UpdateTodoItem, views
 
 
 urlpatterns = [
@@ -25,7 +25,8 @@ urlpatterns = [
     path("", TodoAppView, name="todolist"),
     path("todo/", AddTodo, name="addTodo"),
     # Delete todo
-    path("todo/{{ todo.id }}/delete", DeleteTodo, name="delete"),
+    '''path('todo/<int:item_id>/delete/', DeleteTodo, name='DeleteTodo'),''',
+    path('todo/<int:item_id>/delete/', views.DeleteTodo, name='DeleteTodo'),
     # Edit todo
     # Update todo
 ]

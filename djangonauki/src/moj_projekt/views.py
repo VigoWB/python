@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from moj_projekt.models import Item
+from .models import Item
 
 def TodoAppView(request):
     all_items = Item.objects.all()
@@ -14,7 +14,7 @@ def AddTodo(request):
     return HttpResponseRedirect('/')
 
 # Delete Todo:
-def DeleteTodo(_, item_id):
+def DeleteTodo(request, item_id):
     item_to_delete = Item.objects.get(id=item_id)
     item_to_delete.delete()
     return HttpResponseRedirect('/')
