@@ -3,4 +3,4 @@ from django.db import models
 
 class Item(models.Model):
     content = models.TextField()
-    #date_posted = models.DateTimeField(default=timezone.now)
+#    date_posted = models.DateTimeField(default=timezone.now)
