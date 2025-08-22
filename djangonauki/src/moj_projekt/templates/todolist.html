@@ -58,7 +58,7 @@
                         {% for todo in all_items %}
                         <tr class="d-flex">
                             <td class="col-8">{{ todo.content }}</td>
-                            <td class="col-3">{{ todo.date_posted|date:"d.m.Y H:i" }}</td>
+                            <td class="col-3">{{ todo.date_posted|date:"d.m.Y G:i:s A T" }}</td>
                             <td class="col-4 btn-group" role="group">
                                 {% if edit_item and edit_item.id == todo.id %}
                                     <p>Edytujesz tą pozycję...</p>
