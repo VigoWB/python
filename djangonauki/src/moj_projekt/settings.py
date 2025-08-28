@@ -3,6 +3,8 @@ import os
 # Ścieżka bazowa projektu
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# loginy do penelu admina login: Vigo, haslo: django, login: root, haslo: vigodjango
+
 # Sekret klucz (w produkcji ustaw w zmiennych środowiskowych)
 #SECRET_KEY = os.environ.get("twoj-sekretny-klucz")
 SECRET_KEY = 'twoj-sekretny-klucz'
