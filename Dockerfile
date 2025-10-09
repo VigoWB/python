@@ -25,6 +25,7 @@ COPY *.js* $AP/
 
 WORKDIR $AP
 
+
 RUN npm install
 
 CMD ["supervisord", "-n"]
