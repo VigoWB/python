@@ -2,7 +2,7 @@
 
 FROM docker.io/node:18.13.0
 
-ARG email="anna@example.com"
+ARG email="wic@example.com"
 LABEL "maintainer"=$email
 LABEL "rating"="Five Stars" "class"="First Class"
 
