@@ -1,0 +1,20 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+
+## [Unreleased]
+
+## [1.0.1] - 2021-08-31
+### Added
+- Updated libraries to current releases and removed vulnerable mongodb dependency
+- Added basic security policy
+- Added CodeQL analysis workflow
+
+## [1.0.0] - 2021-03-30
+### Added
+- Added command line support
+- Added micro service (listener) mode
+- Confirmed basic Go Library functionality
+- More details in the README
+

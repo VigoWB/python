@@ -1,0 +1,32 @@
+FROM golang:1.18-alpine3.15 AS build
+
+RUN apk --no-cache add \
+    bash \
+    gcc \
+    musl-dev \
+    openssl
+
+ENV CGO_ENABLED=0
+COPY data/words.json /data/words.json
+ENV PATH="/go/bin:${PATH}"
+
+COPY . /build
+WORKDIR /build
+
+RUN go install github.com/markbates/pkger/cmd/pkger@latest && pkger -include /data/words.json
+RUN ls -la /build
+
+RUN go build .
+
+#RUN go install github.com/markbates/pkger/cmd/pkger@latest && pkger -include /data/words.json && go build .
+
+FROM alpine:3.15 AS deploy
+
+WORKDIR /
+COPY --from=build /build/wordchain /
+
+USER 500
+EXPOSE 8080
+
+ENTRYPOINT ["/wordchain"]
+CMD ["listen"]
