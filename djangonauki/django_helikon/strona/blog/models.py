@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-from django.utils import timezone
+from django.db.models.functions import Now
 
 class Post(models.Model):
     class Status(models.TextChoices):
@@ -14,7 +14,7 @@ class Post(models.Model):
         related_name='blog_posts'
     )
     body = models.TextField()
-    publish = models.DateTimeField(default=timezone.now)
+    publish = models.DateTimeField(db_default=Now())
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(
